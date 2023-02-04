@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Zoho CRM Enhancer",
+    "version": "1.0",
+    "description": "Useful UI and UX improvements for Zoho CRM.",
+
+    "icons": {
+        "16": "images/icon.png",
+        "32": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
+    }
+}
