@@ -21,6 +21,7 @@
                 "webfonts/jetbrains-mono.css"
             ],
             "matches": [
+                "https://crm.zoho.com/crm/*/settings/functions/myFunctions",
                 "https://crm.zoho.eu/crm/*/settings/functions/myFunctions"
             ]
         }
