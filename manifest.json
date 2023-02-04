@@ -9,5 +9,20 @@
         "32": "images/icon.png",
         "48": "images/icon.png",
         "128": "images/icon.png"
-    }
+    },
+
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/functions-editor/functions-editor.js"
+            ],
+            "css": [
+                "scripts/functions-editor/functions-editor.css",
+                "webfonts/jetbrains-mono.css"
+            ],
+            "matches": [
+                "https://crm.zoho.eu/crm/*/settings/functions/myFunctions"
+            ]
+        }
+    ]
 }

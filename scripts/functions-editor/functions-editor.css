@@ -1,0 +1,5 @@
+.CodeMirror-lines * * {
+    font-family: 'JetBrains Mono' !important;
+    font-size: 13px !important;
+    font-weight: bold;
+}
