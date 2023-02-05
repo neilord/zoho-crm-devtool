@@ -1,7 +1,7 @@
 .CodeMirror-linenumber.CodeMirror-gutter-elt, .CodeMirror-line * {
     font-family: 'JetBrains Mono' !important;
     font-size: 13px !important;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 #codemirror_scroll {
@@ -10,5 +10,5 @@
 }
 
 #dreTopBar, #delugeLeftPane, #dreEditorFooter {
-    display: none !important;
+    display: none;
 }
