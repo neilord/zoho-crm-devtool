@@ -8,6 +8,16 @@
     text-decoration: none !important;
 }
 
+.CodeMirror-line {
+    white-space: nowrap;
+    padding-right: 0px !important;
+}
+.CodeMirror-sizer {
+    width: max-content;
+    min-width: -webkit-fill-available;
+    min-width: -moz-available;
+}
+
 #dreTopBar, #delugeLeftPane, #dreEditorFooter, .CodeMirror-gutter-elt .de.de-edit {
     display: none !important;
 }
