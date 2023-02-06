@@ -4,11 +4,14 @@
     font-weight: 800;
 }
 
+.CodeMirror-linenumber.CodeMirror-gutter-elt {
+    text-decoration: none !important;
+}
+
+#dreTopBar, #delugeLeftPane, #dreEditorFooter, .CodeMirror-gutter-elt .de.de-edit {
+    display: none !important;
+}
 #codemirror_scroll {
     border-top: 0px !important;
     padding-top: 0px;
-}
-
-#dreTopBar, #delugeLeftPane, #dreEditorFooter {
-    display: none;
 }
