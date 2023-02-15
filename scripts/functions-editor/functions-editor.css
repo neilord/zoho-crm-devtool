@@ -1,11 +1,16 @@
+body {
+    overscroll-behavior-block: none;
+}
+
+/* Code Lines and Code Editor */
 .CodeMirror-linenumber.CodeMirror-gutter-elt, .CodeMirror-line * {
     font-family: 'JetBrains Mono' !important;
     font-size: 13px !important;
     font-weight: 800;
 }
 
-.CodeMirror-linenumber.CodeMirror-gutter-elt {
-    text-decoration: none !important;
+.CodeMirror-scroll {
+    background: white;
 }
 
 .CodeMirror-line {
@@ -18,7 +23,27 @@
     min-width: -moz-available;
 }
 
-#dreTopBar, #delugeLeftPane, #dreEditorFooter, .CodeMirror-gutter-elt .de.de-edit {
+/* Code Lines */
+.CodeMirror-linenumber.CodeMirror-gutter-elt {
+    text-decoration: none !important;
+    text-align: right !important;
+    margin-left: -10px !important;
+    background: inherit !important;
+}
+
+.CodeMirror-gutter.dre-codemirror-lintmarker, .CodeMirror-gutter.CodeMirror-linenumbers,
+.CodeMirror-gutter.CodeMirror-foldgutter, .CodeMirror-gutter.editmodes,
+.CodeMirror-gutter-elt, .CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle {
+    background: inherit !important;
+}
+.CodeMirror-gutters {
+    background: inherit !important;
+    border: none !important;
+}
+
+/* Useless Elements */
+.CodeMirror-foldgutter-open.CodeMirror-guttermarker-subtle, .CodeMirror-gutter-elt .de.de-edit,
+#dreTopBar, #delugeLeftPane, #dreEditorFooter {
     display: none !important;
 }
 #codemirror_scroll {
