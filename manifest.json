@@ -109,13 +109,13 @@
                 "fonts/fonts.css"
             ],
             "matches": [
-                "https://crm.zoho.com/crm/*/settings/functions/myFunctions",
-                "https://crm.zoho.au/crm/*/settings/functions/myFunctions",
-                "https://crm.zoho.eu/crm/*/settings/functions/myFunctions",
-                "https://crm.zoho.com.au/crm/*/settings/functions/myFunctions",
-                "https://crm.zoho.com.cn/crm/*/settings/functions/myFunctions",
-                "https://crm.zoho.jp/crm/*/settings/functions/myFunctions",
-                "https://crm.zoho.in/crm/*/settings/functions/myFunctions"
+                "https://crm.zoho.com/*",
+                "https://crm.zoho.au/*",
+                "https://crm.zoho.eu/*",
+                "https://crm.zoho.com.au/*",
+                "https://crm.zoho.com.cn/*",
+                "https://crm.zoho.jp/*",
+                "https://crm.zoho.in/*"
             ]
         }
     ]

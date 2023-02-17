@@ -2,8 +2,68 @@ body {
     overscroll-behavior-block: none;
 }
 
+/* Header */
+.lyte-button.lytePrimaryBtn {
+    margin-right: 2px !important;
+}
+.lyte-button.lyteDefaultBtn {
+    margin-left: 10px;
+}
+#functionCancel {
+    display: none;
+}
+
+#templateName, #templateSubject {
+    text-align: center;
+}
+
+#functionName {
+    flex-grow: 1;
+}
+
+#templateName, #templateSubject, .headerSectionTabCnt.pR.color_3.bbd1.w100per.oH {
+    padding: 0px;
+}
+
+.alignright.showOnEditandCreate.pB10.pT7.mT10 {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.editTempName.dIB, .editTempName.dIB > lyte-input, .nTSubsection > lyte-input {
+    width: 100%;
+}
+.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 {
+    height: 50px;
+}
+
+.editTempName.dIB lyte-input, #templateName {
+    height: 100%;
+}
+.nTSubsection > lyte-input {
+    display: block;
+    height: 100%;
+    margin-bottom: 0px;
+}
+.nTSubsection, .nTSubsection * {
+    height: 15px;
+}
+.nTSubsection {
+    margin-bottom: 5px;
+}
+.editTempName.dIB {
+    height: 30px;
+}
+#templateName {
+    font-size: 25px !important;
+}
+
+.lyteField.ltIconShow:has(#templateName), .lyteField:has(#templateSubject)  {
+    border: none !important;
+}
+
 /* Code Lines and Code Editor */
-.CodeMirror-linenumber.CodeMirror-gutter-elt, .CodeMirror-line * {
+.CodeMirror-linenumber.CodeMirror-gutter-elt, .CodeMirror-line span {
     font-family: 'JetBrains Mono' !important;
     font-size: 13px !important;
     font-weight: 800;
