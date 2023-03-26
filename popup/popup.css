@@ -1,0 +1,135 @@
+:root {
+  /* --- Colors --- */
+
+  /* Text */
+  --primary-text-color: #E5E2DC;
+      /* --secondary-text-color: #C5C2BC; */
+
+  /* Buttons */
+      /* --general-button-normal-color: #151B26;
+      --general-button-hover-color: #202736;
+      --general-button-press-color: #3C465C;
+
+      --dangerous-button-normal-color: #E53343;
+      --dangerous-button-hover-color: #CD1222;
+      --dangerous-button-press-color: #9E0E1A;
+
+      --safe-button-normal-color: #00B200;
+      --safe-button-hover-color: #019101;
+      --safe-button-press-color: #006E00; */
+
+  /* Backgrounds */
+  --primary-background-color: #1C222C;
+      /* --secondary-background-color: #151B26; */
+  --tertiary-background-color: #202736;
+      /* --quaternary-background-color: #3C465C; */
+
+  /* Editor */
+      /* --cursor-color: #FFDE94;
+      --line-number-color: #42464D;
+      --active-line-number-color: #F8D68F;
+      --active-line-background-color: #252A35;
+      --selected-text-background-color: #1D3B53;
+      --indent-guides-color: #2C3444;
+      --hint-matching-symbols: #F8D68F; */
+
+  /* Syntax */
+      /* --matching-brackets-background-color: #586478;
+      --brackets-color: #F9D849;
+      --comments-color: #4C5566;
+      --system-functions-color: #F8D68F;
+      --variable-color: #FEF9EF;
+      --strings-color: #9BA8C2;
+      --constants-color: #A684C6;
+      --math-operators-color: #7DB1CB;
+      --logical-operators-color: #4A9DF8;
+      --separators-color: #9AA0AB;
+      --semicolons-color: #BBBBBB; */
+
+
+  
+  /* --- Other --- */
+
+  /* Code Font */
+      /* --code-font-family: 'JetBrains Mono';
+      --code-font-size: 13px;
+      --code-font-weight: 800; */
+
+  /* Buttons */
+      /* --button-border-style: none;
+      --button-border-width: 1px;
+      --buttom-shadow-offset: -2px; */
+
+  /* Popups */
+      /* --popup-border-radius: 10px; */
+}
+
+
+
+/* ------------------------- General ------------------------- */
+
+body {
+  height: 300px;
+  background: var(--primary-background-color);
+  margin: 0px;
+}
+
+
+
+/* ------------------------- Header -------------------------- */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 50px;
+  background: var(--tertiary-background-color);
+}
+
+.title {
+  color: var(--primary-text-color);
+  font-family: 'Monaco';
+  font-size: 20px;
+  text-align: center;
+}
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:checked + .slider:before {
+  transform: translateX(15px);
+}
