@@ -1,5 +1,4 @@
-const visableTopBarSelecter =
-  '#tabLayer:not([style*="display: none"])';
+const visableTopBarSelecter = '#tabLayer:not([style*="display: none"])';
 const hiddenTopBarWithCodeFrameSelecter =
   '#basic:has(#tabLayer[style*="display: none"]) ~ #createfunctionpopdiv';
 
@@ -9,7 +8,6 @@ const functionParametersSelector = '#functionArguments';
 const functionDescriptionId = 'templateSubject';
 
 const buttonsSelector = '.dIB.mL10.viewaschartbtn.addchartbtnhere.vam';
-const closeButtonSelector = '#functionCancel';
 const editArgumentsButtonSelector = '.smalledit.pR';
 
 const goToLineInputSelector = '#customDelugeGoTo';
@@ -56,6 +54,21 @@ function waitForElementRemoval(selector) {
   });
 }
 
+async function invokeScriptFromConsole(name) {
+  const oldScript = document.getElementById(name);
+  if (oldScript) {
+    oldScript.remove();
+  }
+
+  const formatterPath = 'scripts/functions-editor/' + name + '.js';
+  const formatterURL = chrome.runtime.getURL(formatterPath);
+  const newScript = document.createElement('script');
+  newScript.setAttribute('id', name);
+  newScript.setAttribute('type', 'text/javascript');
+  newScript.setAttribute('src', formatterURL);
+  document.body.appendChild(newScript);
+}
+
 // Enhance Functions Editor
 
 async function changeGoToLinePlaceholder() {
@@ -74,7 +87,7 @@ async function addLeftCloseButton() {
   leftCloseButton.setAttribute('id', 'functionCancelLeft');
   leftCloseButton.firstElementChild.textContent = 'Close';
   leftCloseButton.onclick = () => {
-    document.querySelector(closeButtonSelector).click();
+    invokeScriptFromConsole('close-button-action');
   };
 }
 
@@ -187,13 +200,20 @@ async function removeFooter() {
   document.querySelector('#functionFooter').remove();
 }
 
+async function formatCode() {
+  await waitForElementRemoval('.CodeMirror-code');
+  await waitForElement('.CodeMirror-code');
+  invokeScriptFromConsole('code-formatter');
+}
+
+
 async function observeFunctionsEditor() {
   await waitForElement(hiddenTopBarWithCodeFrameSelecter);
 
   // Oppened
-  changeGoToLinePlaceholder();
   addLeftCloseButton();
   addFooter();
+  formatCode();
 
   await waitForElement(visableTopBarSelecter);
 
@@ -203,4 +223,9 @@ async function observeFunctionsEditor() {
   observeFunctionsEditor();
 }
 
+async function startBackgroundTasks() {
+  changeGoToLinePlaceholder();
+}
+
 observeFunctionsEditor();
+startBackgroundTasks();
