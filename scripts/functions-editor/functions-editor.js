@@ -54,19 +54,26 @@ function waitForElementRemoval(selector) {
   });
 }
 
-async function invokeScriptFromConsole(name) {
-  const oldScript = document.getElementById(name);
-  if (oldScript) {
-    oldScript.remove();
+async function createRemoveScriptElement(file, remove = false) {
+  const name = file.split('.')[0];
+  const type = file.split('.')[1];
+
+  const oldElm = document.getElementById(name);
+  if (oldElm) {
+    oldElm.remove();
   }
 
-  const formatterPath = 'scripts/functions-editor/' + name + '.js';
-  const formatterURL = chrome.runtime.getURL(formatterPath);
-  const newScript = document.createElement('script');
-  newScript.setAttribute('id', name);
-  newScript.setAttribute('type', 'text/javascript');
-  newScript.setAttribute('src', formatterURL);
-  document.body.appendChild(newScript);
+  if (!remove) {
+    const url = chrome.runtime.getURL('scripts/functions-editor/' + file);
+    const newElm = document.createElement(type == 'js' ? 'script' : 'link');
+    newElm.id = name;
+    newElm.setAttribute(type == 'js' ? 'src' : 'href', url);
+    newElm.setAttribute(
+      type == 'js' ? 'type' : 'rel',
+      type == 'js' ? 'text/javascript' : 'stylesheet'
+    );
+    document.body.appendChild(newElm);
+  }
 }
 
 // Enhance Functions Editor
@@ -87,7 +94,7 @@ async function addLeftCloseButton() {
   leftCloseButton.setAttribute('id', 'functionCancelLeft');
   leftCloseButton.firstElementChild.textContent = 'Close';
   leftCloseButton.onclick = () => {
-    invokeScriptFromConsole('close-button-action');
+    createRemoveScriptElement('close-button-action.js');
   };
 }
 
@@ -203,9 +210,8 @@ async function removeFooter() {
 async function formatCode() {
   await waitForElementRemoval('.CodeMirror-code');
   await waitForElement('.CodeMirror-code');
-  invokeScriptFromConsole('code-formatter');
+  createRemoveScriptElement('code-formatter.js');
 }
-
 
 async function observeFunctionsEditor() {
   await waitForElement(hiddenTopBarWithCodeFrameSelecter);
@@ -214,11 +220,13 @@ async function observeFunctionsEditor() {
   addLeftCloseButton();
   addFooter();
   formatCode();
+  createRemoveScriptElement('functions-editor.css');
 
   await waitForElement(visableTopBarSelecter);
 
   // Closed
   removeFooter();
+  createRemoveScriptElement('functions-editor.css', true);
 
   observeFunctionsEditor();
 }

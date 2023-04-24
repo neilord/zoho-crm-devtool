@@ -96,7 +96,7 @@
 
 .headerSectionTabCnt.pR.color_3.bbd1.w100per.oH {
   border-color: var(--secondary-background-color) !important;
-  box-shadow: 0px 3px 8px 0px var(--secondary-background-color) !important;
+  box-shadow: 0px 3px 4px 0px var(--secondary-background-color) !important;
   border-bottom: 1px solid var(--header-footer-border-color) !important;
   z-index: 29 !important;
 }
@@ -198,8 +198,10 @@
   border-radius: var(--popup-border-radius) !important;
 }
 .f20.color_202123.crm-font-bold.fL.fontSmooth,
+.crmLabelColor.pR30,
 #dreExecuteParams,
-#dreEditParams {
+#dreEditParams,
+lyte-modal-header {
   color: var(--primary-text-color) !important;
 }
 
@@ -214,13 +216,20 @@
 .deluge-popup.dre-edit-params-popup {
   background: var(--secondary-background-color) !important;
 }
-.dre-ep-params-title {
+.dre-ep-params-title,
+.pA.customFunctionArginformation,
+.crm-font-bold.mT30.mB15.dB.crmHeadingColor {
   color: var(--secondary-text-color) !important;
+}
+.crm-font-bold.mT30.mB15.dB.crmHeadingColor {
+  font-family: var(--crm-font) !important;
 }
 .dre-edex-params-main-content,
 .dre-ep-btn,
+.lyteModal.lyteModalFromTop,
 #dreEditParamFunctionName {
   background: var(--tertiary-background-color) !important;
+  box-shadow: none !important;
 }
 
 #dreEditParamFunctionName {
@@ -232,6 +241,18 @@
   border-width: 0px !important;
   padding-right: 10px !important;
   padding-left: 10px !important;
+}
+.lyteField.ltIconShow {
+  background: var(--secondary-background-color) !important;
+  border-radius: 10px !important;
+  border-width: 0px !important;
+  box-shadow: none !important;
+}
+.lyteField.ltIconShow > input {
+  color: var(--primary-text-color) !important;
+}
+.crmLabelColor.pR30 {
+  padding-right: 10px !important;
 }
 
 .dre-ep-param-name > input {
@@ -284,6 +305,12 @@
 .deluge-popup-freeze {
   opacity: 0.2 !important
 }
+.modalWrapper.formRawDataPop {
+  z-index: 29 !important;
+}
+lyte-modal-freeze {
+  background: #00000070 !important;
+}
 
 .deluge-popup.dre-edex-params-popup.dre-execute-params-popup,
 .dre-edex-params,
@@ -303,7 +330,8 @@
   padding-bottom: 0px !important;
 }
 
-.dre-ep-params-layout {
+.dre-ep-params-layout,
+.formdata.wfEaArguments.p10.pT20 {
   background: var(--secondary-background-color) !important;
   border-width: 0px !important;
   border-top-left-radius: calc(var(--popup-border-radius) * 1.5) !important;
@@ -330,6 +358,21 @@
 .dre-ep-param-add-btn-text,
 .dre-ep-param-msg {
   font-weight: normal !important;
+}
+
+.crm-font-bold.mT30.mB15.dB.crmHeadingColor {
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+}
+.formdata.wfEaArguments.p10.pT20 {
+  padding: 5px !important;
+}
+lyte-modal-footer {
+  padding-top: 0px !important;
+  padding-bottom: 15px !important;
+}
+.noBorderTable.w100per {
+  border-radius: var(--popup-border-radius) !important;
 }
 
 .dre-ep-param-type,
@@ -446,30 +489,37 @@
   border-color: var(--general-button-press-color) !important;
 }
 
-/* Leave Page */
-.newDelBtn.leavePage.redbtn {
+/* Leave Page and Edit Arguments */
+.newDelBtn.leavePage.redbtn,
+lyte-modal-footer .lyte-button.lytePrimaryBtn {
   background: var(--dangerous-button-normal-color) !important;
   border-color: var(--dangerous-button-hover-color) !important;
   box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--dangerous-button-press-color) !important;
 }
-.newDelBtn.leavePage.redbtn:hover {
+.newDelBtn.leavePage.redbtn:hover,
+lyte-modal-footer .lyte-button.lytePrimaryBtn:hover {
   background: var(--dangerous-button-hover-color) !important;
 }
-.newDelBtn.leavePage.redbtn:active {
+.newDelBtn.leavePage.redbtn:active,
+lyte-modal-footer .lyte-button.lytePrimaryBtn:hover {
   background: var(--dangerous-button-press-color) !important;
   border-color: var(--dangerous-button-press-color) !important;
 }
 
-/* Stay on Page */
-.newGrayBgBtn.stayPage.newgraybtn {
+/* Stay on Page and Edit Arguments */
+.newGrayBgBtn.stayPage.newgraybtn,
+lyte-modal-footer .lyte-button.lyteDefaultBtn {
+  color: #FFFFFF !important;
   background: var(--safe-button-normal-color) !important;
   border-color: var(--safe-button-hover-color) !important;
   box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--safe-button-press-color) !important;
 }
-.newGrayBgBtn.stayPage.newgraybtn:hover {
+.newGrayBgBtn.stayPage.newgraybtn:hover,
+lyte-modal-footer .lyte-button.lyteDefaultBtn:hover {
   background: var(--safe-button-hover-color) !important;
 }
-.newGrayBgBtn.stayPage.newgraybtn:active {
+.newGrayBgBtn.stayPage.newgraybtn:active,
+lyte-modal-footer .lyte-button.lyteDefaultBtn:active {
   background: var(--safe-button-press-color) !important;
   border-color: var(--safe-button-press-color) !important;
 }
