@@ -4,12 +4,44 @@
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
-    <div class="header">
-      <div class="title">Zoho CRM Enhancer</div>
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-      </label>
+    <script src="popup.js"></script>
+    <div id="extension-container">
+      <div id="extension-header">
+        <div id="title">Zoho CRM Enhancer</div>
+        <div id="extension-activation-switch">
+          <div class="toggle toggle-on" id="switch">
+            <div class="toggle-text-off">OFF</div>
+            <div class="glow-comp"></div>
+            <div class="toggle-button"></div>
+            <div class="toggle-text-on">ON</div>
+          </div>
+        </div>
+      </div>
+      <div id="extension-content">
+        <div id="tabs">
+          <div class="tab active">
+            <div class="tab-header">
+              <div class="tab-icon">@</div>
+            </div>
+            <div class="tab-name">Apperance</div>
+          </div>
+          <div class="tab">
+            <div class="tab-header">
+              <div class="tab-icon">#</div>
+            </div>
+            <div class="tab-name">Code</div>
+          </div>
+          <div class="tab">
+            <div class="tab-header">
+              <div class="tab-icon">$</div>
+            </div>
+            <div class="tab-name">Subscription</div>
+          </div>
+        </div>
+        <div id="settings">
+          <span>Xcontent</span>
+        </div>
+      </div>
     </div>
   </body>
 </html>
