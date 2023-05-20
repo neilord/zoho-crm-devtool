@@ -54,25 +54,25 @@ function waitForElementRemoval(selector) {
   });
 }
 
-async function createRemoveScriptElement(file, remove = false) {
+async function createRemoveScriptElement(file, create = true) {
   const name = file.split('.')[0];
   const type = file.split('.')[1];
 
-  const oldElm = document.getElementById(name);
-  if (oldElm) {
-    oldElm.remove();
+  const oldElement = document.getElementById(name);
+  if (oldElement) {
+    oldElement.remove();
   }
 
-  if (!remove) {
+  if (create) {
     const url = chrome.runtime.getURL('scripts/functions-editor/' + file);
-    const newElm = document.createElement(type == 'js' ? 'script' : 'link');
-    newElm.id = name;
-    newElm.setAttribute(type == 'js' ? 'src' : 'href', url);
-    newElm.setAttribute(
+    const newElement = document.createElement(type == 'js' ? 'script' : 'link');
+    newElement.id = name;
+    newElement.setAttribute(type == 'js' ? 'src' : 'href', url);
+    newElement.setAttribute(
       type == 'js' ? 'type' : 'rel',
       type == 'js' ? 'text/javascript' : 'stylesheet'
     );
-    document.body.appendChild(newElm);
+    document.body.appendChild(newElement);
   }
 }
 
@@ -213,6 +213,17 @@ async function formatCode() {
   createRemoveScriptElement('code-formatter.js');
 }
 
+async function disableEnableDarkReader(disable = true) {
+  let disabler = document.querySelector('meta[name="darkreader-lock"]');
+  if (disable && !disabler) {
+    disabler = document.createElement('meta');
+    disabler.name = 'darkreader-lock';
+    document.head.appendChild(disabler);
+  } else if (disabler) {
+    disabler.parentNode.removeChild(disabler);
+  }
+}
+
 async function observeFunctionsEditor() {
   await waitForElement(hiddenTopBarWithCodeFrameSelecter);
 
@@ -220,13 +231,15 @@ async function observeFunctionsEditor() {
   addLeftCloseButton();
   addFooter();
   formatCode();
+  disableEnableDarkReader();
   createRemoveScriptElement('functions-editor.css');
 
   await waitForElement(visableTopBarSelecter);
 
   // Closed
   removeFooter();
-  createRemoveScriptElement('functions-editor.css', true);
+  disableEnableDarkReader(false);
+  createRemoveScriptElement('functions-editor.css', false);
 
   observeFunctionsEditor();
 }
