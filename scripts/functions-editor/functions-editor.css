@@ -73,6 +73,9 @@
   --secondary-system-font-size: 13px;
   --tertiary-system-font-size: 12px;
 
+  /* Code Beautify */
+  --tab-size: 4;
+
   /* Buttons */
   --button-border-style: none;
   --button-border-width: 1px;
@@ -1014,6 +1017,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 
 .cm-tab {
   border-left: 1px solid var(--indent-guides-color) !important;
+  width: calc(var(--tab-size) * 7.2px) !important;
 }
 
 .cm-separator,
