@@ -538,6 +538,35 @@ lyte-modal-footer {
   justify-content: space-between !important;
 }
 
+/* Import Status */
+#IMPORTNOTIFICATIONPOP1 {
+  background: var(--primary-background-color) !important;
+  border: none !important;
+  border-radius: 10px !important;
+}
+
+#IMPORTNOTIFICATIONPOP1 .migCardTitle {
+  background: var(--quaternary-background-color) !important;
+  font-family: var(--code-font-family) !important;
+  font-weight: bold !important;
+  font-feature-settings: var(--code-font-features) !important;
+}
+
+#IMPORTNOTIFICATIONPOP1 .migCardTitle .pA.dIB.svgIconsImg.migCardClose.ico-close-white-small2.cP {
+  /* filter: invert(0.85); */
+  /* For Light Theme */
+}
+
+.chatContainer.pR {
+  background: var(--tertiary-background-color) !important;
+}
+
+.crm-font-regular.fontSmooth.content.migCardMsg.succesImportSchedularIco {
+  color: var(--primary-text-color) !important;
+  font-family: var(--code-font-family) !important;
+  font-weight: bold !important;
+  font-feature-settings: var(--code-font-features) !important;
+}
 
 
 /* ------------------------- Buttons ------------------------- */
