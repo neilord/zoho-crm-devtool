@@ -66,7 +66,7 @@
   --code-font-size: 14px;
   --code-font-weight: 400;
   --code-font-line-height: 1.5;
-  --code-font-ligatures: 'zero';
+  --code-font-features: 'calt', 'zero', 'ss02', 'cv03', 'cv04', 'cv16', 'cv18';
 
   --system-font-family: 'Monaco';
   --primary-system-font-size: 14px;
@@ -107,8 +107,10 @@
 }
 
 #templateName {
-  font-family: var(--crm-font-bold);
+  font-family: var(--code-font-family) !important;
   font-size: 20px !important;
+  font-weight: bold;
+  font-feature-settings: var(--code-font-features) !important;
   color: var(--primary-text-color) !important;
 }
 
@@ -125,6 +127,24 @@
 
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button.lyteDefaultBtn {
   margin-left: 10px !important;
+}
+
+.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button:not([id='#functionSaveAndExecute']) {
+  height: 33px !important;
+  width: 100px !important;
+  padding: 0px !important;
+}
+
+#functionSaveAndExecute button {
+  width: 150px !important;
+}
+
+.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button *,
+#functionCancelLeft button {
+  font-family: var(--code-font-family) !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+  font-feature-settings: var(--code-font-features) !important;
 }
 
 .alignright.showOnEditandCreate.pB10.pT7.mT10 {
@@ -206,8 +226,10 @@
 #templateSubject::placeholder {
   position: unset !important;
   flex-grow: 1 !important;
-  font-family: var(--crm-font-bold) !important;
+  font-family: var(--code-font-family) !important;
   font-size: 15px !important;
+  font-weight: bold !important;
+  font-feature-settings: var(--code-font-features) !important;
   color: var(--line-number-color) !important;
   background: var(--primary-background-color) !important;
   border: 0px !important;
@@ -272,8 +294,9 @@ lyte-modal-header {
 #dreEditParamFunctionName {
   color: var(--primary-text-color) !important;
   background: var(--secondary-background-color) !important;
-  font-family: 'Monaco' !important;
-
+  font-family: var(--code-font-family) !important;
+  font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
   border-radius: 10px !important;
   border-width: 0px !important;
   padding-right: 10px !important;
@@ -288,6 +311,7 @@ lyte-modal-header {
   color: var(--primary-text-color) !important;
   background: var(--tertiary-background-color) !important;
   font-family: var(--code-font-family) !important;
+  font-feature-settings: var(--code-font-features) !important;
   font-size: 14px !important;
   font-weight: var(--code-font-weight) !important;
   border-width: 0px !important;
@@ -297,8 +321,10 @@ lyte-modal-header {
 .dre-ep-param-data-type {
   color: var(--primary-text-color) !important;
   background: var(--secondary-background-color) !important;
-  font-family: 'Monaco' !important;
+  font-family: var(--code-font-family) !important;
   font-size: 13px !important;
+  font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
   text-align: center !important;
   border-radius: 10px !important;
   border-width: 0px !important;
@@ -313,7 +339,7 @@ lyte-modal-header {
 
 #dreEditParamsAddBtn {
   background: var(--secondary-background-color) !important;
-  font-family: var(--code-font-family) !important;
+  font-family: 'JetBrains Mono' !important;
   font-weight: var(--code-font-weight) !important;
   margin-top: -5px;
   padding: 0px !important;
@@ -390,6 +416,7 @@ lyte-modal-freeze {
   background: var(--tertiary-background-color);
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
   margin: 5px !important;
   padding: 5px !important;
   border-width: 0px !important;
@@ -441,7 +468,10 @@ lyte-modal-footer {
 .dre-ep-param-input {
   color: var(--primary-text-color) !important;
   background: var(--secondary-background-color) !important;
-  font-family: 'Monaco' !important;
+  font-family: var(--code-font-family) !important;
+  font-size: 14px !important;
+  font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
   border: 0px !important;
   border-radius: 10px !important;
   padding-top: 0px !important;
@@ -605,8 +635,10 @@ lyte-modal-footer {
 #customParamFunctionName input,
 #inputId {
   color: var(--primary-text-color) !important;
-  font-family: 'Monaco' !important;
+  font-family: var(--code-font-family) !important;
   font-size: 13px !important;
+  font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
 }
 
 #customParamFunctionName input::placeholder {
@@ -672,6 +704,7 @@ lyte-modal-footer {
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input::placeholder {
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
 }
 
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox>.lyteField>input {
@@ -698,8 +731,10 @@ lyte-modal-footer {
   min-height: 0 !important;
   border: 0px !important;
   background: var(--secondary-background-color) !important;
-  font-family: 'Monaco' !important;
+  font-family: var(--code-font-family) !important;
   font-size: 14px !important;
+  font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
   align-items: center !important;
   box-shadow: none !important;
   border-radius: 10px !important;
@@ -790,7 +825,9 @@ lyte-modal-footer {
 .maxW200.mergefieldDropdownEle lyte-drop-button {
   background: var(--secondary-background-color) !important;
   color: var(--primary-text-color) !important;
-  font-family: 'Monaco' !important;
+  font-family: var(--code-font-family) !important;
+  font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
   border: none !important;
   border-radius: 10px !important;
   box-shadow: none !important;
@@ -813,7 +850,9 @@ lyte-modal-footer {
   border-radius: 10px !important;
   background: var(--tertiary-background-color) !important;
   border: 1px solid var(--secondary-background-color) !important;
-  font-family: 'Monaco' !important;
+  font-family: var(--code-font-family) !important;
+  font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
 }
 
 .multilevelmergefieldDropdown.crmBoxDropbox.lyteDropdownCurve.lyteDropdownDown lyte-drop-body {
@@ -850,7 +889,9 @@ lyte-drop-label {
 
 .lyteSearchInput.lyteInput.vertical input,
 .lyteSearchInput.lyteInput.vertical input::placeholder {
-  font-family: 'Monaco' !important;
+  font-family: var(--code-font-family) !important;
+  font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
 }
 
 .lyteSearchInput.lyteInput.vertical input::placeholder {
@@ -879,6 +920,7 @@ lyte-drop-label {
   font-family: var(--code-font-family) !important;
   font-size: var(--code-font-size) !important;
   font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
 }
 
 /* Code Lines */
@@ -1130,9 +1172,15 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 }
 
 #outputToggleHook {
+  height: 100px !important;
+  width: 25px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   color: var(--primary-text-color) !important;
   background: var(--secondary-background-color) !important;
-  padding-right: 5px !important;
+  margin-left: 2px !important;
+  padding: 0px !important;
   box-shadow: none !important;
 }
 
@@ -1150,6 +1198,12 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
   filter: invert(0.85) !important;
 }
 
+#outputToggleHook .dIB.mT5.vam {
+  font-family: var(--code-font-family) !important;
+  font-weight: bold !important;
+  margin-top: 5px !important;
+}
+
 .functionoutputCont.infoTagClass.wbBreakAll .dIB.vam.outputSubjCont.crm-font-bold.pL10,
 .functionoutput.outputInfoMsg {
   color: var(--primary-text-color) !important;
@@ -1162,6 +1216,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 
 .pLR10.mB10.pR {
   font-family: var(--code-font-family) !important;
+  font-feature-settings: var(--code-font-features) !important;
 }
 
 
@@ -1174,8 +1229,13 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 }
 
 #findBtn,
+#findBtn::placeholder,
 #replacementText,
-#customDelugeGoTo {
+#replacementText::placeholder,
+#customDelugeGoTo,
+#customDelugeGoTo::placeholder {
+  font-family: var(--code-font-family) !important;
+  font-feature-settings: var(--code-font-features) !important;
   color: var(--primary-text-color) !important;
   background: var(--tertiary-background-color) !important;
   border-color: var(--secondary-background-color) !important;
@@ -1186,10 +1246,6 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 #replacementText::placeholder,
 #customDelugeGoTo::placeholder {
   color: var(--placeholder-color) !important;
-}
-
-#customDelugeGoTo {
-  font-family: 'Monaco' !important;
 }
 
 .close-icon::before,

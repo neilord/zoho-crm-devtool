@@ -114,8 +114,10 @@ async function addFooter() {
     border-top: 1px solid var(--header-footer-border-color);
     align-items: center;
 
-    font-family: var(--crm-font-bold);
+    font-family: var(--code-font-family);
     font-size: 15px;
+    font-weight: bold;
+    font-feature-settings: var(--code-font-features);
     color: var(--line-number-color);
     background: var(--primary-background-color);
   `;
@@ -193,7 +195,6 @@ async function addFooter() {
   delugeLogo.appendChild(delugeIcon);
   delugeIcon.textContent = '{}';
   delugeIcon.style = `
-    font-family: 'JetBrains Mono';
     margin-right: 8px;
   `;
 
