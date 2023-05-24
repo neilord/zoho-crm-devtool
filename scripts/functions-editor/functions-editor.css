@@ -73,9 +73,6 @@
   --secondary-system-font-size: 13px;
   --tertiary-system-font-size: 12px;
 
-  /* Code Beautify */
-  --tab-size: 4;
-
   /* Buttons */
   --button-border-style: none;
   --button-border-width: 1px;
@@ -991,10 +988,14 @@ lyte-drop-label {
 }
 
 .CodeMirror-line {
-  line-height: var(--code-font-line-height) !important;
+  line-height: 1 !important;
   padding-top: 0px !important;
   padding-right: 10px !important;
   padding-bottom: 0px !important;
+}
+
+.delugeEditorArea #delugeEditorCont .deluge-main-container * {
+  line-height: var(--code-font-line-height) !important;
 }
 
 .CodeMirror-cursor {
@@ -1088,7 +1089,6 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 
 .cm-tab {
   border-left: 1px solid var(--indent-guides-color) !important;
-  width: calc(var(--tab-size) * 6.95px) !important;
 }
 
 .cm-separator,
@@ -1130,7 +1130,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 }
 
 .CodeMirror-hint:not(.CodeMirror-hint.hint-divider-parent) {
-  height: 21px !important;
+  /* height: 21px !important; */
   color: var(--primary-text-color) !important;
   padding-top: 0.5px !important;
   padding-bottom: 0.5px !important;
@@ -1179,6 +1179,17 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
   margin-left: -5px !important;
   border-width: 0px !important;
   border-radius: 5px !important;
+}
+
+.CodeMirror-Tern-tooltip.deluge-tooltip-example.CodeMirror-Tern-hint-doc * {
+  font-family: var(--code-font-family) !important;
+  font-size: var(--code-font-size) !important;
+  font-weight: var(--code-font-weight) !important;
+  font-feature-settings: var(--code-font-features) !important;
+}
+
+.deluge-fn-example * {
+  line-height: var(--code-font-line-height) !important;
 }
 
 .deluge-fn-desc,
