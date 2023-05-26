@@ -1,0 +1,413 @@
+/* ------------------- Extension Container ------------------- */
+
+body {
+  margin: 5px;
+  background: var(--primary-background-color);
+}
+
+#extension-container {
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+}
+
+#extension-container>* {
+  background: var(--tertiary-background-color);
+  border-radius: 10px;
+}
+
+
+
+/* ------------------------- Header -------------------------- */
+
+#extension-header {
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--tertiary-background-color);
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+#title {
+  color: var(--primary-text-color);
+  font-family: var(--code-font-family);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Switch */
+
+#extension-activation-switch,
+#extension-activation-switch>* {
+  width: 56.25px;
+  height: 30px;
+}
+
+#extension-activation-switch .toggle-switch {
+  border-width: 1.5px;
+  border-radius: 15px;
+}
+
+#extension-activation-switch .toggle-switch-button {
+  top: 3px;
+  width: 21px;
+  bottom: 3px;
+  right: 29.25px;
+  border-radius: 14.25px;
+}
+
+#extension-activation-switch .toggle-switch-text-on {
+  line-height: 27px;
+  font-size: 13.5px;
+}
+
+#extension-activation-switch .toggle-on .toggle-switch-button {
+  top: 2.25px;
+  width: 48.75px;
+  bottom: 2.25px;
+  right: 2.25px;
+  border-radius: 17.25px;
+  box-shadow: 0 0 12px var(--extension-popup-switch-on-primary-shadow-color);
+}
+
+#extension-activation-switch .toggle-switch-text-off {
+  right: 4.5px;
+  line-height: 27px;
+  font-size: 10.5px;
+}
+
+#extension-activation-switch .glow-comp {
+  top: 7.5px;
+  bottom: 7.5px;
+  left: 7.5px;
+  right: 7.5px;
+  border-radius: 4.5px;
+  box-shadow: 0 0 9px var(--extension-popup-switch-on-secondary-shadow-color);
+}
+
+
+
+/* -------------------------- Tabs --------------------------- */
+
+#tabs {
+  position: relative;
+  height: 20px;
+  border-radius: 7px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.tab {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--tertiary-background-color);
+  transition: left 0.5s;
+}
+
+.tab-title {
+  display: flex;
+}
+
+.tab-icon {
+  width: 20px;
+  background-image: url('chrome-extension://__MSG_@@extension_id__/images/apperance-icon.svg');
+  filter: invert(1);
+  background-size: 20px;
+}
+
+.tab-name {
+  color: var(--primary-text-color) !important;
+  background: var(--tertiary-background-color);
+  font-family: var(--code-font-family);
+  font-size: 15px;
+}
+
+
+
+/* ------------------------ Settings ------------------------- */
+
+/* Tabs */
+
+#settings {
+  display: grid;
+}
+
+#settings .settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  grid-area: 1/1/1/1;
+  background: inherit;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+body:has(.tab.active:nth-child(1)) #apperance {
+  z-index: 1;
+}
+
+body:has(.tab.active:nth-child(2)) #code-beautifier {
+  z-index: 1;
+}
+
+body:has(.tab.active:nth-child(3)) #advanced-settings {
+  z-index: 1;
+}
+
+/* Containers */
+
+.settings-container {
+  display: flex;
+  gap: 5px;
+}
+
+.settings-container>* {
+  flex-grow: 1;
+}
+
+.vertical-settings-container {
+  flex-direction: column;
+}
+
+/* General */
+
+.setting {
+  display: flex;
+  align-items: center;
+  background: var(--secondary-background-color);
+  padding: 0px 5px;
+}
+
+.setting>* {
+  color: var(--primary-text-color);
+  font-family: var(--code-font-family);
+  font-size: 14px;
+  font-weight: var(--code-font-weight);
+  font-feature-settings: var(--code-font-features);
+}
+
+.setting-title {
+  display: flex;
+}
+
+.setting-separator {
+  margin-right: 10px;
+  font-weight: 100;
+}
+
+body:not(:has(#extension-activation-switch > .toggle-on)) .setting * {
+  pointer-events: none;
+}
+
+/* Types */
+
+.normal {
+  height: 25px;
+  border-radius: 7px;
+}
+
+.small {
+  height: 20px;
+  border-radius: 7px;
+}
+
+/* Dropdown */
+
+.setting-dropdown {
+  flex-grow: 1;
+}
+
+/* Switch */
+
+.setting-switch {
+  margin-left: auto;
+  margin-right: 4px;
+}
+
+.setting-switch,
+.setting-switch>* {
+  width: 37.5px;
+  height: 20px;
+}
+
+.setting-switch .toggle-switch {
+  border-width: 1px;
+  border-radius: 10px;
+}
+
+.setting-switch .toggle-switch-button {
+  top: 2px;
+  width: 14px;
+  bottom: 2px;
+  right: 19.5px;
+  border-radius: 9.5px;
+}
+
+.setting-switch .toggle-switch-text-on {
+  line-height: 18px;
+  font-size: 9px;
+}
+
+body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .toggle-switch-button {
+  top: 1.5px;
+  width: 32.5px;
+  bottom: 1.5px;
+  right: 1.5px;
+  border-radius: 11.5px;
+  box-shadow: 0 0 8px var(--extension-popup-switch-on-primary-shadow-color);
+}
+
+.setting-switch .toggle-switch-text-off {
+  right: 3px;
+  line-height: 18px;
+  font-size: 7px;
+}
+
+.setting-switch .glow-comp {
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  border-radius: 3px;
+  box-shadow: 0 0 6px var(--extension-popup-switch-on-secondary-shadow-color);
+}
+
+/* Dropdown + Switch */
+
+.dropdown.switch .setting-dropdown {
+  text-align: right;
+  color: var(--extension-popup-glow-color);
+}
+
+
+
+/* ------------------------ Utilities ------------------------ */
+
+/* Dropdown */
+
+select {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+}
+
+/* Switch */
+
+.toggle-switch {
+  position: absolute;
+  border: 0px solid var(--extension-popup-switch-off-color);
+  transition: border-color 0.6s ease-out;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body:has(#extension-activation-switch > .toggle-on) .toggle-switch.toggle-on {
+  border-color: rgba(137, 194, 217, 0.4);
+  transition: border-color 0.5s 0.15s ease-out;
+}
+
+.toggle-switch-button {
+  position: absolute;
+  background-color: var(--extension-popup-switch-off-color);
+  cursor: pointer;
+  transition: background-color 0.3s 0.1s,
+    width 0.1s,
+    top 0.1s,
+    bottom 0.1s,
+    right 0.2s 0.1s,
+    border-radius 0.2s 0.1s;
+}
+
+body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-button {
+  background-color: var(--extension-popup-switch-on-primary-background-color);
+  transition:
+    top 0.2s 0.1s,
+    width 0.2s 0.1s,
+    bottom 0.2s 0.1s,
+    right 0.1s,
+    border-radius 0.2s 0.1s,
+    box-shadow 0.2s 0.1s;
+}
+
+.toggle-switch-text-on {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'QuJicksand', sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0);
+}
+
+body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-text-on {
+  color: var(--extension-popup-switch-on-text-color);
+  transition: color 0.3s 0.15s;
+}
+
+.toggle-switch-text-off {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+  color: var(--extension-popup-switch-off-color);
+}
+
+body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-text-off {
+  color: rgba(0, 0, 0, 0);
+}
+
+.glow-comp {
+  position: absolute;
+  opacity: 0;
+  background-color: var(--extension-popup-switch-on-secondary-background-color);
+  transition: opacity 4.5s 1s;
+}
+
+body:has(#extension-activation-switch > .toggle-on) .toggle-on .glow-comp {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+/* Text Glowing */
+
+#title,
+.tab-title,
+.setting-title,
+.setting-dropdown {
+  filter: opacity(0.5);
+  transition: text-shadow 0.3s ease, filter 0.3s ease;
+}
+
+body:has(#extension-activation-switch > .toggle-on) #title,
+body:has(#extension-activation-switch > .toggle-on) .tab-title,
+body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(~ .setting-switch)),
+body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on),
+body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:not(:has(~ .setting-switch)),
+body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:has(~ .setting-switch .toggle-on) {
+  filter: opacity(1);
+}
+
+body:has(#extension-activation-switch > .toggle-on) #title {
+  text-shadow: 0 0 5px var(--extension-popup-glow-color);
+}
+
+body:has(#extension-activation-switch > .toggle-on) .tab-title,
+body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(~ .setting-switch)),
+body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on),
+body:has(#extension-activation-switch > .toggle-on) .dropdown.switch .setting-dropdown:has(~ .setting-switch .toggle-on) {
+  text-shadow: 0 0 3px var(--extension-popup-glow-color);
+}

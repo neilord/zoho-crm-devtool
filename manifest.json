@@ -17,13 +17,13 @@
   
   "action": {
     "default_title": "Zoho CRM Enhancer",
-    "default_popup": "popup/popup.html"
+    "default_popup": "scripts/popup/popup.html"
   },
 
   "content_scripts": [
     {
       "js": ["scripts/functions-editor/functions-editor.js"],
-      "css": ["fonts/fonts.css"],
+      "css": ["scripts/variables.css"],
       "matches": [
         "https://crm.zoho.com/*",
         "https://crm.zoho.au/*",
