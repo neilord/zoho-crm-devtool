@@ -382,32 +382,39 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .glow-comp {
   transition: opacity 1s;
 }
 
-/* Text Glowing */
+/* Text Glowing & Brightness */
 
+/* Darker */
 #title,
-.tab-title,
+.tab-icon,
+.tab.active .tab-name,
 .setting-title,
 .setting-dropdown {
   filter: opacity(0.5);
   transition: text-shadow 0.3s ease, filter 0.3s ease;
 }
 
+/* Brighter */
 body:has(#extension-activation-switch > .toggle-on) #title,
-body:has(#extension-activation-switch > .toggle-on) .tab-title,
-body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(~ .setting-switch)),
-body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on),
 body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:not(:has(~ .setting-switch)),
 body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:has(~ .setting-switch .toggle-on) {
   filter: opacity(1);
 }
 
+/* Glow */
 body:has(#extension-activation-switch > .toggle-on) #title {
   text-shadow: 0 0 5px var(--extension-popup-glow-color);
 }
 
-body:has(#extension-activation-switch > .toggle-on) .tab-title,
-body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(~ .setting-switch)),
-body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on),
 body:has(#extension-activation-switch > .toggle-on) .dropdown.switch .setting-dropdown:has(~ .setting-switch .toggle-on) {
   text-shadow: 0 0 3px var(--extension-popup-glow-color);
+}
+
+/* Brighter + Glow */
+body:has(#extension-activation-switch > .toggle-on) .tab-icon,
+body:has(#extension-activation-switch > .toggle-on) .tab.active .tab-name,
+body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(~ .setting-switch)),
+body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on) {
+  text-shadow: 0 0 3px var(--extension-popup-glow-color);
+  filter: opacity(1);
 }
