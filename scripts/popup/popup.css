@@ -219,6 +219,8 @@ body:not(:has(#extension-activation-switch > .toggle-on)) .setting * {
 
 .setting-dropdown {
   flex-grow: 1;
+  line-height: 25px;
+  appearance: none;
 }
 
 /* Switch */
