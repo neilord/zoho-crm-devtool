@@ -78,7 +78,7 @@
   --code-font-size: 14px;
   --code-font-weight: 400;
   --code-font-line-height: 1.5;
-  --code-font-features: 'calt', 'zero', 'ss02', 'cv03', 'cv04', 'cv16', 'cv18';
+  --code-font-features: 'calt', 'zero';
 
   --system-font-family: 'Monaco';
   --primary-system-font-size: 14px;
