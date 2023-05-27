@@ -59,7 +59,15 @@
         "fonts/JetBrainsMono-Thin.woff2",
         "fonts/JetBrainsMono-ThinItalic.woff2"
       ],
-      "matches": ["<all_urls>"]
+      "matches": [
+        "https://crm.zoho.com/*",
+        "https://crm.zoho.au/*",
+        "https://crm.zoho.eu/*",
+        "https://crm.zoho.com.au/*",
+        "https://crm.zoho.com.cn/*",
+        "https://crm.zoho.jp/*",
+        "https://crm.zoho.in/*"
+      ]
     }
   ]
 }
