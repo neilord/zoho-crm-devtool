@@ -185,7 +185,7 @@ body:has(.tab.active:nth-child(3)) #advanced-settings {
   font-family: var(--code-font-family);
   font-size: 14px;
   font-weight: var(--code-font-weight);
-  font-feature-settings: var(--code-font-features);
+  font-feature-settings: var(--code-font-feature-settings);
 }
 
 .setting-title {

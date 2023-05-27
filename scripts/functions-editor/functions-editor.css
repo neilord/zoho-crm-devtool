@@ -21,7 +21,7 @@
   font-family: var(--code-font-family) !important;
   font-size: 20px !important;
   font-weight: 600 !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
   color: var(--primary-text-color) !important;
 }
 
@@ -55,7 +55,7 @@
   font-family: var(--code-font-family) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 .alignright.showOnEditandCreate.pB10.pT7.mT10 {
@@ -140,7 +140,7 @@
   font-family: var(--code-font-family) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
   color: var(--line-number-color) !important;
   background: var(--primary-background-color) !important;
   border: 0px !important;
@@ -207,7 +207,7 @@ lyte-modal-header {
   background: var(--secondary-background-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
   border-radius: 10px !important;
   border-width: 0px !important;
   padding-right: 10px !important;
@@ -222,7 +222,7 @@ lyte-modal-header {
   color: var(--primary-text-color) !important;
   background: var(--tertiary-background-color) !important;
   font-family: var(--code-font-family) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
   font-size: 14px !important;
   font-weight: var(--code-font-weight) !important;
   border-width: 0px !important;
@@ -235,7 +235,7 @@ lyte-modal-header {
   font-family: var(--code-font-family) !important;
   font-size: 13px !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
   text-align: center !important;
   border-radius: 10px !important;
   border-width: 0px !important;
@@ -327,7 +327,7 @@ lyte-modal-freeze {
   background: var(--tertiary-background-color);
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
   margin: 5px !important;
   padding: 5px !important;
   border-width: 0px !important;
@@ -382,7 +382,7 @@ lyte-modal-footer {
   font-family: var(--code-font-family) !important;
   font-size: 14px !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
   border: 0px !important;
   border-radius: 10px !important;
   padding-top: 0px !important;
@@ -460,7 +460,7 @@ lyte-modal-footer {
   background: var(--quaternary-background-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: 600 !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 #IMPORTNOTIFICATIONPOP1 .migCardTitle .pA.dIB.svgIconsImg.migCardClose.ico-close-white-small2.cP {
@@ -476,7 +476,7 @@ lyte-modal-footer {
   color: var(--primary-text-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: 600 !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 
@@ -578,7 +578,7 @@ lyte-modal-footer {
   font-family: var(--code-font-family) !important;
   font-size: 13px !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 #customParamFunctionName input::placeholder {
@@ -644,7 +644,7 @@ lyte-modal-footer {
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input::placeholder {
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox>.lyteField>input {
@@ -674,7 +674,7 @@ lyte-modal-footer {
   font-family: var(--code-font-family) !important;
   font-size: 14px !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
   align-items: center !important;
   box-shadow: none !important;
   border-radius: 10px !important;
@@ -767,7 +767,7 @@ lyte-modal-footer {
   color: var(--primary-text-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
   border: none !important;
   border-radius: 10px !important;
   box-shadow: none !important;
@@ -792,7 +792,7 @@ lyte-modal-footer {
   border: 1px solid var(--secondary-background-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 .multilevelmergefieldDropdown.crmBoxDropbox.lyteDropdownCurve.lyteDropdownDown lyte-drop-body {
@@ -831,7 +831,7 @@ lyte-drop-label {
 .lyteSearchInput.lyteInput.vertical input::placeholder {
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 .lyteSearchInput.lyteInput.vertical input::placeholder {
@@ -860,7 +860,7 @@ lyte-drop-label {
   font-family: var(--code-font-family) !important;
   font-size: var(--code-font-size) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 /* Code Lines */
@@ -1099,7 +1099,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
   font-family: var(--code-font-family) !important;
   font-size: var(--code-font-size) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 .deluge-fn-example * {
@@ -1170,7 +1170,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 
 .pLR10.mB10.pR {
   font-family: var(--code-font-family) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 
@@ -1189,7 +1189,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 #customDelugeGoTo,
 #customDelugeGoTo::placeholder {
   font-family: var(--code-font-family) !important;
-  font-feature-settings: var(--code-font-features) !important;
+  font-feature-settings: var(--code-font-feature-settings) !important;
   color: var(--primary-text-color) !important;
   background: var(--tertiary-background-color) !important;
   border-color: var(--secondary-background-color) !important;
