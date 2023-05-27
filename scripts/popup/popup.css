@@ -113,16 +113,14 @@ body {
 
 .tab-icon {
   width: 20px;
-  background-image: url('chrome-extension://__MSG_@@extension_id__/images/apperance-icon.svg');
-  filter: invert(1);
-  background-size: 20px;
+  background: white;
 }
 
 .tab-name {
   color: var(--primary-text-color) !important;
   background: var(--tertiary-background-color);
   font-family: var(--code-font-family);
-  font-size: 15px;
+  font-size: 16px;
 }
 
 
