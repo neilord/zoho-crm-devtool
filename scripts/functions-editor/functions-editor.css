@@ -21,7 +21,6 @@
   font-family: var(--code-font-family) !important;
   font-size: 20px !important;
   font-weight: 600 !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
   color: var(--primary-text-color) !important;
 }
 
@@ -55,7 +54,6 @@
   font-family: var(--code-font-family) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 .alignright.showOnEditandCreate.pB10.pT7.mT10 {
@@ -140,7 +138,6 @@
   font-family: var(--code-font-family) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
   color: var(--line-number-color) !important;
   background: var(--primary-background-color) !important;
   border: 0px !important;
@@ -207,7 +204,6 @@ lyte-modal-header {
   background: var(--secondary-background-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
   border-radius: 10px !important;
   border-width: 0px !important;
   padding-right: 10px !important;
@@ -222,7 +218,6 @@ lyte-modal-header {
   color: var(--primary-text-color) !important;
   background: var(--tertiary-background-color) !important;
   font-family: var(--code-font-family) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
   font-size: 14px !important;
   font-weight: var(--code-font-weight) !important;
   border-width: 0px !important;
@@ -235,7 +230,6 @@ lyte-modal-header {
   font-family: var(--code-font-family) !important;
   font-size: 13px !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
   text-align: center !important;
   border-radius: 10px !important;
   border-width: 0px !important;
@@ -245,7 +239,7 @@ lyte-modal-header {
   position: relative !important;
   margin-right: 0px !important;
   margin-left: 20px !important;
-  filter: invert(1) !important;
+  filter: invert(var(--is-dark-theme)) !important;
 }
 
 #dreEditParamsAddBtn {
@@ -327,7 +321,6 @@ lyte-modal-freeze {
   background: var(--tertiary-background-color);
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
   margin: 5px !important;
   padding: 5px !important;
   border-width: 0px !important;
@@ -382,7 +375,6 @@ lyte-modal-footer {
   font-family: var(--code-font-family) !important;
   font-size: 14px !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
   border: 0px !important;
   border-radius: 10px !important;
   padding-top: 0px !important;
@@ -392,7 +384,7 @@ lyte-modal-footer {
 }
 
 .dre-ep-close.deluge-close {
-  filter: invert(1) !important;
+  filter: invert(var(--is-dark-theme)) !important;
 }
 
 #dreExecuteParamsSaveBtn,
@@ -460,12 +452,11 @@ lyte-modal-footer {
   background: var(--quaternary-background-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: 600 !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 #IMPORTNOTIFICATIONPOP1 .migCardTitle .pA.dIB.svgIconsImg.migCardClose.ico-close-white-small2.cP {
-  /* filter: invert(0.85); */
-  /* For Light Theme */
+  filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85)));
+  /* this change 0 -> 1 and 1 -> 0 to get a reverse of --is-dark-theme, kinda --is-light-theme */
 }
 
 .chatContainer.pR {
@@ -476,8 +467,8 @@ lyte-modal-footer {
   color: var(--primary-text-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: 600 !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
 }
+
 
 
 /* ------------------------- Buttons ------------------------- */
@@ -578,7 +569,6 @@ lyte-modal-footer {
   font-family: var(--code-font-family) !important;
   font-size: 13px !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 #customParamFunctionName input::placeholder {
@@ -644,7 +634,6 @@ lyte-modal-footer {
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input::placeholder {
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox>.lyteField>input {
@@ -674,7 +663,6 @@ lyte-modal-footer {
   font-family: var(--code-font-family) !important;
   font-size: 14px !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
   align-items: center !important;
   box-shadow: none !important;
   border-radius: 10px !important;
@@ -727,7 +715,7 @@ lyte-modal-footer {
 
 .zcicn_embedSvg.zcicn-edit-filled-md.zcicn12.crmBaseIcon:not(:hover),
 .zcicn_embedSvg.zcicn-close-9.zcicn9.crmBaseIcon {
-  filter: invert(1) !important;
+  filter: invert(var(--is-dark-theme)) !important;
 }
 
 .lytePopover.lytePopoverVisible {
@@ -767,7 +755,6 @@ lyte-modal-footer {
   color: var(--primary-text-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
   border: none !important;
   border-radius: 10px !important;
   box-shadow: none !important;
@@ -778,12 +765,12 @@ lyte-modal-footer {
 }
 
 .maxW200.mergefieldDropdownEle lyte-drop-button>.dropdown {
-  filter: invert(1) !important;
+  filter: invert(var(--is-dark-theme)) !important;
 }
 
 .mergeFieldDropdownArrow.dIB.mLR10.crmcssBaseIcon.zcicn-arrow-solid-right-sm,
 .lyteSearchInput.lyteInput.vertical .searchIcon {
-  filter: invert(0.85) !important;
+  filter: invert(calc(var(--is-dark-theme) * 0.85));
 }
 
 .multilevelmergefieldDropdown.crmBoxDropbox.lyteDropdownCurve.lyteDropdownDown {
@@ -792,7 +779,6 @@ lyte-modal-footer {
   border: 1px solid var(--secondary-background-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 .multilevelmergefieldDropdown.crmBoxDropbox.lyteDropdownCurve.lyteDropdownDown lyte-drop-body {
@@ -814,7 +800,7 @@ lyte-modal-footer {
 
 .multilevelmergefieldDropdown.crmBoxDropbox.lyteDropdownCurve.lyteDropdownDown lyte-drop-item::before {
   top: 6px !important;
-  filter: invert(0.85) !important;
+  filter: invert(calc(var(--is-dark-theme) * 0.85));
 }
 
 lyte-drop-label {
@@ -831,7 +817,6 @@ lyte-drop-label {
 .lyteSearchInput.lyteInput.vertical input::placeholder {
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 .lyteSearchInput.lyteInput.vertical input::placeholder {
@@ -860,7 +845,6 @@ lyte-drop-label {
   font-family: var(--code-font-family) !important;
   font-size: var(--code-font-size) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 /* Code Lines */
@@ -960,13 +944,11 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 
 /* Syntax */
 .cm-comment {
-  font-style: italic !important;
   color: var(--comments-color) !important;
 }
 
 .cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)) {
   color: var(--system-functions-color) !important;
-  text-transform: lowercase !important;
 }
 
 .cm-variable,
@@ -999,21 +981,6 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 
 .cm-semicolon {
   color: var(--semicolons-color) !important;
-}
-
-.cm-tab {
-  border-left: 1px solid var(--indent-guides-color) !important;
-}
-
-.cm-separator,
-.cm-variable+.cm-syntax,
-.cm-variable+.cm-syntax+.cm-syntax {
-  font-style: italic !important;
-}
-
-.cm-variable:has(+ .cm-syntax) {
-  color: var(--affected-variable-color) !important;
-  font-style: italic !important;
 }
 
 .cm-brackets {
@@ -1099,7 +1066,6 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
   font-family: var(--code-font-family) !important;
   font-size: var(--code-font-size) !important;
   font-weight: var(--code-font-weight) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 .deluge-fn-example * {
@@ -1149,7 +1115,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 }
 
 .dIB.zcicn-arrow-solid-left-md.outputContHookIcon.vam {
-  filter: invert(0.85) !important;
+  filter: invert(calc(var(--is-dark-theme) * 0.85));
 }
 
 #outputToggleHook .dIB.mT5.vam {
@@ -1170,7 +1136,6 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 
 .pLR10.mB10.pR {
   font-family: var(--code-font-family) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
 }
 
 
@@ -1189,7 +1154,6 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 #customDelugeGoTo,
 #customDelugeGoTo::placeholder {
   font-family: var(--code-font-family) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
   color: var(--primary-text-color) !important;
   background: var(--tertiary-background-color) !important;
   border-color: var(--secondary-background-color) !important;
@@ -1204,7 +1168,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 
 .close-icon::before,
 .close-icon::after {
-  filter: invert(1) !important;
+  filter: invert(var(--is-dark-theme)) !important;
 }
 
 .custom-ds-row-div,

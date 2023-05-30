@@ -1,0 +1,3 @@
+.cm-tab {
+  background: linear-gradient(to right, var(--indent-guides-color) var(--indent-guides-width), transparent 0) no-repeat !important;
+}

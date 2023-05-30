@@ -25,7 +25,7 @@
   --selected-text-background-color: #1D3B53;
   --selected-searching-text-background-color: #555B8C;
   --searching-text-background-color: #008CFF4D;
-  --indent-guides-color: #25385A;
+  --indent-guides-color: #283B5F;
   --hint-matching-symbols: #CBE386;
   --tooltip-border-color: #657D95;
 
@@ -73,8 +73,12 @@
 
   /* --- Other --- */
 
+  /* Theme */
+  --is-dark-theme: 1;
+
   /* Fonts */
-  --code-font-family: 'JetBrains Mono';
+  --code-font-family: 'JetBrains Mono NL';
+  --code-font-family-ligatures: 'JetBrains Mono';
   --code-font-size: 14px;
   --code-font-weight: 400;
   --code-font-line-height: 1.5;
@@ -84,6 +88,12 @@
   --primary-system-font-size: 14px;
   --secondary-system-font-size: 13px;
   --tertiary-system-font-size: 12px;
+
+  /* Syntax Highlighting */
+  --comments-font-style: italic;
+  --system-functions-font-style: italic;
+  --affected-variable-font-style: italic;
+  --indent-guides-width: 1px;
 
   /* Buttons */
   --button-border-style: none;
@@ -221,4 +231,120 @@
   font-style: italic;
   font-weight: 800;
   src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-ExtraBoldItalic.woff2') format('woff2');
+}
+
+/* JetBrains Mono NL */
+
+/* Normal Fonts */
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 100;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 200;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 300;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 500;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 600;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 800;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-ExtraBold.woff2') format('woff2');
+}
+
+/* Italic Fonts */
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: italic;
+  font-weight: 100;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-ThinItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: italic;
+  font-weight: 200;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-ExtraLightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: italic;
+  font-weight: 300;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-LightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: italic;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: italic;
+  font-weight: 500;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-MediumItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: italic;
+  font-weight: 600;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: italic;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: italic;
+  font-weight: 800;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-ExtraBoldItalic.woff2') format('woff2');
 }

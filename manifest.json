@@ -11,10 +11,8 @@
     "128": "images/icon.png"
   },
 
-  "permissions": [
-    "storage"
-  ],
-  
+  "permissions": ["storage"],
+
   "action": {
     "default_title": "Zoho CRM Enhancer",
     "default_popup": "scripts/popup/popup.html"
@@ -22,8 +20,8 @@
 
   "content_scripts": [
     {
-      "js": ["scripts/functions-editor/functions-editor.js"],
-      "css": ["scripts/variables.css"],
+      "js": ["scripts/utilities/utilities.js", "scripts/functions-editor/functions-editor.js"],
+      "css": ["scripts/utilities/variables.css"],
       "matches": [
         "https://crm.zoho.com/*",
         "https://crm.zoho.au/*",
@@ -39,25 +37,13 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "scripts/functions-editor/functions-editor.css",
         "scripts/functions-editor/code-formatter.js",
         "scripts/functions-editor/close-button-action.js",
-        "fonts/JetBrainsMono-Bold.woff2",
-        "fonts/JetBrainsMono-BoldItalic.woff2",
-        "fonts/JetBrainsMono-ExtraBold.woff2",
-        "fonts/JetBrainsMono-ExtraBoldItalic.woff2",
-        "fonts/JetBrainsMono-ExtraLight.woff2",
-        "fonts/JetBrainsMono-ExtraLightItalic.woff2",
-        "fonts/JetBrainsMono-Italic.woff2",
-        "fonts/JetBrainsMono-Light.woff2",
-        "fonts/JetBrainsMono-LightItalic.woff2",
-        "fonts/JetBrainsMono-Medium.woff2",
-        "fonts/JetBrainsMono-MediumItalic.woff2",
-        "fonts/JetBrainsMono-Regular.woff2",
-        "fonts/JetBrainsMono-SemiBold.woff2",
-        "fonts/JetBrainsMono-SemiBoldItalic.woff2",
-        "fonts/JetBrainsMono-Thin.woff2",
-        "fonts/JetBrainsMono-ThinItalic.woff2"
+        "scripts/functions-editor/functions-editor.css",
+        "scripts/functions-editor/settings-styles/*",
+        "scripts/popup/settings-styles/*",
+        "scripts/utilities/themes/*",
+        "fonts/*"
       ],
       "matches": [
         "https://crm.zoho.com/*",

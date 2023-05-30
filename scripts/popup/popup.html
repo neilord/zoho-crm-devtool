@@ -2,14 +2,16 @@
 <html>
   <head>
     <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="../utilities/variables.css" />
   </head>
 
   <body>
     <script src="popup.js"></script>
+    <script src="../utilities/utilities.js"></script>
     <div id="extension-container">
       <div id="extension-header">
         <div id="title">Zoho CRM Enhancer</div>
-        <div id="extension-activation-switch">
+        <div id="extension-activation-switch" data-key="extension-activation-switch">
           <div class="toggle-switch toggle-on">
             <div class="toggle-switch-text-off">OFF</div>
             <div class="glow-comp"></div>
@@ -48,7 +50,7 @@
               <div class="setting-name">Theme</div>
               <div class="setting-separator">:</div>
             </label>
-            <select id="theme-select" name="theme" class="setting-dropdown">
+            <select id="theme-select" class="setting-dropdown" data-key="theme">
               <option value="night-owl" selected>Night Owl</option>
               <option value="night-owl-light">Night Owl Light</option>
             </select>
@@ -61,9 +63,9 @@
                 <div class="setting-name">Font</div>
                 <div class="setting-separator">:</div>
               </label>
-              <select id="font-family-select" name="font-family" class="setting-dropdown">
-                <option value="JetBrains Mono" selected>JetBrains Mono</option>
-                <option value="Fira Code">Fira Code</option>
+              <select id="font-family-select" class="setting-dropdown" data-key="--code-font-family">
+                <option value="JetBrains Mono NL, JetBrains Mono" selected>JetBrains Mono</option>
+                <option value="Monaco">Zoho Default (Monaco)</option>
               </select>
             </div>
 
@@ -74,7 +76,7 @@
                   <div class="setting-name">Size</div>
                   <div class="setting-separator">:</div>
                 </label>
-                <select id="font-size-select" name="font-size" class="setting-dropdown">
+                <select id="font-size-select" class="setting-dropdown" data-key="--code-font-size">
                   <option value="5px">5</option>
                   <option value="6px">6</option>
                   <option value="7px">7</option>
@@ -110,7 +112,7 @@
                   <div class="setting-name">Weight</div>
                   <div class="setting-separator">:</div>
                 </label>
-                <select id="font-weight-select" name="font-weight" class="setting-dropdown">
+                <select id="font-weight-select" class="setting-dropdown" data-key="--code-font-weight">
                   <option value="100">100</option>
                   <option value="200">200</option>
                   <option value="300">300</option>
@@ -129,7 +131,7 @@
                 <div class="setting-name">Line Height</div>
                 <div class="setting-separator">:</div>
               </label>
-              <select id="line-height-select" name="line-height" class="setting-dropdown">
+              <select id="line-height-select" class="setting-dropdown" data-key="--code-font-line-height">
                 <option value="1">1</option>
                 <option value="1.1">1.1</option>
                 <option value="1.2">1.2</option>
@@ -150,12 +152,12 @@
                 <div class="setting-name">Ligatures</div>
                 <div class="setting-separator">:</div>
               </label>
-              <select id="font-feature-settings-select" name="font-feature-settings" class="setting-dropdown">
+              <select id="font-feature-settings-select" class="setting-dropdown" data-key="--code-font-feature-settings">
                 <option value="'calt', 'zero'" selected>Regular</option>
                 <option value="'calt', 'zero', 'ss01'">Neutral</option>
                 <option value="'calt', 'zero', 'ss02', 'cv03', 'cv04', 'cv16', 'cv18'">Dynamic</option>
               </select>
-              <div id="font-feature-settings-switch" class="setting-switch">
+              <div id="font-feature-settings-switch" class="setting-switch" data-key="font-feature-settings-switch">
                 <div class="toggle-switch toggle-on">
                   <div class="toggle-switch-text-off">OFF</div>
                   <div class="glow-comp"></div>
@@ -172,7 +174,7 @@
                 <div class="setting-icon"></div>
                 <div class="setting-name">Pro Syntax Higliting</div>
               </div>
-              <div id="pro-syntax-higliting-switch" class="setting-switch">
+              <div id="pro-syntax-higliting-switch" class="setting-switch" data-key="pro-syntax-higliting-switch">
                 <div class="toggle-switch toggle-on">
                   <div class="toggle-switch-text-off">OFF</div>
                   <div class="glow-comp"></div>
@@ -187,7 +189,7 @@
                 <div class="setting-icon"></div>
                 <div class="setting-name">Italics</div>
               </div>
-              <div id="italics-switch" class="setting-switch">
+              <div id="italics-switch" class="setting-switch" data-key="italics-switch">
                 <div class="toggle-switch toggle-on">
                   <div class="toggle-switch-text-off">OFF</div>
                   <div class="glow-comp"></div>
@@ -202,7 +204,7 @@
                 <div class="setting-icon"></div>
                 <div class="setting-name">Indent Guides</div>
               </div>
-              <div id="indent-guides-switch" class="setting-switch">
+              <div id="indent-guides-switch" class="setting-switch" data-key="indent-guides-switch">
                 <div class="toggle-switch toggle-on">
                   <div class="toggle-switch-text-off">OFF</div>
                   <div class="glow-comp"></div>
@@ -217,7 +219,7 @@
                 <div class="setting-icon"></div>
                 <div class="setting-name">Functions Lowercase</div>
               </div>
-              <div id="functions-lowercase-switch" class="setting-switch">
+              <div id="functions-lowercase-switch" class="setting-switch" data-key="functions-lowercase-switch">
                 <div class="toggle-switch">
                   <div class="toggle-switch-text-off">OFF</div>
                   <div class="glow-comp"></div>
@@ -234,7 +236,7 @@
               <div class="setting-name">Close Button</div>
               <div class="setting-separator">:</div>
             </label>
-            <select id="close-button-select" name="close-button-select" class="setting-dropdown">
+            <select id="close-button-select" class="setting-dropdown" data-key="close-button-select">
               <option value="right" selected>Right</option>
               <option value="left">Left</option>
             </select>
@@ -247,7 +249,7 @@
               <div class="setting-icon"></div>
               <div class="setting-name">End With New Line</div>
             </div>
-            <div id="end-with-new-line-switch" class="setting-switch">
+            <div id="end-with-new-line-switch" class="setting-switch" data-key="end-with-new-line-switch">
               <div class="toggle-switch toggle-on">
                 <div class="toggle-switch-text-off">OFF</div>
                 <div class="glow-comp"></div>
@@ -262,7 +264,7 @@
               <div class="setting-icon"></div>
               <div class="setting-name">Space If-Statements</div>
             </div>
-            <div id="space-if-statements-switch" class="setting-switch">
+            <div id="space-if-statements-switch" class="setting-switch" data-key="space-if-statements-switch">
               <div class="toggle-switch toggle-on">
                 <div class="toggle-switch-text-off">OFF</div>
                 <div class="glow-comp"></div>
@@ -277,7 +279,7 @@
               <div class="setting-icon"></div>
               <div class="setting-name">Shift Brackets</div>
             </div>
-            <div id="shift-brackets-switch" class="setting-switch">
+            <div id="shift-brackets-switch" class="setting-switch" data-key="shift-brackets-switch">
               <div class="toggle-switch">
                 <div class="toggle-switch-text-off">OFF</div>
                 <div class="glow-comp"></div>
@@ -292,7 +294,7 @@
               <div class="setting-icon"></div>
               <div class="setting-name">Compact Conditions</div>
             </div>
-            <div id="compact-conditions-switch" class="setting-switch">
+            <div id="compact-conditions-switch" class="setting-switch" data-key="compact-conditions-switch">
               <div class="toggle-switch">
                 <div class="toggle-switch-text-off">OFF</div>
                 <div class="glow-comp"></div>
@@ -307,11 +309,11 @@
               <div class="setting-icon"></div>
               <div class="setting-name">Divide Comments</div>
             </label>
-            <select id="divide-comments-select" name="divide-comments-select" class="setting-dropdown">
+            <select id="divide-comments-select" class="setting-dropdown" data-key="divide-comments-select">
               <option value="Remarks" selected>Remarks</option>
               <option value="All">All</option>
             </select>
-            <div id="divide-comments-switch" class="setting-switch">
+            <div id="divide-comments-switch" class="setting-switch" data-key="divide-comments-switch">
               <div class="toggle-switch">
                 <div class="toggle-switch-text-off">OFF</div>
                 <div class="glow-comp"></div>
@@ -328,7 +330,7 @@
               <div class="setting-icon"></div>
               <div class="setting-name">Disable DarkReader</div>
             </div>
-            <div id="disable-darkreader-switch" class="setting-switch">
+            <div id="disable-darkreader-switch" class="setting-switch" data-key="disable-darkreader-switch">
               <div class="toggle-switch toggle-on">
                 <div class="toggle-switch-text-off">OFF</div>
                 <div class="glow-comp"></div>

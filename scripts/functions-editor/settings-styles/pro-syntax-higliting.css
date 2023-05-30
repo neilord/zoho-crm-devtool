@@ -1,0 +1,4 @@
+.cm-variable:has(+ .cm-syntax) {
+  color: var(--affected-variable-color) !important;
+  font-style: var(--italics) !important;
+}

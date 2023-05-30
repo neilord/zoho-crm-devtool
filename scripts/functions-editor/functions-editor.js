@@ -12,70 +12,6 @@ const editArgumentsButtonSelector = '.smalledit.pR';
 
 const goToLineInputSelector = '#customDelugeGoTo';
 
-// Utilities
-
-function waitForElement(selector) {
-  return new Promise((resolve) => {
-    if (document.querySelector(selector)) {
-      return resolve(document.querySelector(selector));
-    }
-
-    const observer = new MutationObserver(() => {
-      if (document.querySelector(selector)) {
-        resolve(document.querySelector(selector));
-        observer.disconnect();
-      }
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-  });
-}
-
-function waitForElementRemoval(selector) {
-  return new Promise((resolve) => {
-    if (!document.querySelector(selector)) {
-      return resolve();
-    }
-
-    const observer = new MutationObserver(() => {
-      if (!document.querySelector(selector)) {
-        resolve();
-        observer.disconnect();
-      }
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-  });
-}
-
-async function createRemoveScriptElement(file, create = true) {
-  const name = file.split('.')[0];
-  const type = file.split('.')[1];
-
-  const oldElement = document.getElementById(name);
-  if (oldElement) {
-    oldElement.remove();
-  }
-
-  if (create) {
-    const url = chrome.runtime.getURL('scripts/functions-editor/' + file);
-    const newElement = document.createElement(type == 'js' ? 'script' : 'link');
-    newElement.id = name;
-    newElement.setAttribute(type == 'js' ? 'src' : 'href', url);
-    newElement.setAttribute(
-      type == 'js' ? 'type' : 'rel',
-      type == 'js' ? 'text/javascript' : 'stylesheet'
-    );
-    document.body.appendChild(newElement);
-  }
-}
-
 // Enhance Functions Editor
 
 async function changeGoToLinePlaceholder() {
@@ -88,13 +24,13 @@ async function changeGoToLinePlaceholder() {
   changeGoToLinePlaceholder();
 }
 
-async function addLeftCloseButton() {
+function addLeftCloseButton() {
   const leftCloseButton = document.createElement('lyte-button');
   document.querySelector(headerSelector).children[0].before(leftCloseButton);
   leftCloseButton.setAttribute('id', 'functionCancelLeft');
   leftCloseButton.firstElementChild.textContent = 'Close';
   leftCloseButton.onclick = () => {
-    createRemoveScriptElement('close-button-action.js');
+    createRemoveScriptElement('scripts/functions-editor/close-button-action.js');
   };
 }
 
@@ -140,9 +76,7 @@ async function addFooter() {
 
   // Function Parameters
   await waitForElement(functionParametersSelector);
-  const headerFunctionParameters = document.querySelector(
-    functionParametersSelector
-  );
+  const headerFunctionParameters = document.querySelector(functionParametersSelector);
 
   const functionParameters = document.createElement('div');
   functionDetails.appendChild(functionParameters);
@@ -166,19 +100,14 @@ async function addFooter() {
 
   // Function Description
   await waitForElement('#' + functionDescriptionId);
-  const headerFunctionDescription = document.getElementById(
-    functionDescriptionId
-  );
+  const headerFunctionDescription = document.getElementById(functionDescriptionId);
 
   const functionDescription = document.createElement('input');
   footer.appendChild(functionDescription);
   functionDescription.setAttribute('id', functionDescriptionId);
   functionDescription.setAttribute('placeholder', 'Function Description');
   functionDescription.setAttribute('autocomplete', 'off');
-  functionDescription.setAttribute(
-    'value',
-    headerFunctionDescription.getAttribute('value')
-  );
+  functionDescription.setAttribute('value', headerFunctionDescription.getAttribute('value'));
   headerFunctionDescription.setAttribute('id', 'headerFunctionDescription');
 
   // Deluge Logo
@@ -204,17 +133,17 @@ async function addFooter() {
   delugeTitle.textContent = 'Deluge';
 }
 
-async function removeFooter() {
+function removeFooter() {
   document.querySelector('#functionFooter').remove();
 }
 
 async function formatCode() {
   await waitForElementRemoval('.CodeMirror-code');
   await waitForElement('.CodeMirror-code');
-  createRemoveScriptElement('code-formatter.js');
+  createRemoveScriptElement('scripts/functions-editor/code-formatter.js');
 }
 
-async function disableEnableDarkReader(disable = true) {
+function disableEnableDarkReader(disable = true) {
   let disabler = document.querySelector('meta[name="darkreader-lock"]');
   if (disable && !disabler) {
     disabler = document.createElement('meta');
@@ -233,21 +162,21 @@ async function observeFunctionsEditor() {
   addFooter();
   formatCode();
   disableEnableDarkReader();
-  createRemoveScriptElement('functions-editor.css');
+  createRemoveScriptElement('scripts/functions-editor/functions-editor.css');
+  applyStyleSettings('website');
 
   await waitForElement(visableTopBarSelecter);
 
   // Closed
   removeFooter();
   disableEnableDarkReader(false);
-  createRemoveScriptElement('functions-editor.css', false);
+  createRemoveScriptElement('scripts/functions-editor.css', false);
 
   observeFunctionsEditor();
 }
 
-async function startBackgroundTasks() {
-  changeGoToLinePlaceholder();
-}
-
 observeFunctionsEditor();
-startBackgroundTasks();
+
+// Background Task
+
+changeGoToLinePlaceholder();

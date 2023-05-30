@@ -121,6 +121,7 @@ body {
   background: var(--tertiary-background-color);
   font-family: var(--code-font-family);
   font-size: 16px;
+  font-weight: 500;
 }
 
 
@@ -184,8 +185,7 @@ body:has(.tab.active:nth-child(3)) #advanced-settings {
   color: var(--primary-text-color);
   font-family: var(--code-font-family);
   font-size: 14px;
-  font-weight: var(--code-font-weight);
-  font-feature-settings: var(--code-font-feature-settings);
+  font-weight: 400;
 }
 
 .setting-title {

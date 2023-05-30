@@ -1,0 +1,3 @@
+.cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)) {
+  text-transform: lowercase !important;
+}

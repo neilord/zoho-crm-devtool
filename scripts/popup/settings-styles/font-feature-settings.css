@@ -1,0 +1,6 @@
+#title,
+.tab-name,
+.setting>* {
+  font-family: var(--code-font-family-ligatures);
+  font-feature-settings: var(--code-font-feature-settings);
+}

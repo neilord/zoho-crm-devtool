@@ -1,0 +1,12 @@
+:root {
+  --italics: italic;
+}
+
+.cm-comment {
+  font-style: var(--italics) !important;
+}
+
+.cm-variable+.cm-syntax,
+.cm-variable+.cm-syntax+.cm-syntax {
+  font-style: var(--italics) !important;
+}
