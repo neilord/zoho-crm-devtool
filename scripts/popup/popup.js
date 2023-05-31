@@ -26,6 +26,19 @@ function setSavedSettings() {
   });
 }
 
+async function setDefaultSettings() {
+  await new Promise((resolve) => chrome.storage.local.clear(resolve));
+
+  // Reset popup.html
+  let response = await fetch(chrome.runtime.getURL('scripts/popup/popup.html'));
+  let data = await response.text();
+  const original = new DOMParser().parseFromString(data, 'text/html');
+  document.body.innerHTML = original.body.innerHTML;
+
+  setupPopup();
+  startBackgroundTasks();
+}
+
 function saveSettings() {
   const settings = document.querySelectorAll('*[data-key]');
   for (const setting of settings) {
@@ -48,12 +61,14 @@ async function updateStorageVariable(key, value, overwrite = true) {
   chrome.storage.local.set({ [key]: value });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+function setupPopup() {
   setTabsPossitions();
   setSavedSettings();
   saveSettings();
   applyStyleSettings('popup');
+}
 
+function startBackgroundTasks() {
   // Tabs selector
   const tabs = document.querySelectorAll('.tab');
   for (const selectedTab of tabs) {
@@ -71,25 +86,32 @@ document.addEventListener('DOMContentLoaded', function () {
       settingSwitch.classList.toggle('toggle-on');
     });
   };
-});
 
+  // Reset Settings Button
+  const resetSettingsButton = document.querySelector('#reset-settings-button');
+  const textUnconfirmed = resetSettingsButton.textContent;
+  const textConfirmed = 'Really?'
+  let confirmed = false;
+  let resetTimeout;
 
+  resetSettingsButton.addEventListener('click', () => {
+    if (confirmed) {
+      setDefaultSettings();
+      confirmed = false;
+      resetSettingsButton.textContent = textUnconfirmed;
+      clearTimeout(resetTimeout);
+    } else {
+      confirmed = true;
+      resetSettingsButton.textContent = textConfirmed;
+      resetTimeout = setTimeout(() => {
+        confirmed = false;
+        resetSettingsButton.textContent = textUnconfirmed;
+      }, 5000);
+    }
+  });
+}
 
-
-
-
-
-
-
-
-
-
-
-chrome.storage.onChanged.addListener((changes, namespace) => {
-  for (const [key, { oldValue, newValue }] of Object.entries(changes)) {
-    console.log(
-      `Storage key "${key}" in namespace "${namespace}" changed.`,
-      `Old value was "${oldValue}", new value is "${newValue}".`
-    );
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  setupPopup();
+  startBackgroundTasks();
 });

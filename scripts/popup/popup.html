@@ -152,7 +152,11 @@
                 <div class="setting-name">Ligatures</div>
                 <div class="setting-separator">:</div>
               </label>
-              <select id="font-feature-settings-select" class="setting-dropdown" data-key="--code-font-feature-settings">
+              <select
+                id="font-feature-settings-select"
+                class="setting-dropdown"
+                data-key="--code-font-feature-settings"
+              >
                 <option value="'calt', 'zero'" selected>Regular</option>
                 <option value="'calt', 'zero', 'ss01'">Neutral</option>
                 <option value="'calt', 'zero', 'ss02', 'cv03', 'cv04', 'cv16', 'cv18'">Dynamic</option>
@@ -322,6 +326,10 @@
               </div>
             </div>
           </div>
+
+          <div id="divide-comments" class="setting auto middle message">
+            <div class="setting-message">Reopening Functions Editor required for changes to take effect</div>
+          </div>
         </div>
 
         <div id="advanced-settings" class="settings-group">
@@ -338,6 +346,10 @@
                 <div class="toggle-switch-text-on">ON</div>
               </div>
             </div>
+          </div>
+
+          <div id="reset-settings" class="setting normal bottom button">
+            <button id="reset-settings-button" class="setting-button" role="button">Reset Settings</button>
           </div>
         </div>
       </div>

@@ -42,6 +42,7 @@
         "scripts/functions-editor/functions-editor.css",
         "scripts/functions-editor/settings-styles/*",
         "scripts/popup/settings-styles/*",
+        "scripts/popup/popup.html",
         "scripts/utilities/themes/*",
         "fonts/*"
       ],
