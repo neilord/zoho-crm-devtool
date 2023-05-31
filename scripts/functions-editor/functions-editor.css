@@ -892,7 +892,8 @@ lyte-drop-label {
   padding-bottom: 0px !important;
 }
 
-.delugeEditorArea #delugeEditorCont .deluge-main-container * {
+.delugeEditorArea #delugeEditorCont .deluge-main-container *:not(.CodeMirror-dialog.CodeMirror-dialog-top *),
+.CodeMirror-hints {
   line-height: var(--code-font-line-height) !important;
 }
 
