@@ -205,7 +205,7 @@ body:not(:has(#extension-activation-switch > .toggle-on)) .setting * {
 /* Types */
 
 .normal {
-  height: 25px;
+  height: 27px;
 }
 
 .small {
