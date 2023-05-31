@@ -89,9 +89,6 @@ function applyStyleSettings(page) {
           document.documentElement.style.setProperty(variable, value);
         }
 
-      } else if (key === 'theme') {
-        createRemoveScriptElement('scripts/utilities/themes/' + value + '.css');
-
       } else if (key.endsWith('-switch')) {
         const path = 'scripts/' + (page === 'popup' ? 'popup/' : 'functions-editor/') + 'settings-styles/';
         const name = key.replace(/(-switch$)/, '');
@@ -100,6 +97,12 @@ function applyStyleSettings(page) {
 
         if (key == '--code-font-family')
           document.documentElement.style.setProperty('--code-font-family', value);
+
+      } else if (key === 'theme') {
+        createRemoveScriptElement('scripts/utilities/themes/' + value + '.css');
+
+      } else if (key === 'close-button-select') {
+        createRemoveScriptElement('scripts/functions-editor/settings-styles/' + key + '.css', value === 'left');
       }
     }
   }

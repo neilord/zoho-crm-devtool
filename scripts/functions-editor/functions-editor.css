@@ -830,7 +830,7 @@ lyte-drop-label {
 }
 
 /* Close */
-#functionCancelLeft~.alignright.showOnEditandCreate.pB10.pT7.mT10 #functionCancel {
+#functionCancelLeft {
   display: none !important;
 }
 
