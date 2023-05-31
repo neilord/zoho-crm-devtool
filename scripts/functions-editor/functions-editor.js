@@ -143,15 +143,25 @@ async function beautifyCode() {
   createRemoveScriptElement('scripts/functions-editor/code-beautifier.js');
 }
 
-function disableEnableDarkReader(disable = true) {
+async function disableEnableDarkReader(disable = true) {
+  const setting = await chrome.storage.local.get('disable-darkreader-switch');
   let disabler = document.querySelector('meta[name="darkreader-lock"]');
-  if (disable && !disabler) {
+  if (setting['disable-darkreader-switch'] && disable && !disabler) {
     disabler = document.createElement('meta');
     disabler.name = 'darkreader-lock';
     document.head.appendChild(disabler);
   } else if (disabler) {
     disabler.parentNode.removeChild(disabler);
   }
+}
+
+function onSettingsChange(changes) {
+  if ('disable-darkreader-switch' in changes) {
+    disableEnableDarkReader();
+  }
+}
+function addRemoveSettingsListener(add = true) {
+  chrome.storage.onChanged[add ? 'addListener' : 'removeListener'](onSettingsChange);
 }
 
 async function observeFunctionsEditor() {
@@ -164,6 +174,7 @@ async function observeFunctionsEditor() {
   disableEnableDarkReader();
   createRemoveScriptElement('scripts/functions-editor/functions-editor.css');
   applyStyleSettings('website');
+  addRemoveSettingsListener();
 
   await waitForElement(visableTopBarSelecter);
 
@@ -171,6 +182,7 @@ async function observeFunctionsEditor() {
   removeFooter();
   disableEnableDarkReader(false);
   createRemoveScriptElement('scripts/functions-editor.css', false);
+  addRemoveSettingsListener(false);
 
   observeFunctionsEditor();
 }
@@ -182,12 +194,12 @@ observeFunctionsEditor();
 changeGoToLinePlaceholder();
 
 // Return storage settings if requested
-window.addEventListener('message', function(event) {
+window.addEventListener('message', function (event) {
   if (event.source !== window)
     return;
 
   if (event.data.type === 'GET_LOCAL_STORAGE') {
-    chrome.storage.local.get(null, function(result) {
+    chrome.storage.local.get(null, function (result) {
       window.postMessage({
         type: 'LOCAL_STORAGE_RESPONSE',
         data: result

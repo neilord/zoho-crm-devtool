@@ -66,12 +66,22 @@ function applyStyleSettings(page) {
     'theme',
     '--code-font-family',
     '--code-font-feature-settings',
-    'font-feature-settings-switch'
+    'font-feature-settings-switch',
+  ];
+
+  const skipSettings = [
+    'end-with-new-line-switch',
+    'space-if-statements-switch',
+    'shift-brackets-switch',
+    'compact-conditions-switch',
+    'divide-comments-select',
+    'divide-comments-switch',
+    'disable-darkreader-switch',
   ];
 
   function modifyStyles(changes) {
     for (const [key, value] of Object.entries(changes)) {
-      if (page === 'popup' && !popupSettings.includes(key)) {
+      if (skipSettings.includes(key) || (page === 'popup' && !popupSettings.includes(key))) {
         continue;
       }
 
