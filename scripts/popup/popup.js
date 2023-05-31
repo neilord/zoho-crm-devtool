@@ -30,8 +30,8 @@ async function setDefaultSettings() {
   await new Promise((resolve) => chrome.storage.local.clear(resolve));
 
   // Reset popup.html
-  let response = await fetch(chrome.runtime.getURL('scripts/popup/popup.html'));
-  let data = await response.text();
+  let file = await fetch(chrome.runtime.getURL('scripts/popup/popup.html'));
+  let data = await file.text();
   const original = new DOMParser().parseFromString(data, 'text/html');
   document.body.innerHTML = original.body.innerHTML;
 
@@ -55,8 +55,8 @@ function saveSettings() {
 
 async function updateStorageVariable(key, value, overwrite = true) {
   if (!overwrite) {
-    const result = await chrome.storage.local.get(key);
-    value = result[key] !== undefined ? result[key] : value;
+    const setting = await chrome.storage.local.get(key);
+    value = setting[key] !== undefined ? setting[key] : value;
   }
   chrome.storage.local.set({ [key]: value });
 }
@@ -80,10 +80,10 @@ function startBackgroundTasks() {
   };
 
   // Switch toggler
-  const settingSwitches = document.querySelectorAll('.toggle-switch');
-  for (const settingSwitch of settingSwitches) {
-    settingSwitch.addEventListener('click', () => {
-      settingSwitch.classList.toggle('toggle-on');
+  const switchSettings = document.querySelectorAll('.toggle-switch');
+  for (const switchSetting of switchSettings) {
+    switchSetting.addEventListener('click', () => {
+      switchSetting.classList.toggle('toggle-on');
     });
   };
 

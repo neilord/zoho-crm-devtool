@@ -137,10 +137,10 @@ function removeFooter() {
   document.querySelector('#functionFooter').remove();
 }
 
-async function formatCode() {
+async function beautifyCode() {
   await waitForElementRemoval('.CodeMirror-code');
   await waitForElement('.CodeMirror-code');
-  createRemoveScriptElement('scripts/functions-editor/code-formatter.js');
+  createRemoveScriptElement('scripts/functions-editor/code-beautifier.js');
 }
 
 function disableEnableDarkReader(disable = true) {
@@ -160,7 +160,7 @@ async function observeFunctionsEditor() {
   // Oppened
   addLeftCloseButton();
   addFooter();
-  formatCode();
+  beautifyCode();
   disableEnableDarkReader();
   createRemoveScriptElement('scripts/functions-editor/functions-editor.css');
   applyStyleSettings('website');
@@ -180,3 +180,18 @@ observeFunctionsEditor();
 // Background Task
 
 changeGoToLinePlaceholder();
+
+// Return storage settings if requested
+window.addEventListener('message', function(event) {
+  if (event.source !== window)
+    return;
+
+  if (event.data.type === 'GET_LOCAL_STORAGE') {
+    chrome.storage.local.get(null, function(result) {
+      window.postMessage({
+        type: 'LOCAL_STORAGE_RESPONSE',
+        data: result
+      }, '*');
+    });
+  }
+});

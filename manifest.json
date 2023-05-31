@@ -37,7 +37,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "scripts/functions-editor/code-formatter.js",
+        "scripts/functions-editor/code-beautifier.js",
         "scripts/functions-editor/close-button-action.js",
         "scripts/functions-editor/functions-editor.css",
         "scripts/functions-editor/settings-styles/*",
