@@ -17,17 +17,20 @@
   padding: 0px !important;
 }
 
+.headerSectionTabCnt.pR.color_3.bbd1.w100per.oH {
+  background: var(--editor-header-background-color);
+}
+
 #templateName {
   font-family: var(--code-font-family) !important;
   font-size: 20px !important;
   font-weight: 600 !important;
-  color: var(--primary-text-color) !important;
+  color: var(--editor-header-text-color) !important;
 }
 
 .headerSectionTabCnt.pR.color_3.bbd1.w100per.oH {
-  border-color: var(--secondary-background-color) !important;
-  box-shadow: 0px 3px 4px 0px var(--secondary-background-color) !important;
-  border-bottom: 1px solid var(--header-footer-border-color) !important;
+  box-shadow: 0px 3px 4px 0px var(--editor-header-shadow-color) !important;
+  border-bottom: 1px solid var(--editor-header-border-color) !important;
   z-index: 29 !important;
 }
 
@@ -138,8 +141,8 @@
   font-family: var(--code-font-family) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
-  color: var(--line-number-color) !important;
-  background: var(--primary-background-color) !important;
+  color: var(--editor-footer-text-color) !important;
+  background: var(--editor-footer-background-color) !important;
   border: 0px !important;
   margin-left: 30px !important;
   margin-right: 30px !important;
@@ -392,6 +395,7 @@ lyte-modal-footer {
   height: 32px !important;
   width: 71px !important;
   background: var(--save-arguments-button-normal-color) !important;
+  background: var(--save-arguments-button-normal-gradient) !important;
   border-color: var(--save-arguments-button-hover-color) !important;
   font-family: system-ui !important;
   font-size: 14px !important;
@@ -404,11 +408,13 @@ lyte-modal-footer {
 #dreExecuteParamsSaveBtn:hover,
 #dreEditParamsSaveBtn:hover {
   background: var(--save-arguments-button-hover-color) !important;
+  background: var(--save-arguments-button-hover-gradient) !important;
 }
 
 #dreExecuteParamsSaveBtn:active,
 #dreEditParamsSaveBtn:active {
   background: var(--save-arguments-button-press-color) !important;
+  background: var(--save-arguments-button-press-gradient) !important;
   border-color: var(--save-arguments-button-press-color) !important;
 }
 
@@ -496,16 +502,19 @@ lyte-modal-footer {
 /* Save and Save & Execute */
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button {
   background: var(--general-button-normal-color) !important;
+  background: var(--general-button-normal-gradient) !important;
   border-color: var(--general-button-hover-color) !important;
   box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--general-button-press-color) !important;
 }
 
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button:hover {
   background: var(--general-button-hover-color) !important;
+  background: var(--general-button-hover-gradient) !important;
 }
 
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button:active {
   background: var(--general-button-press-color) !important;
+  background: var(--general-button-press-gradient) !important;
   border-color: var(--general-button-press-color) !important;
 }
 
@@ -515,6 +524,7 @@ lyte-modal-footer {
 .lytePopover.lytePopoverVisible .lyte-button.lyteDefaultBtn {
   color: #FFFFFF !important;
   background: var(--dangerous-button-normal-color) !important;
+  background: var(--dangerous-button-normal-gradient) !important;
   border-color: var(--dangerous-button-hover-color) !important;
   box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--dangerous-button-press-color) !important;
 }
@@ -523,12 +533,14 @@ lyte-modal-footer {
 .lyteModal.lyteModalFromTop .lyte-button.lyteDefaultBtn:hover,
 .lytePopover.lytePopoverVisible .lyte-button.lyteDefaultBtn:hover {
   background: var(--dangerous-button-hover-color) !important;
+  background: var(--dangerous-button-hover-gradient) !important;
 }
 
 .newDelBtn.leavePage.redbtn:active,
 .lyteModal.lyteModalFromTop .lyte-button.lyteDefaultBtn:active,
 .lytePopover.lytePopoverVisible .lyte-button.lyteDefaultBtn:active {
   background: var(--dangerous-button-press-color) !important;
+  background: var(--dangerous-button-press-gradient) !important;
   border-color: var(--dangerous-button-press-color) !important;
 }
 
@@ -538,6 +550,7 @@ lyte-modal-footer {
 .lytePopover.lytePopoverVisible .lyte-button.lytePrimaryBtn {
   color: #FFFFFF !important;
   background: var(--safe-button-normal-color) !important;
+  background: var(--safe-button-normal-gradient) !important;
   border-color: var(--safe-button-hover-color) !important;
   box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--safe-button-press-color) !important;
 }
@@ -546,12 +559,14 @@ lyte-modal-footer {
 .lyteModal.lyteModalFromTop .lyte-button.lytePrimaryBtn:hover,
 .lytePopover.lytePopoverVisible .lyte-button.lytePrimaryBtn:hover {
   background: var(--safe-button-hover-color) !important;
+  background: var(--safe-button-hover-gradient) !important;
 }
 
 .newGrayBgBtn.stayPage.newgraybtn:active,
 .lyteModal.lyteModalFromTop .lyte-button.lytePrimaryBtn:active,
 .lytePopover.lytePopoverVisible .lyte-button.lytePrimaryBtn:active {
   background: var(--safe-button-press-color) !important;
+  background: var(--safe-button-press-gradient) !important;
   border-color: var(--safe-button-press-color) !important;
 }
 
@@ -857,7 +872,6 @@ lyte-drop-label {
 #codemirror_scroll,
 #delugeEditorArea,
 #delugeEditorCont,
-.headerSectionTabCnt.pR.color_3.bbd1.w100per.oH,
 .deluge-main-container,
 .deluge-editor-layer.dre-editor-layer,
 .deluge-mc-editor-layer,
@@ -1053,6 +1067,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 
 .CodeMirror-hint:not(.CodeMirror-hint.CodeMirror-hint-active) .partial-hint {
   color: var(--hint-matching-symbols) !important;
+  font-weight: bolder !important;
 }
 
 .CodeMirror-Tern-tooltip.deluge-tooltip-example.CodeMirror-Tern-hint-doc {
