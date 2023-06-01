@@ -319,10 +319,10 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
 #reset-settings-button {
   appearance: none;
   background-color: transparent;
-  border: 2px solid var(--dangerous-button-background-color);
+  border: 2px solid var(--extension-popup-dangerous-button-background-color);
   border-radius: 7px;
   box-sizing: border-box;
-  color: var(--dangerous-button-text-color);
+  color: var(--extension-popup-dangerous-button-text-color);
   cursor: pointer;
   display: inline-block;
   font-family: var(--code-font-family);
@@ -350,7 +350,7 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
 
 #reset-settings-button:hover {
   color: #ffffff;
-  background-color: var(--dangerous-button-background-color);
+  background-color: var(--extension-popup-dangerous-button-background-color);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
