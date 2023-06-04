@@ -9,7 +9,7 @@ function createRemoveScriptElement(file, create = true) {
   }
 
   if (create) {
-    const url = chrome.runtime.getURL(file);
+    const url = chrome.runtime.getURL('scripts/' + file);
     const newElement = document.createElement(type === 'js' ? 'script' : 'link');
     newElement.id = id;
     newElement.setAttribute(type === 'js' ? 'src' : 'href', url);
@@ -92,17 +92,17 @@ function applyRevertStyleSettings(page, apply = true) {
 
       } else if (key.endsWith('-switch')) {
         // Appending CSS for specific functionalities
-        const path = 'scripts/' + (page === 'popup' ? 'popup/' : 'functions-editor/') + 'settings-styles/';
+        const path = (page === 'popup' ? 'popup/' : 'functions-editor/') + 'settings-styles/';
         const name = key.replace(/(-switch$)/, '');
         const create = apply && value;
         createRemoveScriptElement(path + name + '.css', create);
 
       } else if (key === 'close-button-select') {
         const create = apply && value === 'left';
-        createRemoveScriptElement('scripts/functions-editor/settings-styles/' + key + '.css', create);
+        createRemoveScriptElement('functions-editor/settings-styles/' + key + '.css', create);
 
       } else if (key === 'theme') {
-        createRemoveScriptElement('scripts/utilities/themes/' + value + '.css');
+        createRemoveScriptElement('utilities/themes/' + value + '.css');
       }
     }
   }

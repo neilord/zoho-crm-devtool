@@ -104,7 +104,6 @@ body {
   width: 100%;
   height: 100%;
   background: var(--tertiary-background-color);
-  transition: left 0.5s;
 }
 
 .tab-title {
@@ -329,13 +328,10 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
   font-weight: 600;
   line-height: normal;
   margin: 0;
-  /* min-height: 30px; */
   min-width: 0;
   outline: none;
-  /* padding: 16px 24px; */
   text-align: center;
   text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -381,37 +377,22 @@ select:focus {
 .toggle-switch {
   position: absolute;
   border: 0px solid var(--extension-popup-switch-off-color);
-  transition: border-color 0.6s ease-out;
   box-sizing: border-box;
   user-select: none;
 }
 
 body:has(#extension-activation-switch > .toggle-on) .toggle-switch.toggle-on {
   border-color: rgba(137, 194, 217, 0.4);
-  transition: border-color 0.5s 0.15s ease-out;
 }
 
 .toggle-switch-button {
   position: absolute;
   background-color: var(--extension-popup-switch-off-color);
   cursor: pointer;
-  transition: background-color 0.3s 0.1s,
-    width 0.1s,
-    top 0.1s,
-    bottom 0.1s,
-    right 0.2s 0.1s,
-    border-radius 0.2s 0.1s;
 }
 
 body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-button {
   background-color: var(--extension-popup-switch-on-primary-background-color);
-  transition:
-    top 0.2s 0.1s,
-    width 0.2s 0.1s,
-    bottom 0.2s 0.1s,
-    right 0.1s,
-    border-radius 0.2s 0.1s,
-    box-shadow 0.2s 0.1s;
 }
 
 .toggle-switch-text-on {
@@ -429,7 +410,6 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-bu
 
 body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-text-on {
   color: var(--extension-popup-switch-on-text-color);
-  transition: color 0.3s 0.15s;
 }
 
 .toggle-switch-text-off {
@@ -451,12 +431,10 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-te
   position: absolute;
   opacity: 0;
   background-color: var(--extension-popup-switch-on-secondary-background-color);
-  transition: opacity 4.5s 1s;
 }
 
 body:has(#extension-activation-switch > .toggle-on) .toggle-on .glow-comp {
   opacity: 1;
-  transition: opacity 1s;
 }
 
 /* Text Glowing & Brightness */
@@ -468,7 +446,6 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .glow-comp {
 .setting-title,
 .setting-dropdown {
   filter: opacity(0.5);
-  transition: text-shadow 0.3s ease, filter 0.3s ease;
 }
 
 /* Brighter */

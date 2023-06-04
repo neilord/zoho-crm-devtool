@@ -30,7 +30,7 @@ function addLeftCloseButton() {
   leftCloseButton.setAttribute('id', 'functionCancelLeft');
   leftCloseButton.firstElementChild.textContent = 'Close';
   leftCloseButton.onclick = () => {
-    createRemoveScriptElement('scripts/functions-editor/close-button-action.js');
+    createRemoveScriptElement('functions-editor/close-button-action.js');
   };
 }
 
@@ -150,7 +150,7 @@ function removeFooter() {
 async function beautifyCode() {
   await waitForElementRemoval('.CodeMirror-code');
   await waitForElement('.CodeMirror-code');
-  createRemoveScriptElement('scripts/functions-editor/code-beautifier.js');
+  createRemoveScriptElement('functions-editor/code-beautifier.js');
 }
 
 function disableEnableDarkReader(disable = true) {
@@ -169,7 +169,7 @@ function enchanceFunctionsEditor() {
   addFooter();
   beautifyCode();
   disableEnableDarkReader();
-  createRemoveScriptElement('scripts/functions-editor/functions-editor.css');
+  createRemoveScriptElement('functions-editor/functions-editor.css');
   applyRevertStyleSettings('website');
 }
 
@@ -177,7 +177,7 @@ function revertFunctionsEditor() {
   removeLeftCloseButton();
   removeFooter();
   disableEnableDarkReader(false);
-  createRemoveScriptElement('scripts/functions-editor.css', false);
+  createRemoveScriptElement('functions-editor.css', false);
   applyRevertStyleSettings('website', false);
 }
 

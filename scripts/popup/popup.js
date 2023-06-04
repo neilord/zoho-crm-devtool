@@ -62,12 +62,20 @@ async function updateStorageVariable(key, value, overwrite = true) {
   chrome.storage.local.set({ [key]: value });
 }
 
+function addAnimationsCSS() {
+
+}
+
 function setupPopup() {
   setTabsPossitions();
   setSavedSettings();
   saveSettings();
   addAvailiableFontSettings();
   applyRevertStyleSettings('popup');
+
+  requestAnimationFrame(() => {
+    createRemoveScriptElement('popup/animations.css');
+  });
 }
 
 function startBackgroundTasks() {
