@@ -2,6 +2,7 @@ function setTabsPossitions() {
   const tabs = document.querySelectorAll('.tab');
   const iconWidth = document.querySelector('.tab-icon').offsetWidth;
   const containerWidth = document.querySelector('#extension-container').offsetWidth;
+
   let left = 0;
   for (const tab of tabs) {
     tab.style.setProperty('left', left + 'px');
@@ -65,6 +66,7 @@ function setupPopup() {
   setTabsPossitions();
   setSavedSettings();
   saveSettings();
+  addAvailiableFontSettings();
   applyStyleSettings('popup');
 }
 
@@ -83,17 +85,28 @@ function startBackgroundTasks() {
   const switchSettings = document.querySelectorAll('.toggle-switch');
   for (const switchSetting of switchSettings) {
     switchSetting.addEventListener('click', () => {
-      switchSetting.classList.toggle('toggle-on');
+      if (switchSetting.parentElement.id === 'font-feature-settings-switch') {
+        // Allow ligatures activation only if font have such version.
+        const fontFamilySelect = document.getElementById('font-family-select');
+        if (fontFamilySelect.value.split(',').length === 2) {
+          switchSetting.classList.toggle('toggle-on');
+        }
+      } else {
+        switchSetting.classList.toggle('toggle-on');
+      }
     });
   };
 
   // Reset Settings Button
   const resetSettingsButton = document.querySelector('#reset-settings-button');
   const textUnconfirmed = resetSettingsButton.textContent;
+
   const textConfirmed = 'Really?'
+  const confirmationTime = 5000;
+
+  // When clicked show confirmation message for some time
   let confirmed = false;
   let resetTimeout;
-
   resetSettingsButton.addEventListener('click', () => {
     if (confirmed) {
       setDefaultSettings();
@@ -106,7 +119,7 @@ function startBackgroundTasks() {
       resetTimeout = setTimeout(() => {
         confirmed = false;
         resetSettingsButton.textContent = textUnconfirmed;
-      }, 5000);
+      }, confirmationTime);
     }
   });
 }
@@ -115,3 +128,87 @@ document.addEventListener('DOMContentLoaded', function () {
   setupPopup();
   startBackgroundTasks();
 });
+
+function addAvailiableFontSettings() {
+  fetch(chrome.runtime.getURL('scripts/utilities/variables.css'))
+    .then(response => response.text())
+    .then(variables => {
+      const fontFamiliesWeights = extractFontFamiliesWeightsFromFontFaces(variables);
+
+      const fontFamilySelect = document.getElementById('font-family-select');
+      fontFamilySelect.addEventListener('change', event => {
+        const selectedFontFamily = event.target.value.split(',')[0].trim();
+        const weights = fontFamiliesWeights[selectedFontFamily];
+        const fontWeightSelect = document.getElementById('font-weight-select');
+
+        // Add weights to settings dropdown
+        fontWeightSelect.textContent = '';
+        chrome.storage.local.get(['--code-font-weight']).then((result) => {
+          let closestWeight = null;
+          let closestWeightDifference = Infinity;
+
+          weights.sort().forEach(weight => {
+            // Find closest font-weight selected in old font-family in new font-family
+            const weightDifference = Math.abs(weight - result['--code-font-weight']);
+            if (weightDifference < closestWeightDifference) {
+              closestWeight = weight;
+              closestWeightDifference = weightDifference;
+            }
+
+            const option = document.createElement('option');
+            option.value = weight;
+            option.textContent = weight;
+            fontWeightSelect.appendChild(option);
+          });
+
+          if (closestWeight) {
+            fontWeightSelect.value = closestWeight;
+            chrome.storage.local.set({ '--code-font-weight': closestWeight });
+          }
+        });
+
+        // Deactivate ligatures if font don't have such version.
+        if (fontFamilySelect.value.split(',').length !== 2) {
+          document.querySelector('#font-feature-settings-switch .toggle-switch').classList.remove('toggle-on');
+          chrome.storage.local.set({ 'font-feature-settings-switch': false });
+        }
+      });
+      fontFamilySelect.dispatchEvent(new Event('change'));
+    });
+}
+
+function extractFontFamiliesWeightsFromFontFaces(cssText) {
+  const fontFamiliesWeights = {};
+
+  // Iterate over all @font-face blocks in CSS text
+  const regex = /@font-face\s*\{([^\}]*)\}/g; // defined outside of the loop
+  let match;
+  while ((match = regex.exec(cssText)) !== null) {
+    const rules = match[1].split(';').map(rule => rule.trim());
+    let fontFamily, fontWeight;
+
+    // Find font-family with font-weight
+    for (const rule of rules) {
+      if (rule.startsWith('font-family')) {
+        fontFamily = rule.split(':')[1].trim().replace(/["']/g, '');
+      } else if (rule.startsWith('font-weight')) {
+        fontWeight = rule.split(':')[1].trim();
+      }
+    };
+
+    // Add found font-family with font-weight
+    if (fontFamily && fontWeight) {
+      if (!fontFamiliesWeights[fontFamily]) {
+        fontFamiliesWeights[fontFamily] = new Set();
+      }
+      fontFamiliesWeights[fontFamily].add(fontWeight);
+    }
+  }
+
+  // Remove duplicates
+  for (let fontFamily in fontFamiliesWeights) {
+    fontFamiliesWeights[fontFamily] = Array.from(fontFamiliesWeights[fontFamily]);
+  }
+  return fontFamiliesWeights;
+}
+

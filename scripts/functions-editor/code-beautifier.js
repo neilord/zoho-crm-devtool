@@ -1,4 +1,8 @@
 (async () => {
+  if (!delugeEditor.isEditorContentModified()) {
+    return;
+  }
+  
   const beautifiers = {
     'end-with-new-line-switch': {
       find: /([^\n])$/g,
@@ -44,8 +48,7 @@
   };
   const settings = await getSettings();
 
-  console.log(settings);
-  let newContent = delugeEditor.getEditorValue();
+  let content = delugeEditor.delugeEditorContent;
   for (const [key, value] of Object.entries(beautifiers)) {
     let active = false;
 
@@ -58,8 +61,8 @@
     }
 
     if (active) {
-      newContent = newContent.replace(value.find, value.replace);
-      delugeEditor.setEditorContent(newContent);
+      content = content.replace(value.find, value.replace);
+      delugeEditor.setEditorContent(content);
     }
   }
 })();

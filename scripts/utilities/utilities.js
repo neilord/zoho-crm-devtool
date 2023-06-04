@@ -78,7 +78,7 @@ function applyStyleSettings(page) {
       if (key.startsWith('--')) {
         let modifications = {};
         if (key === '--code-font-family' && value) {
-          const fontFamilies = value.split(', ');
+          const fontFamilies = value.split(',');
           modifications['--code-font-family'] = fontFamilies[0];
           modifications['--code-font-family-ligatures'] = fontFamilies[1] || fontFamilies[0];
         } else {
