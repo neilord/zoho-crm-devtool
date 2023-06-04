@@ -61,7 +61,7 @@ function waitForElementRemoval(selector) {
   });
 }
 
-function applyStyleSettings(page) {
+function applyRevertStyleSettings(page, apply = true) {
   const popupSettings = [
     'theme',
     '--code-font-family',
@@ -76,6 +76,7 @@ function applyStyleSettings(page) {
       }
 
       if (key.startsWith('--')) {
+        // CSS Variables
         let modifications = {};
         if (key === '--code-font-family' && value) {
           const fontFamilies = value.split(',');
@@ -90,19 +91,18 @@ function applyStyleSettings(page) {
         }
 
       } else if (key.endsWith('-switch')) {
+        // Appending CSS for specific functionalities
         const path = 'scripts/' + (page === 'popup' ? 'popup/' : 'functions-editor/') + 'settings-styles/';
         const name = key.replace(/(-switch$)/, '');
-        createRemoveScriptElement(path + name + '.css', value);
-        console.log(path + name + '.css, ' + value);
+        const create = apply && value;
+        createRemoveScriptElement(path + name + '.css', create);
 
-        if (key == '--code-font-family')
-          document.documentElement.style.setProperty('--code-font-family', value);
+      } else if (key === 'close-button-select') {
+        const create = apply && value === 'left';
+        createRemoveScriptElement('scripts/functions-editor/settings-styles/' + key + '.css', create);
 
       } else if (key === 'theme') {
         createRemoveScriptElement('scripts/utilities/themes/' + value + '.css');
-
-      } else if (key === 'close-button-select') {
-        createRemoveScriptElement('scripts/functions-editor/settings-styles/' + key + '.css', value === 'left');
       }
     }
   }
@@ -111,15 +111,12 @@ function applyStyleSettings(page) {
   chrome.storage.local.get(null, modifyStyles);
 
   // Listen for changes
-  if (!applyStyleSettings.listenerAdded) {
-    chrome.storage.onChanged.addListener((changes) => {
-      const simplifiedChanges = {};
-      for (const [key, { newValue }] of Object.entries(changes)) {
-        simplifiedChanges[key] = newValue;
-      }
-      modifyStyles(simplifiedChanges);
-    });
-    applyStyleSettings.listenerAdded = true;
-  }
+  const settingsChangesListener = (changes) => {
+    const simplifiedChanges = {};
+    for (const [key, { newValue }] of Object.entries(changes)) {
+      simplifiedChanges[key] = newValue;
+    }
+    modifyStyles(simplifiedChanges);
+  };
+  chrome.storage.onChanged[apply ? 'addListener' : 'removeListener'](settingsChangesListener);
 }
-applyStyleSettings.listenerAdded = false;

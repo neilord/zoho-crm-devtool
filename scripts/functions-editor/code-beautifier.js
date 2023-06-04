@@ -30,6 +30,7 @@
     },
   };
 
+  // Get code beautifier settings
   const getSettings = () => {
     return new Promise((resolve) => {
       window.addEventListener('message', (event) => {
@@ -48,6 +49,7 @@
   };
   const settings = await getSettings();
 
+  // Apply regex rules
   let content = delugeEditor.delugeEditorContent;
   for (const [key, value] of Object.entries(beautifiers)) {
     let active = false;

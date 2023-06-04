@@ -34,6 +34,13 @@ function addLeftCloseButton() {
   };
 }
 
+function removeLeftCloseButton() {
+  const leftCloseButton = document.querySelector('#functionCancelLeft');
+  if (leftCloseButton) {
+    leftCloseButton.remove();
+  }
+}
+
 async function addFooter() {
   // Footer
   const footer = document.createElement('footer');
@@ -134,7 +141,10 @@ async function addFooter() {
 }
 
 function removeFooter() {
-  document.querySelector('#functionFooter').remove();
+  const footer = document.querySelector('#functionFooter');
+  if (footer) {
+    footer.remove();
+  }
 }
 
 async function beautifyCode() {
@@ -154,23 +164,51 @@ function disableEnableDarkReader(disable = true) {
   }
 }
 
-async function observeFunctionsEditor() {
-  await waitForElement(hiddenTopBarWithCodeFrameSelecter);
-
-  // Oppened
+function enchanceFunctionsEditor() {
   addLeftCloseButton();
   addFooter();
   beautifyCode();
   disableEnableDarkReader();
   createRemoveScriptElement('scripts/functions-editor/functions-editor.css');
-  applyStyleSettings('website');
+  applyRevertStyleSettings('website');
+}
 
-  await waitForElement(visableTopBarSelecter);
-
-  // Closed
+function revertFunctionsEditor() {
+  removeLeftCloseButton();
   removeFooter();
   disableEnableDarkReader(false);
   createRemoveScriptElement('scripts/functions-editor.css', false);
+  applyRevertStyleSettings('website', false);
+}
+
+async function observeFunctionsEditor() {
+  // Opened
+  await waitForElement(hiddenTopBarWithCodeFrameSelecter);
+
+  // Enchance if extension-activation-switch is on or was turned on
+  chrome.storage.local.get(['extension-activation-switch']).then((result) => {
+    if (result['extension-activation-switch']) {
+      enchanceFunctionsEditor();
+    }
+  });
+
+  const extensionActivationSwitchChangesListener = (changes) => {
+    if ('extension-activation-switch' in changes) {
+      if (changes['extension-activation-switch'].newValue) {
+        enchanceFunctionsEditor();
+      } else {
+        revertFunctionsEditor();
+      }
+    }
+  };
+
+  chrome.storage.onChanged.addListener(extensionActivationSwitchChangesListener);
+
+  // Closed
+  await waitForElement(visableTopBarSelecter);
+  revertFunctionsEditor();
+
+  chrome.storage.onChanged.removeListener(extensionActivationSwitchChangesListener);
 
   observeFunctionsEditor();
 }
@@ -182,12 +220,12 @@ observeFunctionsEditor();
 changeGoToLinePlaceholder();
 
 // Return storage settings if requested
-window.addEventListener('message', function(event) {
+window.addEventListener('message', function (event) {
   if (event.source !== window)
     return;
 
   if (event.data.type === 'GET_LOCAL_STORAGE') {
-    chrome.storage.local.get(null, function(result) {
+    chrome.storage.local.get(null, function (result) {
       window.postMessage({
         type: 'LOCAL_STORAGE_RESPONSE',
         data: result

@@ -67,7 +67,7 @@ function setupPopup() {
   setSavedSettings();
   saveSettings();
   addAvailiableFontSettings();
-  applyStyleSettings('popup');
+  applyRevertStyleSettings('popup');
 }
 
 function startBackgroundTasks() {
