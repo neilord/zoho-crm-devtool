@@ -420,6 +420,7 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-te
   font-family: 'Quicksand', sans-serif;
   font-weight: 800;
   cursor: pointer;
+  padding-right: 1px;
   color: var(--extension-popup-switch-off-color);
 }
 
@@ -437,7 +438,7 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .glow-comp {
   opacity: 1;
 }
 
-/* Text Glowing & Brightness */
+/* Text Glowing, Brightness, Block Icon */
 
 /* Darker */
 #title,
@@ -471,4 +472,19 @@ body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(~ .s
 body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on) {
   text-shadow: 0 0 3px var(--extension-popup-glow-color);
   filter: opacity(1);
+}
+
+/* Block Icon */
+body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggle-switch-text-off,
+.setting-switch[class~="not-available"] .toggle-switch-text-off {
+  visibility: hidden;
+}
+
+body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggle-switch-text-off:after,
+.setting-switch[class~="not-available"] .toggle-switch-text-off:after {
+  content: "\e900";
+  font-family: 'icons' !important;
+  font-size: 15px;
+  padding-right: 2px;
+  visibility: visible;
 }

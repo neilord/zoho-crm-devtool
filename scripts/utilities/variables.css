@@ -112,6 +112,15 @@
 
 /* -------------------------- Fonts -------------------------- */
 
+/* Icons */
+
+@font-face {
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/icons.woff2') format('woff2');
+}
+
 /* JetBrains Mono */
 
 /* Normal */

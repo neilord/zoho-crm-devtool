@@ -176,9 +176,13 @@ function addAvailiableFontSettings() {
         });
 
         // Deactivate ligatures if font don't have such version.
+        const fontFeatureSettingsSwitch = document.querySelector('#font-feature-settings-switch');
         if (fontFamilySelect.value.split(',').length !== 2) {
-          document.querySelector('#font-feature-settings-switch .toggle-switch').classList.remove('toggle-on');
+          fontFeatureSettingsSwitch.classList.add('not-available');
+          fontFeatureSettingsSwitch.children[0].classList.remove('toggle-on');
           chrome.storage.local.set({ 'font-feature-settings-switch': false });
+        } else {
+          fontFeatureSettingsSwitch.classList.remove('not-available');
         }
       });
       fontFamilySelect.dispatchEvent(new Event('change'));
