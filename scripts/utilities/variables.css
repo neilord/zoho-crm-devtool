@@ -7,16 +7,23 @@
   --primary-text-color: #E5E2DC;
   --secondary-text-color: #C5C2BC;
   --tertiary-text-color: #93918C;
-
   --placeholder-color: #8E9AB6;
   --error-text-color: #F22C3E;
+
+  --editor-header-text-color: #E5E2DC;
+  --editor-footer-text-color: #506377;
 
   /* Backgrounds */
   --primary-background-color: #061626;
   --secondary-background-color: #05131F;
   --tertiary-background-color: #122438;
   --quaternary-background-color: #475C70;
-  --header-footer-border-color: #192C40;
+
+  --editor-header-background-color: #061626;
+  --editor-header-border-color: #05131F;
+  --editor-header-shadow-color: #05131F;
+  --editor-footer-background-color: #061626;
+  --editor-footer-border-color: #192C40;
 
   /* Editor */
   --cursor-color: #8AA6C3;
@@ -27,7 +34,7 @@
   --selected-searching-text-background-color: #555B8C;
   --searching-text-background-color: #008CFF4D;
   --indent-guides-color: #283B5F;
-  --hint-matching-symbols: #CBE386;
+  --hint-matching-symbols-color: #CBE386;
   --tooltip-border-color: #657D95;
 
   /* Syntax */
@@ -46,21 +53,37 @@
   --matching-brackets-border-color: #888888;
 
   /* Buttons */
-  --general-button-normal-color: #122438;
-  --general-button-hover-color: #314458;
-  --general-button-press-color: #506377;
+  --general-button-text-color: #ffffff;
+  --general-normal-button-background-color: #122438;
+  --general-normal-button-border-color: #314458;
+  --general-normal-button-shadow-color: #506377;
+  --general-hover-button-background-color: #314458;
+  --general-press-button-background-color: #506377;
+  --general-press-button-border-color: #506377;
 
-  --save-arguments-button-normal-color: #05131F;
-  --save-arguments-button-hover-color: #314458;
-  --save-arguments-button-press-color: #506377;
+  --save-arguments-button-text-color: #ffffff;
+  --save-arguments-normal-button-background-color: #05131F;
+  --save-arguments-normal-button-border-color: #314458;
+  --save-arguments-normal-button-shadow-color: #506377;
+  --save-arguments-hover-button-background-color: #314458;
+  --save-arguments-press-button-background-color: #506377;
+  --save-arguments-press-button-border-color: #506377;
 
-  --dangerous-button-normal-color: #E53343;
-  --dangerous-button-hover-color: #CD1222;
-  --dangerous-button-press-color: #9E0E1A;
+  --safe-button-text-color: #ffffff;
+  --safe-normal-button-background-color: #00B200;
+  --safe-normal-button-border-color: #019101;
+  --safe-normal-button-shadow-color: #006E00;
+  --safe-hover-button-background-color: #019101;
+  --safe-press-button-background-color: #006E00;
+  --safe-press-button-border-color: #006E00;
 
-  --safe-button-normal-color: #00B200;
-  --safe-button-hover-color: #019101;
-  --safe-button-press-color: #006E00;
+  --dangerous-button-text-color: #ffffff;
+  --dangerous-normal-button-background-color: #E53343;
+  --dangerous-normal-button-border-color: #CD1222;
+  --dangerous-normal-button-shadow-color: #9E0E1A;
+  --dangerous-hover-button-background-color: #CD1222;
+  --dangerous-press-button-background-color: #9E0E1A;
+  --dangerous-press-button-border-color: #9E0E1A;
 
   /* Extension Pupup */
   --extension-popup-glow-color: #89C2DA;
@@ -72,26 +95,30 @@
   --extension-popup-switch-on-secondary-shadow-color: #4D7A8D33;
   --extension-popup-switch-on-text-color: #3B6A7D;
 
-  --dangerous-button-text-color: #ff2335;
-  --dangerous-button-background-color: #ff2335;
+  --extension-popup-dangerous-button-text-color: #ff2335;
+  --extension-popup-dangerous-button-background-color: #ff2335;
 
   /* --- Other --- */
 
-  /* Theme */
-  --is-dark-theme: 1;
-
   /* Fonts */
+  --editor-font-family: 'BR Cobane';
+  --editor-font-family-ligatures: 'BR Cobane';
   --code-font-family: 'JetBrains Mono NL';
   --code-font-family-ligatures: 'JetBrains Mono';
+  --system-font-family: 'Monaco';
+
   --code-font-size: 14px;
   --code-font-weight: 400;
   --code-font-line-height: 1.5;
-  --code-font-feature-settings: 'calt', 'zero';
+  --font-feature-settings: 'calt', 'zero';
 
-  --system-font-family: 'Monaco';
   --primary-system-font-size: 14px;
   --secondary-system-font-size: 13px;
   --tertiary-system-font-size: 12px;
+
+  --editor-header-font-family: var(--code-font-family);
+  --editor-footer-font-family: var(--code-font-family);
+  --editor-buttons-font-family: var(--code-font-family);
 
   /* Syntax Highlighting */
   --comments-font-style: italic;
@@ -105,7 +132,10 @@
   --buttom-shadow-offset: -2px;
 
   /* Popups */
-  --popup-border-radius: 10px;
+  --border-radius: 10px;
+
+  /* Theme */
+  --is-dark-theme: 1;
 }
 
 
@@ -128,56 +158,56 @@
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 100;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-Thin.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-Thin.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 200;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-ExtraLight.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-ExtraLight.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 300;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-Light.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-Light.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 500;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-Medium.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 600;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-SemiBold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-Bold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 800;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-ExtraBold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-ExtraBold.woff2') format('woff2');
 }
 
 /* Italic */
@@ -185,56 +215,56 @@
   font-family: 'JetBrains Mono';
   font-style: italic;
   font-weight: 100;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-ThinItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-ThinItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: italic;
   font-weight: 200;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-ExtraLightItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-ExtraLightItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: italic;
   font-weight: 300;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-LightItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-LightItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: italic;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-Italic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: italic;
   font-weight: 500;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-MediumItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-MediumItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: italic;
   font-weight: 600;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-SemiBoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-SemiBoldItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: italic;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-BoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-BoldItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: italic;
   font-weight: 800;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono-ExtraBoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMono-ExtraBoldItalic.woff2') format('woff2');
 }
 
 /* JetBrains Mono NL */
@@ -244,56 +274,56 @@
   font-family: 'JetBrains Mono NL';
   font-style: normal;
   font-weight: 100;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Thin.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-Thin.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: normal;
   font-weight: 200;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-ExtraLight.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-ExtraLight.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: normal;
   font-weight: 300;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Light.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-Light.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: normal;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Regular.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: normal;
   font-weight: 500;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Medium.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-Medium.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: normal;
   font-weight: 600;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-SemiBold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: normal;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Bold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-Bold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: normal;
   font-weight: 800;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-ExtraBold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-ExtraBold.woff2') format('woff2');
 }
 
 /* Italic */
@@ -301,56 +331,56 @@
   font-family: 'JetBrains Mono NL';
   font-style: italic;
   font-weight: 100;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-ThinItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-ThinItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: italic;
   font-weight: 200;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-ExtraLightItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-ExtraLightItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: italic;
   font-weight: 300;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-LightItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-LightItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: italic;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-Italic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-Italic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: italic;
   font-weight: 500;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-MediumItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-MediumItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: italic;
   font-weight: 600;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-SemiBoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-SemiBoldItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: italic;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-BoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-BoldItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'JetBrains Mono NL';
   font-style: italic;
   font-weight: 800;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMonoNL-ExtraBoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/JetBrainsMono/JetBrainsMonoNL-ExtraBoldItalic.woff2') format('woff2');
 }
 
 /* Source Code Pro */
@@ -360,56 +390,56 @@
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 200;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-ExtraLight.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-ExtraLight.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 300;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-Light.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-Light.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-Regular.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 500;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-Medium.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-Medium.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 600;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-SemiBold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-Bold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-Bold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 800;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-ExtraBold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-ExtraBold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 900;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-Black.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-Black.woff2') format('woff2');
 }
 
 /* Italic */
@@ -417,54 +447,170 @@
   font-family: 'Source Code Pro';
   font-style: italic;
   font-weight: 200;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-ExtraLightItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-ExtraLightItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: italic;
   font-weight: 300;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-LightItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-LightItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: italic;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-Italic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-Italic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: italic;
   font-weight: 500;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-MediumItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-MediumItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: italic;
   font-weight: 600;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-SemiBoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-SemiBoldItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: italic;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-BoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-BoldItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: italic;
   font-weight: 800;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-ExtraBoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-ExtraBoldItalic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
   font-style: italic;
   font-weight: 900;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro-BlackItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-BlackItalic.woff2') format('woff2');
+}
+
+/* BR Cobane */
+
+/* Normal */
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: normal;
+  font-weight: 100;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: normal;
+  font-weight: 200;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: normal;
+  font-weight: 300;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: normal;
+  font-weight: 500;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: normal;
+  font-weight: 600;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: normal;
+  font-weight: 900;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-Black.woff2') format('woff2');
+}
+
+/* Italics */
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: italic;
+  font-weight: 100;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-ThinItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: italic;
+  font-weight: 200;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-ExtraLightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: italic;
+  font-weight: 300;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-LightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: italic;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-RegularItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: italic;
+  font-weight: 500;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-MediumItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: italic;
+  font-weight: 600;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: italic;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BR Cobane';
+  font-style: italic;
+  font-weight: 900;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-BlackItalic.woff2') format('woff2');
 }

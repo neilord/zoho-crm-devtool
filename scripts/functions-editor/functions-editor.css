@@ -17,17 +17,20 @@
   padding: 0px !important;
 }
 
+.headerSectionTabCnt.pR.color_3.bbd1.w100per.oH {
+  background: var(--editor-header-background-color);
+}
+
 #templateName {
-  font-family: var(--code-font-family) !important;
+  font-family: var(--editor-header-font-family) !important;
   font-size: 20px !important;
   font-weight: 600 !important;
-  color: var(--primary-text-color) !important;
+  color: var(--editor-header-text-color) !important;
 }
 
 .headerSectionTabCnt.pR.color_3.bbd1.w100per.oH {
-  border-color: var(--secondary-background-color) !important;
-  box-shadow: 0px 3px 4px 0px var(--secondary-background-color) !important;
-  border-bottom: 1px solid var(--header-footer-border-color) !important;
+  box-shadow: 0px 3px 4px 0px var(--editor-header-shadow-color) !important;
+  border-bottom: 1px solid var(--editor-header-border-color) !important;
   z-index: 29 !important;
 }
 
@@ -40,9 +43,7 @@
 }
 
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button:not([id='#functionSaveAndExecute']) {
-  height: 33px !important;
   width: 100px !important;
-  padding: 0px !important;
 }
 
 #functionSaveAndExecute button {
@@ -51,7 +52,7 @@
 
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button *,
 #functionCancelLeft button {
-  font-family: var(--code-font-family) !important;
+  font-family: var(--editor-buttons-font-family) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
 }
@@ -135,11 +136,11 @@
 #templateSubject::placeholder {
   position: unset !important;
   flex-grow: 1 !important;
-  font-family: var(--code-font-family) !important;
+  font-family: var(--editor-footer-font-family) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
-  color: var(--line-number-color) !important;
-  background: var(--primary-background-color) !important;
+  color: var(--editor-footer-text-color) !important;
+  background: var(--editor-footer-background-color) !important;
   border: 0px !important;
   margin-left: 30px !important;
   margin-right: 30px !important;
@@ -150,330 +151,11 @@
   font-style: italic !important;
 }
 
-/* ------------------------- Popups -------------------------- */
-
-/* General */
-.deluge-popup.dre-edit-params-popup,
-.deluge-popup.dre-edex-params-popup.dre-execute-params-popup,
-#StayOrLeave {
-  border-radius: var(--popup-border-radius) !important;
-}
-
-.f20.color_202123.crm-font-bold.fL.fontSmooth,
-.crmLabelColor.pR30,
-#dreExecuteParams,
-#dreEditParams,
-lyte-modal-header {
-  color: var(--primary-text-color) !important;
-}
-
-/* Edit Arguments and Save & Execute */
-.dre-edex-params-header,
-#dreEditParams {
-  background: var(--secondary-background-color) !important;
-}
-
-.dre-edex-params-params {
-  padding-top: 5px !important;
-}
-
-.deluge-popup.dre-edit-params-popup {
-  background: var(--secondary-background-color) !important;
-}
-
-.dre-ep-params-title,
-.pA.customFunctionArginformation,
-.crm-font-bold.mT30.mB15.dB.crmHeadingColor {
-  color: var(--secondary-text-color) !important;
-}
-
-.crm-font-bold.mT30.mB15.dB.crmHeadingColor {
-  font-family: var(--crm-font) !important;
-}
-
-.dre-edex-params-main-content,
-.dre-ep-btn,
-.lyteModal.lyteModalFromTop,
-#dreEditParamFunctionName {
-  background: var(--tertiary-background-color) !important;
-  box-shadow: none !important;
-}
-
-#dreEditParamFunctionName {
-  color: var(--primary-text-color) !important;
-  background: var(--secondary-background-color) !important;
-  font-family: var(--code-font-family) !important;
-  font-weight: var(--code-font-weight) !important;
-  border-radius: 10px !important;
-  border-width: 0px !important;
-  padding-right: 10px !important;
-  padding-left: 10px !important;
-}
-
-.crmLabelColor.pR30 {
-  padding-right: 10px !important;
-}
-
-.dre-ep-param-name>input {
-  color: var(--primary-text-color) !important;
-  background: var(--tertiary-background-color) !important;
-  font-family: var(--code-font-family) !important;
-  font-size: 14px !important;
-  font-weight: var(--code-font-weight) !important;
-  border-width: 0px !important;
-  border-radius: 10px !important;
-}
-
-.dre-ep-param-data-type {
-  color: var(--primary-text-color) !important;
-  background: var(--secondary-background-color) !important;
-  font-family: var(--code-font-family) !important;
-  font-size: 13px !important;
-  font-weight: var(--code-font-weight) !important;
-  text-align: center !important;
-  border-radius: 10px !important;
-  border-width: 0px !important;
-}
-
-.dre-ep-param-delete.deluge-close {
-  position: relative !important;
-  margin-right: 0px !important;
-  margin-left: 20px !important;
-  filter: invert(var(--is-dark-theme)) !important;
-}
-
-#dreEditParamsAddBtn {
-  background: var(--secondary-background-color) !important;
-  font-family: 'JetBrains Mono' !important;
-  font-weight: var(--code-font-weight) !important;
-  margin-top: -5px;
-  padding: 0px !important;
-
-  border: 5px solid var(--secondary-background-color);
-  border-top-left-radius: 0px !important;
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: calc(var(--popup-border-radius) * 1.5) !important;
-  border-bottom-left-radius: calc(var(--popup-border-radius) * 1.5) !important;
-}
-
-#dreEditParamsAddBtn>div {
-  background: var(--tertiary-background-color) !important;
-  padding: 4.5px !important;
-  border: 5px solid var(--tertiary-background-color) !important;
-  border-radius: 10px !important;
-}
-
-#freezeBackGround {
-  background: #000000 !important;
-}
-
-.deluge-popup-freeze {
-  opacity: 0.2 !important
-}
-
-.modalWrapper.formRawDataPop {
-  z-index: 29 !important;
-}
-
-lyte-modal-freeze {
-  background: #00000070 !important;
-}
-
-.deluge-popup.dre-edex-params-popup.dre-execute-params-popup,
-.dre-edex-params,
-.dre-ep-header-title,
-#dreExecuteParams {
-  background: var(--tertiary-background-color) !important;
-}
-
-.dre-edex-params-header {
-  height: auto !important;
-  border: 0px !important;
-}
-
-.deluge-popup.dre-edex-params-popup.dre-execute-params-popup {
-  box-shadow: 0 3px 17px #0000004D !important;
-}
-
-.dre-ep-header-title {
-  font-size: 20px !important;
-  padding-bottom: 0px !important;
-}
-
-.dre-ep-params-layout,
-.formdata.wfEaArguments.p10.pT20 {
-  background: var(--secondary-background-color) !important;
-  border-width: 0px !important;
-  border-radius: calc(var(--popup-border-radius) * 1.5) !important;
-}
-
-#dreExecuteParams .dre-ep-params-layout {
-  border-bottom-right-radius: calc(var(--popup-border-radius) * 1.5) !important;
-  border-bottom-left-radius: calc(var(--popup-border-radius) * 1.5) !important;
-}
-
-#dreEditParams .dre-ep-params-layout {
-  border-bottom-right-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
-}
-
-.dre-ep-param-row {
-  background: var(--tertiary-background-color);
-  font-family: var(--code-font-family) !important;
-  font-weight: var(--code-font-weight) !important;
-  margin: 5px !important;
-  padding: 5px !important;
-  border-width: 0px !important;
-  border-radius: 10px !important;
-}
-
-.dre-ep-param-add-btn-sym,
-.dre-ep-param-add-btn-text,
-.dre-ep-param-msg {
-  font-weight: normal !important;
-}
-
-.crm-font-bold.mT30.mB15.dB.crmHeadingColor {
-  margin-top: 20px !important;
-  margin-bottom: 10px !important;
-}
-
-.formdata.wfEaArguments.p10.pT20 {
-  padding: 5px !important;
-}
-
-lyte-modal-footer {
-  padding-top: 0px !important;
-  padding-bottom: 15px !important;
-}
-
-.noBorderTable.w100per {
-  border-radius: var(--popup-border-radius) !important;
-}
-
-.dre-ep-param-type,
-.dre-ep-param-name {
-  font-weight: inherit !important;
-}
-
-.dre-ep-param-type {
-  color: var(--quaternary-background-color) !important;
-}
-
-.dre-ep-param-equals {
-  font-family: math !important;
-  font-size: 15px !important;
-}
-
-.dre-ep-param-input-div {
-  padding-left: 10px !important;
-}
-
-.dre-ep-param-input {
-  color: var(--primary-text-color) !important;
-  background: var(--secondary-background-color) !important;
-  font-family: var(--code-font-family) !important;
-  font-size: 14px !important;
-  font-weight: var(--code-font-weight) !important;
-  border: 0px !important;
-  border-radius: 10px !important;
-  padding-top: 0px !important;
-  padding-right: 10px !important;
-  padding-bottom: 0px !important;
-  padding-left: 10px !important;
-}
-
-.dre-ep-close.deluge-close {
-  filter: invert(var(--is-dark-theme)) !important;
-}
-
-#dreExecuteParamsSaveBtn,
-#dreEditParamsSaveBtn {
-  height: 32px !important;
-  width: 71px !important;
-  background: var(--save-arguments-button-normal-color) !important;
-  border-color: var(--save-arguments-button-hover-color) !important;
-  font-family: system-ui !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  text-transform: capitalize !important;
-  border-radius: 6px !important;
-  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--save-arguments-button-press-color) !important;
-}
-
-#dreExecuteParamsSaveBtn:hover,
-#dreEditParamsSaveBtn:hover {
-  background: var(--save-arguments-button-hover-color) !important;
-}
-
-#dreExecuteParamsSaveBtn:active,
-#dreEditParamsSaveBtn:active {
-  background: var(--save-arguments-button-press-color) !important;
-  border-color: var(--save-arguments-button-press-color) !important;
-}
-
-.dre-ep-param-msg {
-  color: var(--error-text-color) !important;
-  font-size: var(--secondary-system-font-size) !important;
-}
-
-/* Stay or Leave */
-#StayOrLeave {
-  background: var(--tertiary-background-color) !important;
-  border: none !important;
-  padding-top: 20px !important;
-}
-
-.f15.color_434d5f.crm-font-regular.mT1.fL.mT15.fontSmooth {
-  color: var(--secondary-text-color) !important;
-}
-
-.newDelBtn.leavePage.redbtn,
-.newGrayBgBtn.stayPage.newgraybtn {
-  width: 135px !important;
-  margin-right: 0px !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-}
-
-.pT20.tgl.mT10.alignright {
-  display: flex !important;
-  justify-content: space-between !important;
-}
-
-/* Import Status */
-#IMPORTNOTIFICATIONPOP1 {
-  background: var(--primary-background-color) !important;
-  border: none !important;
-  border-radius: 10px !important;
-}
-
-#IMPORTNOTIFICATIONPOP1 .migCardTitle {
-  background: var(--quaternary-background-color) !important;
-  font-family: var(--code-font-family) !important;
-  font-weight: 600 !important;
-}
-
-#IMPORTNOTIFICATIONPOP1 .migCardTitle .pA.dIB.svgIconsImg.migCardClose.ico-close-white-small2.cP {
-  filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85)));
-  /* this change 0 -> 1 and 1 -> 0 to get a reverse of --is-dark-theme, kinda --is-light-theme */
-}
-
-.chatContainer.pR {
-  background: var(--tertiary-background-color) !important;
-}
-
-.crm-font-regular.fontSmooth.content.migCardMsg.succesImportSchedularIco {
-  color: var(--primary-text-color) !important;
-  font-family: var(--code-font-family) !important;
-  font-weight: 600 !important;
-}
-
 
 
 /* ------------------------- Buttons ------------------------- */
 
-/* General */
+/* Default */
 #dreExecuteParamsSaveBtn,
 #dreEditParamsSaveBtn,
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button,
@@ -483,76 +165,76 @@ lyte-modal-footer {
 .lyteModal.lyteModalFromTop .lyte-button.lytePrimaryBtn,
 .lytePopover.lytePopoverVisible .lyte-button.lyteDefaultBtn,
 .lytePopover.lytePopoverVisible .lyte-button.lytePrimaryBtn {
-  color: var(--primary-text-color) !important;
-
-  border-top-width: var(--button-border-width) !important;
-  border-right-width: var(--button-border-width) !important;
-  border-bottom-width: 0px !important;
-  border-left-width: var(--button-border-width) !important;
-
+  height: 33px !important;
+  padding: 0px !important;
   border-style: var(--button-border-style) !important;
+  border-width: var(--button-border-width), var(--button-border-width), 0px, var(--button-border-width) !important;
 }
 
 /* Save and Save & Execute */
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button {
-  background: var(--general-button-normal-color) !important;
-  border-color: var(--general-button-hover-color) !important;
-  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--general-button-press-color) !important;
+  color: var(--general-button-text-color) !important;
+  background: var(--general-normal-button-background-color) !important;
+  border-color: var(--general-normal-button-border-color) !important;
+  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--general-normal-button-shadow-color) !important;
 }
 
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button:hover {
-  background: var(--general-button-hover-color) !important;
+  background: var(--general-hover-button-background-color) !important;
 }
 
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button:active {
-  background: var(--general-button-press-color) !important;
-  border-color: var(--general-button-press-color) !important;
+  background: var(--general-press-button-background-color) !important;
+  border-color: var(--general-press-button-border-color) !important;
+  top: 1px !important;
 }
 
 /* Leave Page and Workflow Edit Arguments Cancel */
 .newDelBtn.leavePage.redbtn,
 .lyteModal.lyteModalFromTop .lyte-button.lyteDefaultBtn,
 .lytePopover.lytePopoverVisible .lyte-button.lyteDefaultBtn {
-  color: #FFFFFF !important;
-  background: var(--dangerous-button-normal-color) !important;
-  border-color: var(--dangerous-button-hover-color) !important;
-  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--dangerous-button-press-color) !important;
+  color: var(--dangerous-button-text-color) !important;
+  background: var(--dangerous-normal-button-background-color) !important;
+  border-color: var(--dangerous-normal-button-border-color) !important;
+  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--dangerous-normal-button-shadow-color) !important;
 }
 
 .newDelBtn.leavePage.redbtn:hover,
 .lyteModal.lyteModalFromTop .lyte-button.lyteDefaultBtn:hover,
 .lytePopover.lytePopoverVisible .lyte-button.lyteDefaultBtn:hover {
-  background: var(--dangerous-button-hover-color) !important;
+  background: var(--dangerous-hover-button-background-color) !important;
 }
 
 .newDelBtn.leavePage.redbtn:active,
 .lyteModal.lyteModalFromTop .lyte-button.lyteDefaultBtn:active,
 .lytePopover.lytePopoverVisible .lyte-button.lyteDefaultBtn:active {
-  background: var(--dangerous-button-press-color) !important;
-  border-color: var(--dangerous-button-press-color) !important;
+  background: var(--dangerous-press-button-background-color) !important;
+  border-color: var(--dangerous-press-button-border-color) !important;
+  top: 1px !important;
 }
 
 /* Stay on Page and Workflow Edit Arguments Save */
 .newGrayBgBtn.stayPage.newgraybtn,
 .lyteModal.lyteModalFromTop .lyte-button.lytePrimaryBtn,
 .lytePopover.lytePopoverVisible .lyte-button.lytePrimaryBtn {
-  color: #FFFFFF !important;
-  background: var(--safe-button-normal-color) !important;
-  border-color: var(--safe-button-hover-color) !important;
-  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--safe-button-press-color) !important;
+  color: var(--safe-button-text-color) !important;
+  background: var(--safe-normal-button-background-color) !important;
+  border-color: var(--safe-normal-button-border-color) !important;
+  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--safe-normal-button-shadow-color) !important;
 }
 
 .newGrayBgBtn.stayPage.newgraybtn:hover,
 .lyteModal.lyteModalFromTop .lyte-button.lytePrimaryBtn:hover,
 .lytePopover.lytePopoverVisible .lyte-button.lytePrimaryBtn:hover {
-  background: var(--safe-button-hover-color) !important;
+  background: var(--safe-hover-button-background-color) !important;
 }
 
 .newGrayBgBtn.stayPage.newgraybtn:active,
 .lyteModal.lyteModalFromTop .lyte-button.lytePrimaryBtn:active,
 .lytePopover.lytePopoverVisible .lyte-button.lytePrimaryBtn:active {
-  background: var(--safe-button-press-color) !important;
-  border-color: var(--safe-button-press-color) !important;
+  background: var(--safe-press-button-background-color) !important;
+  border-color: var(--safe-press-button-border-color) !important;
+  top: 1px !important;
 }
 
 /* Workflow Edit Arguments */
@@ -836,6 +518,330 @@ lyte-drop-label {
 
 
 
+/* ------------------------- Popups -------------------------- */
+
+/* General */
+.deluge-popup.dre-edit-params-popup,
+.deluge-popup.dre-edex-params-popup.dre-execute-params-popup,
+#StayOrLeave {
+  border-radius: var(--border-radius) !important;
+}
+
+.f20.color_202123.crm-font-bold.fL.fontSmooth,
+.crmLabelColor.pR30,
+#dreExecuteParams,
+#dreEditParams,
+lyte-modal-header {
+  color: var(--primary-text-color) !important;
+}
+
+/* Edit Arguments and Save & Execute */
+.dre-edex-params-header,
+#dreEditParams {
+  background: var(--secondary-background-color) !important;
+}
+
+.dre-edex-params-params {
+  padding-top: 5px !important;
+}
+
+.deluge-popup.dre-edit-params-popup {
+  background: var(--secondary-background-color) !important;
+}
+
+.dre-ep-params-title,
+.pA.customFunctionArginformation,
+.crm-font-bold.mT30.mB15.dB.crmHeadingColor {
+  color: var(--secondary-text-color) !important;
+}
+
+.crm-font-bold.mT30.mB15.dB.crmHeadingColor {
+  font-family: var(--crm-font) !important;
+}
+
+.dre-edex-params-main-content,
+.dre-ep-btn,
+.lyteModal.lyteModalFromTop,
+#dreEditParamFunctionName {
+  background: var(--tertiary-background-color) !important;
+  box-shadow: none !important;
+}
+
+#dreEditParamFunctionName {
+  color: var(--primary-text-color) !important;
+  background: var(--secondary-background-color) !important;
+  font-family: var(--code-font-family) !important;
+  font-weight: var(--code-font-weight) !important;
+  border-radius: 10px !important;
+  border-width: 0px !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+
+.crmLabelColor.pR30 {
+  padding-right: 10px !important;
+}
+
+.dre-ep-param-name>input {
+  color: var(--primary-text-color) !important;
+  background: var(--tertiary-background-color) !important;
+  font-family: var(--code-font-family) !important;
+  font-size: 14px !important;
+  font-weight: var(--code-font-weight) !important;
+  border-width: 0px !important;
+  border-radius: 10px !important;
+}
+
+.dre-ep-param-data-type {
+  color: var(--primary-text-color) !important;
+  background: var(--secondary-background-color) !important;
+  font-family: var(--code-font-family) !important;
+  font-size: 13px !important;
+  font-weight: var(--code-font-weight) !important;
+  text-align: center !important;
+  border-radius: 10px !important;
+  border-width: 0px !important;
+}
+
+.dre-ep-param-delete.deluge-close {
+  position: relative !important;
+  margin-right: 0px !important;
+  margin-left: 20px !important;
+  filter: invert(var(--is-dark-theme)) !important;
+}
+
+#dreEditParamsAddBtn {
+  background: var(--secondary-background-color) !important;
+  font-family: 'JetBrains Mono' !important;
+  font-weight: var(--code-font-weight) !important;
+  margin-top: -5px;
+  padding: 0px !important;
+
+  border: 5px solid var(--secondary-background-color);
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: calc(var(--border-radius) * 1.5) !important;
+  border-bottom-left-radius: calc(var(--border-radius) * 1.5) !important;
+}
+
+#dreEditParamsAddBtn>div {
+  background: var(--tertiary-background-color) !important;
+  padding: 4.5px !important;
+  border: 5px solid var(--tertiary-background-color) !important;
+  border-radius: 10px !important;
+}
+
+#freezeBackGround {
+  background: #000000 !important;
+}
+
+.deluge-popup-freeze {
+  opacity: 0.2 !important
+}
+
+.modalWrapper.formRawDataPop {
+  z-index: 29 !important;
+}
+
+lyte-modal-freeze {
+  background: #00000070 !important;
+}
+
+.deluge-popup.dre-edex-params-popup.dre-execute-params-popup,
+.dre-edex-params,
+.dre-ep-header-title,
+#dreExecuteParams {
+  background: var(--tertiary-background-color) !important;
+}
+
+.dre-edex-params-header {
+  height: auto !important;
+  border: 0px !important;
+}
+
+.deluge-popup.dre-edex-params-popup.dre-execute-params-popup {
+  box-shadow: 0 3px 17px #0000004D !important;
+}
+
+.dre-ep-header-title {
+  font-size: 20px !important;
+  padding-bottom: 0px !important;
+}
+
+.dre-ep-params-layout,
+.formdata.wfEaArguments.p10.pT20 {
+  background: var(--secondary-background-color) !important;
+  border-width: 0px !important;
+  border-radius: calc(var(--border-radius) * 1.5) !important;
+}
+
+#dreExecuteParams .dre-ep-params-layout {
+  border-bottom-right-radius: calc(var(--border-radius) * 1.5) !important;
+  border-bottom-left-radius: calc(var(--border-radius) * 1.5) !important;
+}
+
+#dreEditParams .dre-ep-params-layout {
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.dre-ep-param-row {
+  background: var(--tertiary-background-color);
+  font-family: var(--code-font-family) !important;
+  font-weight: var(--code-font-weight) !important;
+  margin: 5px !important;
+  padding: 5px !important;
+  border-width: 0px !important;
+  border-radius: 10px !important;
+}
+
+.dre-ep-param-add-btn-sym,
+.dre-ep-param-add-btn-text,
+.dre-ep-param-msg {
+  font-weight: normal !important;
+}
+
+.crm-font-bold.mT30.mB15.dB.crmHeadingColor {
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+}
+
+.formdata.wfEaArguments.p10.pT20 {
+  padding: 5px !important;
+}
+
+lyte-modal-footer {
+  padding-top: 0px !important;
+  padding-bottom: 15px !important;
+}
+
+.noBorderTable.w100per {
+  border-radius: var(--border-radius) !important;
+}
+
+.dre-ep-param-type,
+.dre-ep-param-name {
+  font-weight: inherit !important;
+}
+
+.dre-ep-param-type {
+  color: var(--quaternary-background-color) !important;
+}
+
+.dre-ep-param-equals {
+  font-family: math !important;
+  font-size: 15px !important;
+}
+
+.dre-ep-param-input-div {
+  padding-left: 10px !important;
+}
+
+.dre-ep-param-input {
+  color: var(--primary-text-color) !important;
+  background: var(--secondary-background-color) !important;
+  font-family: var(--code-font-family) !important;
+  font-size: 14px !important;
+  font-weight: var(--code-font-weight) !important;
+  border: 0px !important;
+  border-radius: 10px !important;
+  padding-top: 0px !important;
+  padding-right: 10px !important;
+  padding-bottom: 0px !important;
+  padding-left: 10px !important;
+}
+
+.dre-ep-close.deluge-close {
+  filter: invert(var(--is-dark-theme)) !important;
+}
+
+#dreExecuteParamsSaveBtn,
+#dreEditParamsSaveBtn {
+  height: 32px !important;
+  width: 71px !important;
+  color: var(--save-arguments-button-text-color) !important;
+  background: var(--save-arguments-normal-button-background-color) !important;
+  border-color: var(--save-arguments-normal-button-border-color) !important;
+  font-family: var(--editor-buttons-font-family) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-transform: capitalize !important;
+  border-radius: 6px !important;
+  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--save-arguments-normal-button-shadow-color) !important;
+}
+
+#dreExecuteParamsSaveBtn:hover,
+#dreEditParamsSaveBtn:hover {
+  background: var(--save-arguments-hover-button-background-color) !important;
+}
+
+#dreExecuteParamsSaveBtn:active,
+#dreEditParamsSaveBtn:active {
+  background: var(--save-arguments-press-button-background-color) !important;
+  border-color: var(--save-arguments-press-button-border-color) !important;
+  position: relative !important;
+  top: 1px !important;
+}
+
+.dre-ep-param-msg {
+  color: var(--error-text-color) !important;
+  font-size: var(--secondary-system-font-size) !important;
+}
+
+/* Stay or Leave */
+#StayOrLeave {
+  background: var(--tertiary-background-color) !important;
+  border: none !important;
+  padding-top: 20px !important;
+}
+
+.f15.color_434d5f.crm-font-regular.mT1.fL.mT15.fontSmooth {
+  color: var(--secondary-text-color) !important;
+}
+
+.newDelBtn.leavePage.redbtn,
+.newGrayBgBtn.stayPage.newgraybtn {
+  width: 135px !important;
+  margin-right: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.pT20.tgl.mT10.alignright {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+/* Import Status */
+#IMPORTNOTIFICATIONPOP1 {
+  background: var(--primary-background-color) !important;
+  border: none !important;
+  border-radius: var( --border-radius) !important;
+}
+
+#IMPORTNOTIFICATIONPOP1 .migCardTitle {
+  background: var(--quaternary-background-color) !important;
+  font-family: var(--code-font-family) !important;
+  font-weight: 600 !important;
+}
+
+#IMPORTNOTIFICATIONPOP1 .migCardTitle .pA.dIB.svgIconsImg.migCardClose.ico-close-white-small2.cP {
+  filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85)));
+  /* this change 0 -> 1 and 1 -> 0 to get a reverse of --is-dark-theme, kinda --is-light-theme */
+}
+
+.chatContainer.pR {
+  background: var(--tertiary-background-color) !important;
+}
+
+.crm-font-regular.fontSmooth.content.migCardMsg.succesImportSchedularIco {
+  color: var(--primary-text-color) !important;
+  font-family: var(--code-font-family) !important;
+  font-weight: 600 !important;
+}
+
+
+
 /* ------------------------- Editor -------------------------- */
 
 /* Code Lines and Code Editor and Hint */
@@ -1052,7 +1058,8 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 }
 
 .CodeMirror-hint:not(.CodeMirror-hint.CodeMirror-hint-active) .partial-hint {
-  color: var(--hint-matching-symbols) !important;
+  color: var(--hint-matching-symbols-color) !important;
+  font-weight: bolder !important;
 }
 
 .CodeMirror-Tern-tooltip.deluge-tooltip-example.CodeMirror-Tern-hint-doc {
