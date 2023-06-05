@@ -171,7 +171,7 @@
   border-width: var(--button-border-width), var(--button-border-width), 0px, var(--button-border-width) !important;
 }
 
-/* Save and Save & Execute */
+/* Save, Save & Execute, Close */
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button {
   color: var(--general-button-text-color) !important;
   background: var(--general-normal-button-background-color) !important;
@@ -187,6 +187,26 @@
   background: var(--general-press-button-background-color) !important;
   border-color: var(--general-press-button-border-color) !important;
   top: 1px !important;
+}
+
+/* Close */
+#functionCancel button,
+#functionCancelLeft button {
+  color: var(--close-button-text-color) !important;
+  background: var(--close-normal-button-background-color) !important;
+  border-color: var(--close-normal-button-border-color) !important;
+  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--close-normal-button-shadow-color) !important;
+}
+
+#functionCancel button:hover,
+#functionCancelLeft button:hover {
+  background: var(--close-hover-button-background-color) !important;
+}
+
+#functionCancel button:active,
+#functionCancelLeft button:active {
+  background: var(--close-press-button-background-color) !important;
+  border-color: var(--close-press-button-border-color) !important;
 }
 
 /* Leave Page and Workflow Edit Arguments Cancel */
@@ -816,7 +836,7 @@ lyte-modal-footer {
 #IMPORTNOTIFICATIONPOP1 {
   background: var(--primary-background-color) !important;
   border: none !important;
-  border-radius: var( --border-radius) !important;
+  border-radius: var(--border-radius) !important;
 }
 
 #IMPORTNOTIFICATIONPOP1 .migCardTitle {

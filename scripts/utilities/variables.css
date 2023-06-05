@@ -61,6 +61,14 @@
   --general-press-button-background-color: #506377;
   --general-press-button-border-color: #506377;
 
+  --close-button-text-color: #ffffff;
+  --close-normal-button-background-color: #122438;
+  --close-normal-button-border-color: #314458;
+  --close-normal-button-shadow-color: #506377;
+  --close-hover-button-background-color: #314458;
+  --close-press-button-background-color: #506377;
+  --close-press-button-border-color: #506377;
+
   --save-arguments-button-text-color: #ffffff;
   --save-arguments-normal-button-background-color: #05131F;
   --save-arguments-normal-button-border-color: #314458;
@@ -497,6 +505,38 @@
   font-style: italic;
   font-weight: 900;
   src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-BlackItalic.woff2') format('woff2');
+}
+
+/* Consolas */
+
+/* Normal */
+@font-face {
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Consolas/Consolas.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Consolas/Consolas-Bold.woff2') format('woff2');
+}
+
+/* Italic */
+@font-face {
+  font-family: 'Consolas';
+  font-style: italic;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Consolas/Consolas-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Consolas';
+  font-style: italic;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Consolas/Consolas-BoldItalic.woff2') format('woff2');
 }
 
 /* BR Cobane */
