@@ -18,7 +18,7 @@
 }
 
 .headerSectionTabCnt.pR.color_3.bbd1.w100per.oH {
-  background: var(--editor-header-background-color);
+  background: var(--editor-header-background-color) !important;
 }
 
 #templateName {
@@ -260,8 +260,8 @@
 #functionNameErrorMsg_NaN {
   position: absolute !important;
   color: var(--error-text-color) !important;
-  top: 35px;
-  width: 500px;
+  top: 35px !important;
+  width: 500px !important;
   font-size: var(--tertiary-system-font-size) !important;
   font-family: var(--system-font-family) !important;
 }
@@ -278,7 +278,7 @@
 
 .wfDelugeArgumentsRow {
   display: flex !important;
-  justify-content: space-between;
+  justify-content: space-between !important;
   background: var(--tertiary-background-color) !important;
   border-left: 5px solid var(--tertiary-background-color) !important;
   border-right: 8px solid var(--tertiary-background-color) !important;
@@ -309,7 +309,7 @@
 }
 
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input {
-  padding-left: 5px;
+  padding-left: 5px !important;
 }
 
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input,
@@ -452,7 +452,7 @@
 
 .mergeFieldDropdownArrow.dIB.mLR10.crmcssBaseIcon.zcicn-arrow-solid-right-sm,
 .lyteSearchInput.lyteInput.vertical .searchIcon {
-  filter: invert(calc(var(--is-dark-theme) * 0.85));
+  filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
 }
 
 .multilevelmergefieldDropdown.crmBoxDropbox.lyteDropdownCurve.lyteDropdownDown {
@@ -482,7 +482,7 @@
 
 .multilevelmergefieldDropdown.crmBoxDropbox.lyteDropdownCurve.lyteDropdownDown lyte-drop-item::before {
   top: 6px !important;
-  filter: invert(calc(var(--is-dark-theme) * 0.85));
+  filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
 }
 
 lyte-drop-label {
@@ -614,10 +614,10 @@ lyte-modal-header {
   background: var(--secondary-background-color) !important;
   font-family: 'JetBrains Mono' !important;
   font-weight: var(--code-font-weight) !important;
-  margin-top: -5px;
+  margin-top: -5px !important;
   padding: 0px !important;
 
-  border: 5px solid var(--secondary-background-color);
+  border: 5px solid var(--secondary-background-color) !important;
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: calc(var(--border-radius) * 1.5) !important;
@@ -686,7 +686,7 @@ lyte-modal-freeze {
 }
 
 .dre-ep-param-row {
-  background: var(--tertiary-background-color);
+  background: var(--tertiary-background-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
   margin: 5px !important;
@@ -826,7 +826,7 @@ lyte-modal-footer {
 }
 
 #IMPORTNOTIFICATIONPOP1 .migCardTitle .pA.dIB.svgIconsImg.migCardClose.ico-close-white-small2.cP {
-  filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85)));
+  filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85))) !important;
   /* this change 0 -> 1 and 1 -> 0 to get a reverse of --is-dark-theme, kinda --is-light-theme */
 }
 
@@ -911,7 +911,7 @@ lyte-modal-footer {
 }
 
 .CodeMirror-gutter-wrapper {
-  margin-top: -1px;
+  margin-top: -1px !important;
 }
 
 .CodeMirror-gutter-wrapper.CodeMirror-activeline-gutter>.CodeMirror-linenumber.CodeMirror-gutter-elt {
@@ -1127,7 +1127,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 }
 
 .dIB.zcicn-arrow-solid-left-md.outputContHookIcon.vam {
-  filter: invert(calc(var(--is-dark-theme) * 0.85));
+  filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
 }
 
 #outputToggleHook .dIB.mT5.vam {
