@@ -910,6 +910,10 @@ lyte-modal-footer {
   padding-bottom: 2px !important;
 }
 
+.CodeMirror-gutter-wrapper {
+  margin-top: -1px;
+}
+
 .CodeMirror-gutter-wrapper.CodeMirror-activeline-gutter>.CodeMirror-linenumber.CodeMirror-gutter-elt {
   color: var(--active-line-number-color) !important;
 }
