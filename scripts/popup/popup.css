@@ -256,7 +256,6 @@ body:not(:has(#extension-activation-switch > .toggle-on)) .setting * {
 
 .setting-switch {
   margin-left: auto;
-  margin-right: 4px;
 }
 
 .setting-switch,
@@ -312,6 +311,7 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
 .dropdown.switch .setting-dropdown {
   text-align: right;
   color: var(--extension-popup-glow-color);
+  padding-right: 20px;
 }
 
 /* Reset Settings Button */
@@ -354,6 +354,98 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
 #reset-settings-button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+
+
+/* ------------------------- Icons --------------------------- */
+
+/* Switch */
+body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggle-switch-text-off,
+.setting-switch[class~="not-available"] .toggle-switch-text-off {
+  visibility: hidden;
+}
+
+body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggle-switch-text-off::after,
+.setting-switch[class~="not-available"] .toggle-switch-text-off::after {
+  content: "\e900";
+  font-family: 'icons' !important;
+  font-size: 15px;
+  padding-right: 2px;
+  visibility: visible;
+}
+
+/* Dropdown */
+.dropdown:not(:has(.setting-switch)),
+.dropdown.switch .setting-switch {
+  position: relative;
+}
+
+.dropdown:not(:has(.setting-switch))::after,
+.dropdown.switch .setting-switch::before {
+  content: "\e901";
+  position: absolute;
+  right: 0;
+  font-family: 'icons' !important;
+  font-size: 5px;
+  padding-right: 5px;
+  pointer-events: none;
+}
+
+.dropdown:not(:has(.setting-switch))::after {
+  color: var(--primary-text-color);
+}
+
+.dropdown.switch .setting-switch::before {
+  left: -17px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--extension-popup-glow-color);
+}
+
+
+
+/* --------------- Text Glowing and Brightness --------------- */
+
+/* Darker */
+#title,
+.tab-icon,
+.tab.active .tab-name,
+.setting-title,
+.setting-dropdown,
+.dropdown:not(:has(.setting-switch))::after,
+.dropdown.switch .setting-switch::before {
+  filter: opacity(0.5);
+}
+
+/* Brighter */
+body:has(#extension-activation-switch > .toggle-on) #title,
+body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:not(:has(~ .setting-switch)),
+body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:has(~ .setting-switch .toggle-on)
+
+,body:has(#extension-activation-switch > .toggle-on) .dropdown:not(:has(.setting-switch))::after
+,body:has(#extension-activation-switch > .toggle-on) .dropdown.switch:has(.setting-switch .toggle-on) .setting-switch::before
+
+{
+  filter: opacity(1);
+}
+
+/* Glow */
+body:has(#extension-activation-switch > .toggle-on) #title {
+  text-shadow: 0 0 5px var(--extension-popup-glow-color);
+}
+
+body:has(#extension-activation-switch > .toggle-on) .dropdown.switch .setting-dropdown:has(~ .setting-switch .toggle-on) {
+  text-shadow: 0 0 3px var(--extension-popup-glow-color);
+}
+
+/* Brighter + Glow */
+body:has(#extension-activation-switch > .toggle-on) .tab-icon,
+body:has(#extension-activation-switch > .toggle-on) .tab.active .tab-name,
+body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(~ .setting-switch)),
+body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on) {
+  text-shadow: 0 0 3px var(--extension-popup-glow-color);
+  filter: opacity(1);
 }
 
 
@@ -436,55 +528,4 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-te
 
 body:has(#extension-activation-switch > .toggle-on) .toggle-on .glow-comp {
   opacity: 1;
-}
-
-/* Text Glowing, Brightness, Block Icon */
-
-/* Darker */
-#title,
-.tab-icon,
-.tab.active .tab-name,
-.setting-title,
-.setting-dropdown {
-  filter: opacity(0.5);
-}
-
-/* Brighter */
-body:has(#extension-activation-switch > .toggle-on) #title,
-body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:not(:has(~ .setting-switch)),
-body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:has(~ .setting-switch .toggle-on) {
-  filter: opacity(1);
-}
-
-/* Glow */
-body:has(#extension-activation-switch > .toggle-on) #title {
-  text-shadow: 0 0 5px var(--extension-popup-glow-color);
-}
-
-body:has(#extension-activation-switch > .toggle-on) .dropdown.switch .setting-dropdown:has(~ .setting-switch .toggle-on) {
-  text-shadow: 0 0 3px var(--extension-popup-glow-color);
-}
-
-/* Brighter + Glow */
-body:has(#extension-activation-switch > .toggle-on) .tab-icon,
-body:has(#extension-activation-switch > .toggle-on) .tab.active .tab-name,
-body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(~ .setting-switch)),
-body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on) {
-  text-shadow: 0 0 3px var(--extension-popup-glow-color);
-  filter: opacity(1);
-}
-
-/* Block Icon */
-body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggle-switch-text-off,
-.setting-switch[class~="not-available"] .toggle-switch-text-off {
-  visibility: hidden;
-}
-
-body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggle-switch-text-off:after,
-.setting-switch[class~="not-available"] .toggle-switch-text-off:after {
-  content: "\e900";
-  font-family: 'icons' !important;
-  font-size: 15px;
-  padding-right: 2px;
-  visibility: visible;
 }
