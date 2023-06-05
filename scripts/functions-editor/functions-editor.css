@@ -832,6 +832,10 @@ lyte-modal-footer {
   justify-content: space-between !important;
 }
 
+
+
+/* ---------------------- Notifications ---------------------- */
+
 /* Import Status */
 #IMPORTNOTIFICATIONPOP1 {
   background: var(--primary-background-color) !important;
@@ -858,6 +862,26 @@ lyte-modal-footer {
   color: var(--primary-text-color) !important;
   font-family: var(--code-font-family) !important;
   font-weight: 600 !important;
+}
+
+/* Functions Failures */
+#fin_notification {
+  color: var(--primary-text-color) !important;
+  background: var(--tertiary-background-color) !important;
+}
+
+#fin_notification .migCardTitle {
+  background: var(--quaternary-background-color) !important;
+  font-family: var(--code-font-family) !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  padding: 7px 10px !important;
+  border-radius: 10px 10px 0px 0px !important;
+}
+
+#fin_notification .pA.svgIconsImg.top15.right15.ico-close-white-small2.cP {
+  top: 10px !important;
+  filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85))) !important;
 }
 
 
