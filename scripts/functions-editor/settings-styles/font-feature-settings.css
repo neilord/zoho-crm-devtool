@@ -1,3 +1,8 @@
+:root {
+  --code-font-family: var(--code-font-family-ligatures) !important;
+  --editor-font-family: var(--editor-font-family-ligatures) !important;
+}
+
 #templateName,
 .w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button *,
 #functionCancelLeft button,
@@ -23,13 +28,14 @@
 .CodeMirror-line span,
 .CodeMirror-hint,
 .CodeMirror-Tern-tooltip.deluge-tooltip-example.CodeMirror-Tern-hint-doc *,
+#outputToggleHook .dIB.mT5.vam,
 .pLR10.mB10.pR,
 #findBtn,
 #findBtn::placeholder,
 #replacementText,
 #replacementText::placeholder,
 #customDelugeGoTo,
-#customDelugeGoTo::placeholder {
-  font-family: var(--code-font-family-ligatures) !important;
-  font-feature-settings: var(--code-font-feature-settings) !important;
+#customDelugeGoTo::placeholder,
+#functionFooter {
+  font-feature-settings: var(--font-feature-settings) !important;
 }

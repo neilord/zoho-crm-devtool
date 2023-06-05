@@ -30,8 +30,15 @@ function addLeftCloseButton() {
   leftCloseButton.setAttribute('id', 'functionCancelLeft');
   leftCloseButton.firstElementChild.textContent = 'Close';
   leftCloseButton.onclick = () => {
-    createRemoveScriptElement('scripts/functions-editor/close-button-action.js');
+    createRemoveScriptElement('functions-editor/close-button-action.js');
   };
+}
+
+function removeLeftCloseButton() {
+  const leftCloseButton = document.querySelector('#functionCancelLeft');
+  if (leftCloseButton) {
+    leftCloseButton.remove();
+  }
 }
 
 async function addFooter() {
@@ -47,15 +54,14 @@ async function addFooter() {
     height: 31px;
     width: 100%;
     bottom: 0px;
-    border-top: 1px solid var(--editor-footer-border-color);
+    border-top: 1px solid var(--header-footer-border-color);
     align-items: center;
 
-    font-family: var(--code-font-family);
+    font-family: var(--editor-footer-font-family);
     font-size: 15px;
     font-weight: bold;
-    font-feature-settings: var(--code-font-features);
-    color: var(--editor-footer-text-color);
-    background: var(--editor-footer-background-color);
+    color: var(--line-number-color);
+    background: var(--primary-background-color);
   `;
 
   // Function Details
@@ -134,19 +140,21 @@ async function addFooter() {
 }
 
 function removeFooter() {
-  document.querySelector('#functionFooter').remove();
+  const footer = document.querySelector('#functionFooter');
+  if (footer) {
+    footer.remove();
+  }
 }
 
 async function beautifyCode() {
   await waitForElementRemoval('.CodeMirror-code');
   await waitForElement('.CodeMirror-code');
-  createRemoveScriptElement('scripts/functions-editor/code-beautifier.js');
+  createRemoveScriptElement('functions-editor/code-beautifier.js');
 }
 
-async function disableEnableDarkReader(disable = true) {
-  const setting = await chrome.storage.local.get('disable-darkreader-switch');
+function disableEnableDarkReader(disable = true) {
   let disabler = document.querySelector('meta[name="darkreader-lock"]');
-  if (setting['disable-darkreader-switch'] && disable && !disabler) {
+  if (disable && !disabler) {
     disabler = document.createElement('meta');
     disabler.name = 'darkreader-lock';
     document.head.appendChild(disabler);
@@ -155,34 +163,51 @@ async function disableEnableDarkReader(disable = true) {
   }
 }
 
-function onSettingsChange(changes) {
-  if ('disable-darkreader-switch' in changes) {
-    disableEnableDarkReader();
-  }
-}
-function addRemoveSettingsListener(add = true) {
-  chrome.storage.onChanged[add ? 'addListener' : 'removeListener'](onSettingsChange);
-}
-
-async function observeFunctionsEditor() {
-  await waitForElement(hiddenTopBarWithCodeFrameSelecter);
-
-  // Oppened
+function enchanceFunctionsEditor() {
   addLeftCloseButton();
   addFooter();
   beautifyCode();
   disableEnableDarkReader();
-  createRemoveScriptElement('scripts/functions-editor/functions-editor.css');
-  applyStyleSettings('website');
-  addRemoveSettingsListener();
+  createRemoveScriptElement('functions-editor/functions-editor.css');
+  applyRevertStyleSettings('website');
+}
 
-  await waitForElement(visableTopBarSelecter);
-
-  // Closed
+function revertFunctionsEditor() {
+  removeLeftCloseButton();
   removeFooter();
   disableEnableDarkReader(false);
-  createRemoveScriptElement('scripts/functions-editor.css', false);
-  addRemoveSettingsListener(false);
+  createRemoveScriptElement('functions-editor.css', false);
+  applyRevertStyleSettings('website', false);
+}
+
+async function observeFunctionsEditor() {
+  // Opened
+  await waitForElement(hiddenTopBarWithCodeFrameSelecter);
+
+  // Enchance if extension-activation-switch is on or was turned on
+  chrome.storage.local.get(['extension-activation-switch']).then((result) => {
+    if (result['extension-activation-switch']) {
+      enchanceFunctionsEditor();
+    }
+  });
+
+  const extensionActivationSwitchChangesListener = (changes) => {
+    if ('extension-activation-switch' in changes) {
+      if (changes['extension-activation-switch'].newValue) {
+        enchanceFunctionsEditor();
+      } else {
+        revertFunctionsEditor();
+      }
+    }
+  };
+
+  chrome.storage.onChanged.addListener(extensionActivationSwitchChangesListener);
+
+  // Closed
+  await waitForElement(visableTopBarSelecter);
+  revertFunctionsEditor();
+
+  chrome.storage.onChanged.removeListener(extensionActivationSwitchChangesListener);
 
   observeFunctionsEditor();
 }
