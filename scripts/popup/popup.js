@@ -157,7 +157,7 @@ function addAvailiableFontSettings() {
 
           weights.sort().forEach(weight => {
             // Find closest font-weight selected in old font-family in new font-family
-            const weightDifference = Math.abs(weight - result['--code-font-weight']);
+            const weightDifference = Math.abs(weight - (result['--code-font-weight'] || 400));
             if (weightDifference < closestWeightDifference) {
               closestWeight = weight;
               closestWeightDifference = weightDifference;
@@ -193,7 +193,7 @@ function extractFontFamiliesWeightsFromFontFaces(cssText) {
   const fontFamiliesWeights = {};
 
   // Iterate over all @font-face blocks in CSS text
-  const regex = /@font-face\s*\{([^\}]*)\}/g; // defined outside of the loop
+  const regex = /@font-face\s*\{([^\}]*)\}/g;
   let match;
   while ((match = regex.exec(cssText)) !== null) {
     const rules = match[1].split(';').map(rule => rule.trim());
