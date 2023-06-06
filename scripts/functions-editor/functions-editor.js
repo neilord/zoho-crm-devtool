@@ -54,14 +54,14 @@ async function addFooter() {
     height: 31px;
     width: 100%;
     bottom: 0px;
-    border-top: 1px solid var(--header-footer-border-color);
+    border-top: 1px solid var(--editor-footer-border-color);
     align-items: center;
 
     font-family: var(--editor-footer-font-family);
     font-size: 15px;
     font-weight: bold;
-    color: var(--line-number-color);
-    background: var(--primary-background-color);
+    color: var(--editor-footer-text-color);
+    background: var(--editor-footer-background-color);
   `;
 
   // Function Details
