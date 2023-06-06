@@ -994,6 +994,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 .argTooltip.deluge-cm-script.argTooltip-anim {
   color: var(--variable-color) !important;
   background: var(--primary-background-color) !important;
+  font-family: var(--code-font-family) !important;
   border-color: var(--tooltip-border-color) !important;
 }
 
