@@ -923,7 +923,7 @@ lyte-modal-footer {
 }
 
 .CodeMirror-gutters {
-  background: inherit !important;
+  background: var(--editor-code-line-numbers-background-color) !important;
   border: 0px !important;
 }
 

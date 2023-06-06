@@ -22,6 +22,7 @@
   --editor-header-shadow-color: #1f284350;
   --editor-footer-background-color: #ededed;
   --editor-footer-border-color: #e0e0e0;
+  --editor-code-line-numbers-background-color: #ededed;
 
   /* Editor */
   --cursor-color: black;
