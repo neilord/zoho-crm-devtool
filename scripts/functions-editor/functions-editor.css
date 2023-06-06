@@ -924,7 +924,9 @@ lyte-modal-footer {
 
 .CodeMirror-gutters {
   background: var(--editor-code-line-numbers-background-color) !important;
-  border: 0px !important;
+  border-width: 0px 1px 0px 0px !important;
+  border-style: solid !important;
+  border-color: var(--editor-code-line-numbers-border-color) !important;
 }
 
 .CodeMirror-linenumber.CodeMirror-gutter-elt {
