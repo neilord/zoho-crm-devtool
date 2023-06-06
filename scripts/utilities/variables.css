@@ -508,158 +508,142 @@
   src: url('chrome-extension://__MSG_@@extension_id__/fonts/SourceCodePro/SourceCodePro-BlackItalic.woff2') format('woff2');
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --- Monaco --- */
+/* --- Menlo --- */
 
 /* Normal */
 @font-face {
-  font-family: 'Monaco';
+  font-family: 'Menlo';
   font-style: normal;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Monaco/Monaco-Regular.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Menlo/Menlo-Regular.woff2') format('woff2');
 }
 
+/* --- Anonymous Pro --- */
+
+/* Normal */
 @font-face {
-  font-family: 'Monaco';
+  font-family: 'Anonymous Pro';
   font-style: normal;
-  font-weight: 500;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Monaco/Monaco-Medium.woff2') format('woff2');
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/AnonymousPro/AnonymousPro-Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Monaco';
-  font-style: normal;
-  font-weight: 600;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Monaco/Monaco-Semibold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Monaco';
+  font-family: 'Anonymous Pro';
   font-style: normal;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Monaco/Monaco-Bold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/AnonymousPro/AnonymousPro-Bold.woff2') format('woff2');
 }
 
 /* Italic */
 @font-face {
-  font-family: 'Monaco';
+  font-family: 'Anonymous Pro';
   font-style: italic;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Monaco/Monaco-RegularItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/AnonymousPro/AnonymousPro-RegularItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/AnonymousPro/AnonymousPro-BoldItalic.woff2') format('woff2');
+}
+
+/* --- DejaVu Sans Mono --- */
+
+/* Normal */
+@font-face {
+  font-family: 'DejaVu Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DejaVu Sans Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-Bold.woff2') format('woff2');
+}
+
+/* Oblique */
+@font-face {
+  font-family: 'DejaVu Sans Mono';
+  font-style: oblique;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-RegularItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DejaVu Sans Mono';
+  font-style: oblique;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-BoldItalic.woff2') format('woff2');
+}
+
+/* --- Vera Sans Mono --- */
+
+/* Normal */
+@font-face {
+  font-family: 'Vera Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/VeraSansMono/VeraSansMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Vera Sans Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/VeraSansMono/VeraSansMono-Bold.woff2') format('woff2');
+}
+
+/* Italic */
+@font-face {
+  font-family: 'Vera Sans Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/VeraSansMono/VeraSansMono-RegularItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Vera Sans Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/VeraSansMono/VeraSansMono-BoldItalic.woff2') format('woff2');
+}
+
+/* --- Ubuntu Mono --- */
+
+/* Normal */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/UbuntuMono/UbuntuMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/UbuntuMono/UbuntuMono-Bold.woff2') format('woff2');
+}
+
+/* Italic */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/UbuntuMono/UbuntuMono-RegularItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/UbuntuMono/UbuntuMono-BoldItalic.woff2') format('woff2');
 }
 
 /* --- Consolas --- */
@@ -694,68 +678,227 @@
   src: url('chrome-extension://__MSG_@@extension_id__/fonts/Consolas/Consolas-BoldItalic.woff2') format('woff2');
 }
 
-/* --- DejaVu Sans Mono --- */
+/* --- Monaco --- */
 
 /* Normal */
 @font-face {
-  font-family: 'DejaVu Sans Mono';
+  font-family: 'Monaco';
   font-style: normal;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-Regular.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Monaco/Monaco-Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'DejaVu Sans Mono';
+  font-family: 'Monaco';
+  font-style: normal;
+  font-weight: 500;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Monaco/Monaco-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Monaco';
+  font-style: normal;
+  font-weight: 600;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Monaco/Monaco-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Monaco';
   font-style: normal;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-Bold.woff2') format('woff2');
-}
-
-/* Oblique */
-@font-face {
-  font-family: 'DejaVu Sans Mono';
-  font-style: oblique;
-  font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-RegularOblique.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'DejaVu Sans Mono';
-  font-style: oblique;
-  font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-BoldOblique.woff2') format('woff2');
-}
-
-/* --- Ubuntu Mono --- */
-
-/* Normal */
-@font-face {
-  font-family: 'Ubuntu Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/UbuntuMono/UbuntuMono-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Ubuntu Mono';
-  font-style: normal;
-  font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/UbuntuMono/UbuntuMono-Bold.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Monaco/Monaco-Bold.woff2') format('woff2');
 }
 
 /* Italic */
 @font-face {
-  font-family: 'Ubuntu Mono';
+  font-family: 'Monaco';
   font-style: italic;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/UbuntuMono/UbuntuMono-RegularItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Monaco/Monaco-RegularItalic.woff2') format('woff2');
+}
+
+/* --- Courier New --- */
+
+/* Normal */
+@font-face {
+  font-family: 'Courier New';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/CourierNew/CourierNew-Regular.woff2') format('woff2');
+}
+
+/* --- Terminus --- */
+
+/* Normal */
+@font-face {
+  font-family: 'Terminus';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Terminus/Terminus-Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Ubuntu Mono';
+  font-family: 'Terminus';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Terminus/Terminus-Bold.woff2') format('woff2');
+}
+
+/* Italic */
+@font-face {
+  font-family: 'Terminus';
+  font-style: italic;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Terminus/Terminus-RegularItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Terminus';
   font-style: italic;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/UbuntuMono/UbuntuMono-BoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Terminus/Terminus-BoldItalic.woff2') format('woff2');
+}
+
+/* --- Roboto Mono --- */
+
+/* Normal */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 100;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 200;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-Bold.woff2') format('woff2');
+}
+
+/* Italic */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 100;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-ThinItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 200;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-ExtraLightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 300;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-LightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-RegularItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 500;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-MediumItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 600;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/RobotoMono/RobotoMono-BoldItalic.woff2') format('woff2');
+}
+
+/* --- Droid Sans Mono --- */
+
+/* Normal */
+@font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DroidSansMono/DroidSansMono-Regular.woff2') format('woff2');
+}
+
+/* --- Andale Mono --- */
+
+/* Normal */
+@font-face {
+  font-family: 'Andale Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/AndaleMono/AndaleMono-Regular.woff2') format('woff2');
+}
+
+/* --- Lucida Console --- */
+
+/* Normal */
+@font-face {
+  font-family: 'Lucida Console';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/LucidaConsole/LucidaConsole-Regular.woff2') format('woff2');
+}
+
+/* --- Fixedsys --- */
+
+/* Normal */
+@font-face {
+  font-family: 'Fixedsys';
+  font-style: normal;
+  font-weight: 400;
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/Fixedsys/Fixedsys-Regular.woff2') format('woff2');
 }
 
 /* --- BR Cobane --- */
@@ -817,7 +960,7 @@
   src: url('chrome-extension://__MSG_@@extension_id__/fonts/BRCobane/BRCobane-Black.woff2') format('woff2');
 }
 
-/* Italics */
+/* Italic */
 @font-face {
   font-family: 'BR Cobane';
   font-style: italic;
