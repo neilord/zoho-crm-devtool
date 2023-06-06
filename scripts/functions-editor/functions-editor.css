@@ -1049,6 +1049,10 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
   padding-bottom: 1px !important;
 }
 
+.CodeMirror-nonmatchingbracket {
+  color: var(--nonmatching-brackets-text-color) !important;
+}
+
 .CodeMirror-matchingbracket:not(.CodeMirror-matchingbracket + .CodeMirror-matchingbracket):not(.CodeMirror-matchingbracket:has(+ .CodeMirror-matchingbracket)) {
   outline: 1px solid var(--matching-brackets-border-color) !important;
 }

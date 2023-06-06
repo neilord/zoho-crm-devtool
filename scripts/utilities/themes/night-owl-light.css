@@ -51,6 +51,7 @@
   --brackets-color: #6b6a69;
   --matching-brackets-background-color: #c5e6cc;
   --matching-brackets-border-color: #a2d9ae;
+  --nonmatching-brackets-text-color: #fb001b;
 
   /* Buttons */
   --general-button-text-color: #ffffff;
