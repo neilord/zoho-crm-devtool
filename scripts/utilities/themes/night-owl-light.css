@@ -105,6 +105,13 @@
   --extension-popup-dangerous-button-text-color: #ff2335;
   --extension-popup-dangerous-button-background-color: #ff2335;
 
-  /* Others */
+  /* --- Other --- */
+
+  /* Fonts */
+  --editor-header-font-family: var(--editor-font-family);
+  --editor-footer-font-family: var(--editor-font-family);
+  --editor-buttons-font-family: var(--editor-font-family);
+
+  /* Theme */
   --is-dark-theme: 0;
 }
