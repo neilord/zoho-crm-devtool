@@ -23,8 +23,8 @@
 
 #templateName {
   font-family: var(--editor-header-font-family) !important;
-  font-size: 20px !important;
-  font-weight: 600 !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
   color: var(--editor-header-text-color) !important;
 }
 
