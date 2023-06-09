@@ -155,7 +155,7 @@ function addAvailiableFontSettings() {
         if (
           !weightsStyles.some(
             (weightStyle) =>
-            weightStyle.weight === selectedFontWeight &&
+              weightStyle.weight === selectedFontWeight &&
               (weightStyle.style === 'italic' || weightStyle.style === 'oblique')
           )
         ) {
@@ -164,6 +164,13 @@ function addAvailiableFontSettings() {
           chrome.storage.local.set({ '--italics-switch': false });
         } else {
           italicsSwitch.classList.remove('not-available');
+        }
+
+        // Disable if only a single choice
+        if (fontWeightSelect.options.length <= 1) {
+          fontWeightSelect.disabled = true;
+        } else {
+          fontWeightSelect.disabled = false;
         }
       };
 
@@ -204,12 +211,15 @@ function addAvailiableFontSettings() {
 
           // Deactivate ligatures if font-family don't have such version.
           const fontFeatureSettingsSwitch = document.querySelector('#font-feature-settings-switch');
+          const fontFeatureSettingsSelect = document.querySelector('#font-feature-settings-select');
           if (fontFamilySelect.value.split(',').length !== 2) {
             fontFeatureSettingsSwitch.classList.add('not-available');
             fontFeatureSettingsSwitch.children[0].classList.remove('toggle-on');
+            fontFeatureSettingsSelect.disabled = true;
             chrome.storage.local.set({ 'font-feature-settings-switch': false });
           } else {
             fontFeatureSettingsSwitch.classList.remove('not-available');
+            fontFeatureSettingsSelect.disabled = false;
           }
         });
       };

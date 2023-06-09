@@ -469,9 +469,9 @@ body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggl
 
 /* Brighter */
 body:has(#extension-activation-switch > .toggle-on) #title,
-body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:not(:has(~ .setting-switch)),
+body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:not(:has(option:only-child)):not(:has(~ .setting-switch)),
 body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:has(~ .setting-switch .toggle-on),
-body:has(#extension-activation-switch > .toggle-on) .dropdown:not(:has(.setting-switch))::after,
+body:has(#extension-activation-switch > .toggle-on) .dropdown:not(:has(option:only-child)):not(:has(.setting-switch))::after,
 body:has(#extension-activation-switch > .toggle-on) .dropdown.switch:has(.setting-switch .toggle-on) .setting-switch::before {
   filter: opacity(1);
 }
@@ -488,7 +488,7 @@ body:has(#extension-activation-switch > .toggle-on) .dropdown.switch .setting-dr
 /* Brighter + Glow */
 body:has(#extension-activation-switch > .toggle-on) .tab-icon,
 body:has(#extension-activation-switch > .toggle-on) .tab.active .tab-name,
-body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(~ .setting-switch)),
+body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(+ .setting-dropdown option:only-child)):not(:has(~ .setting-switch)),
 body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on) {
   text-shadow: 0 0 calc(var(--extension-popup-text-glow-blur-radius) * 0.6) var(--extension-popup-glow-color);
   filter: opacity(1);
@@ -566,12 +566,6 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-te
   color: rgba(0, 0, 0, 0);
 }
 
-.setting-switch.not-available .toggle-switch-button,
-.setting-switch.not-available .toggle-switch-text-on,
-.setting-switch.not-available .toggle-switch-text-on {
-  cursor: not-allowed;
-}
-
 .glow-comp {
   position: absolute;
   opacity: 0;
@@ -588,6 +582,7 @@ button {
   appearance: none;
   font-family: var(--code-font-family);
   font-weight: 700;
+  user-select: none;
 }
 
 /* Normal */
