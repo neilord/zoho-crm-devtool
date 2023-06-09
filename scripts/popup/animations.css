@@ -1,11 +1,3 @@
-/* -------------------------- Tabs --------------------------- */
-
-.tab {
-  transition: left 0.5s;
-}
-
-
-
 /* ------------------------ Settings ------------------------- */
 
 /* Reset Settings Button */
@@ -19,8 +11,6 @@
 
 /* Darker */
 #title,
-.tab-icon,
-.tab.active .tab-name,
 .setting-title,
 .setting-dropdown,
 .dropdown:not(:has(.setting-switch))::after,

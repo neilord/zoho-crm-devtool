@@ -1,19 +1,3 @@
-function setTabsPossitions() {
-  const tabs = document.querySelectorAll('.tab');
-  const iconWidth = document.querySelector('.tab-icon').offsetWidth;
-  const containerWidth = document.querySelector('#extension-container').offsetWidth;
-
-  let left = 0;
-  for (const tab of tabs) {
-    tab.style.setProperty('left', left + 'px');
-    if (tab.className.includes('active')) {
-      left += containerWidth - (tabs.length - 1) * iconWidth;
-    } else {
-      left += iconWidth;
-    }
-  };
-}
-
 function setSavedSettings() {
   chrome.storage.local.get(null, (settings) => {
     for (const [key, value] of Object.entries(settings)) {
@@ -67,7 +51,6 @@ function addAnimationsCSS() {
 }
 
 function setupPopup() {
-  setTabsPossitions();
   setSavedSettings();
   saveSettings();
   addAvailiableFontSettings();
@@ -79,16 +62,6 @@ function setupPopup() {
 }
 
 function startBackgroundTasks() {
-  // Tabs selector
-  const tabs = document.querySelectorAll('.tab');
-  for (const selectedTab of tabs) {
-    selectedTab.addEventListener('click', () => {
-      document.querySelector('.tab.active').classList.remove('active');
-      selectedTab.classList.add('active');
-      setTabsPossitions();
-    });
-  };
-
   // Switch toggler
   const switchSettings = document.querySelectorAll('.toggle-switch');
   for (const switchSetting of switchSettings) {

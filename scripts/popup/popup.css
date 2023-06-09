@@ -89,71 +89,13 @@ body {
 
 
 
-/* -------------------------- Tabs --------------------------- */
-
-#tabs {
-  position: relative;
-  height: 20px;
-  border-radius: 7px;
-  margin-bottom: 5px;
-  overflow: hidden;
-}
-
-.tab {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--tertiary-background-color);
-}
-
-.tab-title {
-  display: flex;
-}
-
-.tab-icon {
-  width: 20px;
-  background: white;
-}
-
-.tab-name {
-  color: var(--primary-text-color) !important;
-  background: var(--tertiary-background-color);
-  font-family: var(--code-font-family);
-  font-size: 16px;
-  font-weight: 500;
-}
-
-
-
 /* ------------------------ Settings ------------------------- */
 
-/* Tabs */
-
 #settings {
-  display: grid;
-}
-
-#settings .settings-group {
+  padding: 10px;
+  gap: 5px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-  grid-area: 1/1/1/1;
-  background: inherit;
-  border-radius: inherit;
-  z-index: 0;
-}
-
-body:has(.tab.active:nth-child(1)) #apperance {
-  z-index: 1;
-}
-
-body:has(.tab.active:nth-child(2)) #code-beautifier {
-  z-index: 1;
-}
-
-body:has(.tab.active:nth-child(3)) #advanced-settings {
-  z-index: 1;
 }
 
 /* Containers */
@@ -458,8 +400,6 @@ body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggl
 
 /* Darker */
 #title,
-.tab-icon,
-.tab.active .tab-name,
 .setting-title,
 .setting-dropdown,
 .dropdown:not(:has(.setting-switch))::after,
@@ -486,8 +426,6 @@ body:has(#extension-activation-switch > .toggle-on) .dropdown.switch .setting-dr
 }
 
 /* Brighter + Glow */
-body:has(#extension-activation-switch > .toggle-on) .tab-icon,
-body:has(#extension-activation-switch > .toggle-on) .tab.active .tab-name,
 body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(+ .setting-dropdown option:only-child)):not(:has(~ .setting-switch)),
 body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on) {
   text-shadow: 0 0 calc(var(--extension-popup-text-glow-blur-radius) * 0.6) var(--extension-popup-glow-color);
