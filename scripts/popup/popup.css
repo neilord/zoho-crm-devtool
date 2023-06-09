@@ -9,6 +9,7 @@ body {
   width: 275px;
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 #extension-container>* {
@@ -26,7 +27,6 @@ body {
   justify-content: space-evenly;
   align-items: center;
   background: var(--tertiary-background-color);
-  margin-bottom: 5px;
   border-radius: 10px;
 }
 
@@ -316,7 +316,6 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
 
 /* Reset Settings Button */
 #reset-settings-button {
-  appearance: none;
   background-color: transparent;
   border: 2px solid var(--extension-popup-dangerous-button-background-color);
   border-radius: 7px;
@@ -354,6 +353,55 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
 #reset-settings-button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+
+
+/* ------------------------- Footer -------------------------- */
+
+#footer {
+  background: none;
+}
+
+/* Buttons */
+#footer-buttons {
+  display: flex;
+  flex-grow: 1;
+}
+
+#footer-buttons * {
+  flex-grow: 1;
+}
+
+.footer-button {
+  height: 43px;
+}
+
+/* ------------------------ Buttons -------------------------- */
+
+#donate-button {
+  font-size: 15px;
+}
+
+#request-feature-button,
+#report-bug-button {
+  font-size: 14px;
+  word-spacing: 100vw;
+}
+
+/* Containers */
+
+.buttons-container {
+  display: flex;
+  gap: 5px;
+}
+
+.vertical-buttons-container {
+  flex-direction: column;
+}
+
+.horizontal-buttons-container>* {
+  width: 100%;
 }
 
 
@@ -528,4 +576,119 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-te
 
 body:has(#extension-activation-switch > .toggle-on) .toggle-on .glow-comp {
   opacity: 1;
+}
+
+/* Buttons */
+
+button {
+  appearance: none;
+  font-family: var(--code-font-family);
+  font-weight: 700;
+}
+
+/* Normal */
+.normal-button {
+  color: var(--primary-text-color);
+  background: var(--secondary-background-color);
+  border-width: 2px 1px;
+  border-style: solid;
+  border-color: var(--extension-popup-glow-color);
+  border-radius: 10px;
+  text-shadow: 0 0 calc(var(--extension-popup-text-glow-blur-radius) * 0.6) var(--extension-popup-glow-color);
+  box-shadow:
+    inset 1px 0 calc(var(--extension-popup-text-glow-blur-radius) * 0.8) var(--extension-popup-glow-color),
+    inset -1px 0 calc(var(--extension-popup-text-glow-blur-radius) * 0.8) var(--extension-popup-glow-color);
+}
+
+/* Emphasized */
+.emphasized-button {
+  background: linear-gradient(120deg,
+      #ff0000 0%,
+      #ff9a00 2%,
+      #d0de21 4%,
+      #4fdc4a 6%,
+      #3fdad8 8%,
+      #2fc9e2 10%,
+      #1c7fee 12%,
+      #5f15f2 14%,
+      #ba0cf8 16%,
+      #fb07d9 18%,
+      #ff0000 20%,
+      #ff9a00 22%,
+      #d0de21 24%,
+      #4fdc4a 26%,
+      #3fdad8 28%,
+      #2fc9e2 30%,
+      #1c7fee 32%,
+      #5f15f2 34%,
+      #ba0cf8 36%,
+      #fb07d9 38%,
+      #ff0000 40%,
+      #ff9a00 42%,
+      #d0de21 44%,
+      #4fdc4a 46%,
+      #3fdad8 48%,
+      #2fc9e2 50%,
+      #1c7fee 52%,
+      #5f15f2 54%,
+      #ba0cf8 56%,
+      #fb07d9 58%,
+      #ff0000 60%,
+      #ff9a00 62%,
+      #d0de21 64%,
+      #4fdc4a 66%,
+      #3fdad8 68%,
+      #2fc9e2 70%,
+      #1c7fee 72%,
+      #5f15f2 74%,
+      #ba0cf8 76%,
+      #fb07d9 78%,
+      #ff0000 80%,
+      #ff9a00 82%,
+      #d0de21 84%,
+      #4fdc4a 86%,
+      #3fdad8 88%,
+      #2fc9e2 90%,
+      #1c7fee 92%,
+      #5f15f2 94%,
+      #ba0cf8 96%,
+      #fb07d9 98%,
+      #ff0000 100%);
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: none;
+  color: var(--primary-text-color);
+  padding: 2px;
+  position: relative;
+  text-decoration: none;
+  background-size: 600% 600%;
+  animation: gradient 150s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.emphasized-button span {
+  align-items: center;
+  background: var(--secondary-background-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.emphasized-button:hover span {
+  background: transparent;
 }

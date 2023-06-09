@@ -72,3 +72,18 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-te
 body:has(#extension-activation-switch > .toggle-on) .toggle-on .glow-comp {
   transition: opacity 1s;
 }
+
+/* Buttons */
+
+.footer-button:active {
+  transform: scale(1.02);
+}
+
+.normal-button:hover {
+  background: var(--extension-popup-glow-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.emphasized-button span {
+  transition: background 0.3s ease;
+}
