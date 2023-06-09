@@ -387,6 +387,7 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
 #report-bug-button {
   font-size: 14px;
   word-spacing: 100vw;
+  line-height: 1.3;
 }
 
 /* Containers */
@@ -606,57 +607,47 @@ button {
 /* Emphasized */
 .emphasized-button {
   background: linear-gradient(120deg,
-      #ff0000 0%,
-      #ff9a00 2%,
-      #d0de21 4%,
-      #4fdc4a 6%,
-      #3fdad8 8%,
-      #2fc9e2 10%,
-      #1c7fee 12%,
-      #5f15f2 14%,
-      #ba0cf8 16%,
-      #fb07d9 18%,
-      #ff0000 20%,
-      #ff9a00 22%,
-      #d0de21 24%,
-      #4fdc4a 26%,
-      #3fdad8 28%,
-      #2fc9e2 30%,
-      #1c7fee 32%,
-      #5f15f2 34%,
-      #ba0cf8 36%,
-      #fb07d9 38%,
-      #ff0000 40%,
-      #ff9a00 42%,
-      #d0de21 44%,
-      #4fdc4a 46%,
-      #3fdad8 48%,
-      #2fc9e2 50%,
-      #1c7fee 52%,
-      #5f15f2 54%,
-      #ba0cf8 56%,
-      #fb07d9 58%,
-      #ff0000 60%,
-      #ff9a00 62%,
-      #d0de21 64%,
-      #4fdc4a 66%,
-      #3fdad8 68%,
-      #2fc9e2 70%,
-      #1c7fee 72%,
-      #5f15f2 74%,
-      #ba0cf8 76%,
-      #fb07d9 78%,
-      #ff0000 80%,
-      #ff9a00 82%,
-      #d0de21 84%,
-      #4fdc4a 86%,
-      #3fdad8 88%,
-      #2fc9e2 90%,
-      #1c7fee 92%,
-      #5f15f2 94%,
-      #ba0cf8 96%,
-      #fb07d9 98%,
-      #ff0000 100%);
+      #ff0000,
+      #ff9a00,
+      #d0de21,
+      #4fdc4a,
+      #3fdad8,
+      #2fc9e2,
+      #1c7fee,
+      #5f15f2,
+      #ba0cf8,
+      #fb07d9,
+      #ff0000,
+      #ff9a00,
+      #d0de21,
+      #4fdc4a,
+      #3fdad8,
+      #2fc9e2,
+      #1c7fee,
+      #5f15f2,
+      #ba0cf8,
+      #fb07d9,
+      #ff0000,
+      #ff9a00,
+      #d0de21,
+      #4fdc4a,
+      #3fdad8,
+      #2fc9e2,
+      #1c7fee,
+      #5f15f2,
+      #ba0cf8,
+      #fb07d9,
+      #ff0000,
+      #ff9a00,
+      #d0de21,
+      #4fdc4a,
+      #3fdad8,
+      #2fc9e2,
+      #1c7fee,
+      #5f15f2,
+      #ba0cf8,
+      #fb07d9,
+      #ff0000);
   border-radius: 10px;
   box-sizing: border-box;
   border: none;
@@ -665,7 +656,7 @@ button {
   position: relative;
   text-decoration: none;
   background-size: 600% 600%;
-  animation: gradient 150s ease infinite;
+  animation: gradient 100s ease infinite;
 }
 
 @keyframes gradient {
