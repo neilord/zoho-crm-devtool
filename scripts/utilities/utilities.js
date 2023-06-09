@@ -65,7 +65,7 @@ function applyRevertStyleSettings(page, apply = true) {
   const popupSettings = [
     'theme',
     '--code-font-family',
-    '--code-font-feature-settings',
+    '--font-feature-settings',
     'font-feature-settings-switch',
   ];
 

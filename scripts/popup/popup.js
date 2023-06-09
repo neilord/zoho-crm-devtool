@@ -126,11 +126,6 @@ function startBackgroundTasks() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  setupPopup();
-  startBackgroundTasks();
-});
-
 function addAvailiableFontSettings() {
   fetch(chrome.runtime.getURL('scripts/utilities/variables.css'))
     .then(response => response.text())
@@ -262,3 +257,7 @@ function extractFontFamiliesWeightsStylesFromFontFaces(cssText) {
   return fontFamiliesWeightsStyles;
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  setupPopup();
+  startBackgroundTasks();
+});

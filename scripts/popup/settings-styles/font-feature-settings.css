@@ -2,5 +2,5 @@
 .tab-name,
 .setting>* {
   font-family: var(--code-font-family-ligatures);
-  font-feature-settings: var(--code-font-feature-settings);
+  font-feature-settings: var(--font-feature-settings);
 }
