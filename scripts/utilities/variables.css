@@ -574,14 +574,14 @@
   font-family: 'DejaVu Sans Mono';
   font-style: oblique;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-RegularItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-RegularOblique.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'DejaVu Sans Mono';
   font-style: oblique;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-BoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/DejaVuSansMono/DejaVuSansMono-BoldOblique.woff2') format('woff2');
 }
 
 /* --- Vera Sans Mono --- */
