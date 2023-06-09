@@ -93,13 +93,7 @@ function startBackgroundTasks() {
   const switchSettings = document.querySelectorAll('.toggle-switch');
   for (const switchSetting of switchSettings) {
     switchSetting.addEventListener('click', () => {
-      if (switchSetting.parentElement.id === 'font-feature-settings-switch') {
-        // Allow ligatures activation only if font have such version.
-        const fontFamilySelect = document.getElementById('font-family-select');
-        if (fontFamilySelect.value.split(',').length === 2) {
-          switchSetting.classList.toggle('toggle-on');
-        }
-      } else {
+      if (!switchSetting.parentElement.classList.contains('not-available')) {
         switchSetting.classList.toggle('toggle-on');
       }
     });
@@ -141,21 +135,50 @@ function addAvailiableFontSettings() {
   fetch(chrome.runtime.getURL('scripts/utilities/variables.css'))
     .then(response => response.text())
     .then(variables => {
-      const fontFamiliesWeights = extractFontFamiliesWeightsFromFontFaces(variables);
+      const fontFamiliesWeightsStyles = extractFontFamiliesWeightsStylesFromFontFaces(variables);
 
       const fontFamilySelect = document.getElementById('font-family-select');
-      fontFamilySelect.addEventListener('change', event => {
-        const selectedFontFamily = event.target.value.split(',')[0].trim();
-        const weights = fontFamiliesWeights[selectedFontFamily];
-        const fontWeightSelect = document.getElementById('font-weight-select');
+      const fontWeightSelect = document.getElementById('font-weight-select');
 
-        // Add weights to settings dropdown
-        fontWeightSelect.textContent = '';
+      const getFontSettings = () => {
+        const selectedFontFamily = fontFamilySelect.value.split(',')[0].trim();
+        const selectedFontWeight = fontWeightSelect.value;
+        const weightsStyles = fontFamiliesWeightsStyles[selectedFontFamily];
+        return { selectedFontWeight, weightsStyles };
+      };
+
+      const handleFontWeightChange = () => {
+        const { selectedFontWeight, weightsStyles } = getFontSettings();
+
+        // Deactivate italics if font-weight don't have such version.        
+        const italicsSwitch = document.querySelector('#italics-switch');
+        if (
+          !weightsStyles.some(
+            (weightStyle) =>
+            weightStyle.weight === selectedFontWeight &&
+              (weightStyle.style === 'italic' || weightStyle.style === 'oblique')
+          )
+        ) {
+          italicsSwitch.classList.add('not-available');
+          italicsSwitch.children[0].classList.remove('toggle-on');
+          chrome.storage.local.set({ '--italics-switch': false });
+        } else {
+          italicsSwitch.classList.remove('not-available');
+        }
+      };
+
+      const handleFontFamilyChange = () => {
+        const { weightsStyles } = getFontSettings();
+
         chrome.storage.local.get(['--code-font-weight']).then((result) => {
+          // Add weights to settings dropdown
           let closestWeight = null;
           let closestWeightDifference = Infinity;
+          fontWeightSelect.textContent = '';
 
-          weights.sort().forEach(weight => {
+          weightsStyles.sort((a, b) => a.weight - b.weight).forEach(weightStyle => {
+            const weight = weightStyle.weight;
+
             // Find closest font-weight selected in old font-family in new font-family
             const weightDifference = Math.abs(weight - (result['--code-font-weight'] || 400));
             if (weightDifference < closestWeightDifference) {
@@ -163,64 +186,69 @@ function addAvailiableFontSettings() {
               closestWeightDifference = weightDifference;
             }
 
-            const option = document.createElement('option');
-            option.value = weight;
-            option.textContent = weight;
-            fontWeightSelect.appendChild(option);
+            // Add option if it wasn't added before
+            if (!Array.from(fontWeightSelect.options).some(option => option.value === weight)) {
+              const option = document.createElement('option');
+              option.value = weight;
+              option.textContent = weight;
+              fontWeightSelect.appendChild(option);
+            }
           });
 
+          // Select font-weight
           if (closestWeight) {
             fontWeightSelect.value = closestWeight;
+            fontWeightSelect.dispatchEvent(new Event('change'));
             chrome.storage.local.set({ '--code-font-weight': closestWeight });
           }
-        });
 
-        // Deactivate ligatures if font don't have such version.
-        const fontFeatureSettingsSwitch = document.querySelector('#font-feature-settings-switch');
-        if (fontFamilySelect.value.split(',').length !== 2) {
-          fontFeatureSettingsSwitch.classList.add('not-available');
-          fontFeatureSettingsSwitch.children[0].classList.remove('toggle-on');
-          chrome.storage.local.set({ 'font-feature-settings-switch': false });
-        } else {
-          fontFeatureSettingsSwitch.classList.remove('not-available');
-        }
-      });
-      fontFamilySelect.dispatchEvent(new Event('change'));
+          // Deactivate ligatures if font-family don't have such version.
+          const fontFeatureSettingsSwitch = document.querySelector('#font-feature-settings-switch');
+          if (fontFamilySelect.value.split(',').length !== 2) {
+            fontFeatureSettingsSwitch.classList.add('not-available');
+            fontFeatureSettingsSwitch.children[0].classList.remove('toggle-on');
+            chrome.storage.local.set({ 'font-feature-settings-switch': false });
+          } else {
+            fontFeatureSettingsSwitch.classList.remove('not-available');
+          }
+        });
+      };
+
+      fontFamilySelect.addEventListener('change', handleFontFamilyChange);
+      fontWeightSelect.addEventListener('change', handleFontWeightChange);
+      handleFontFamilyChange();
     });
 }
 
-function extractFontFamiliesWeightsFromFontFaces(cssText) {
-  const fontFamiliesWeights = {};
+function extractFontFamiliesWeightsStylesFromFontFaces(cssText) {
+  const fontFamiliesWeightsStyles = {};
 
   // Iterate over all @font-face blocks in CSS text
   const regex = /@font-face\s*\{([^\}]*)\}/g;
   let match;
   while ((match = regex.exec(cssText)) !== null) {
     const rules = match[1].split(';').map(rule => rule.trim());
-    let fontFamily, fontWeight;
+    let fontFamily, fontWeight, fontStyle;
 
-    // Find font-family with font-weight
+    // Find font-family with font-weight and font-style
     for (const rule of rules) {
       if (rule.startsWith('font-family')) {
         fontFamily = rule.split(':')[1].trim().replace(/["']/g, '');
       } else if (rule.startsWith('font-weight')) {
         fontWeight = rule.split(':')[1].trim();
+      } else if (rule.startsWith('font-style')) {
+        fontStyle = rule.split(':')[1].trim();
       }
     };
 
-    // Add found font-family with font-weight
-    if (fontFamily && fontWeight) {
-      if (!fontFamiliesWeights[fontFamily]) {
-        fontFamiliesWeights[fontFamily] = new Set();
+    // Add found font-family with font-weight and font-style
+    if (fontFamily && fontWeight && fontStyle) {
+      if (!fontFamiliesWeightsStyles[fontFamily]) {
+        fontFamiliesWeightsStyles[fontFamily] = [];
       }
-      fontFamiliesWeights[fontFamily].add(fontWeight);
+      fontFamiliesWeightsStyles[fontFamily].push({ weight: fontWeight, style: fontStyle });
     }
   }
-
-  // Remove duplicates
-  for (let fontFamily in fontFamiliesWeights) {
-    fontFamiliesWeights[fontFamily] = Array.from(fontFamiliesWeights[fontFamily]);
-  }
-  return fontFamiliesWeights;
+  return fontFamiliesWeightsStyles;
 }
 

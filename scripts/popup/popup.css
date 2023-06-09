@@ -565,6 +565,12 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .toggle-switch-te
   color: rgba(0, 0, 0, 0);
 }
 
+.setting-switch.not-available .toggle-switch-button,
+.setting-switch.not-available .toggle-switch-text-on,
+.setting-switch.not-available .toggle-switch-text-on {
+  cursor: not-allowed;
+}
+
 .glow-comp {
   position: absolute;
   opacity: 0;
