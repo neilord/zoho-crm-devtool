@@ -12,10 +12,10 @@
   --editor-footer-text-color: #868686;
 
   /* Backgrounds */
-  --primary-background-color: white; 
-  --secondary-background-color: #ededed; 
-  --tertiary-background-color: white;
-  --quaternary-background-color: #e0e0e0;
+  --primary-background-color: #ffffff; 
+  --secondary-background-color: #dedede;
+  --tertiary-background-color: #eeeeee;
+  --quaternary-background-color: #a6a6a6;
 
   --editor-header-background-color: #1f2843;
   --editor-header-border-color: #181f35;
@@ -26,7 +26,7 @@
   --editor-code-line-numbers-border-color: #e0e0e0;
 
   /* Editor */
-  --cursor-color: black;
+  --cursor-color: #ffffff;
   --line-number-color: #858585; 
   --active-line-number-color: #4b4b4b; 
   --active-line-background-color: #edf4ff; 

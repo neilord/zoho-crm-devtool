@@ -98,6 +98,7 @@
 
   /* Extension Pupup */
   --extension-popup-glow-color: #89C2DA;
+  --extension-popup-text-glow-blur-radius: 5px;
 
   --extension-popup-switch-off-color: #5e6368;
   --extension-popup-switch-on-primary-background-color: #89C2DA;

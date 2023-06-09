@@ -69,7 +69,7 @@ body {
   bottom: 2.25px;
   right: 2.25px;
   border-radius: 17.25px;
-  box-shadow: 0 0 12px var(--extension-popup-switch-on-primary-shadow-color);
+  box-shadow: 0 0 calc(var(--extension-popup-text-glow-blur-radius) * 2.4) var(--extension-popup-switch-on-primary-shadow-color);
 }
 
 #extension-activation-switch .toggle-switch-text-off {
@@ -84,7 +84,7 @@ body {
   left: 7.5px;
   right: 7.5px;
   border-radius: 4.5px;
-  box-shadow: 0 0 9px var(--extension-popup-switch-on-secondary-shadow-color);
+  box-shadow: 0 0 calc(var(--extension-popup-text-glow-blur-radius) * 1.8) var(--extension-popup-switch-on-secondary-shadow-color);
 }
 
 
@@ -288,7 +288,7 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
   bottom: 1.5px;
   right: 1.5px;
   border-radius: 11.5px;
-  box-shadow: 0 0 8px var(--extension-popup-switch-on-primary-shadow-color);
+  box-shadow: 0 0 calc(var(--extension-popup-text-glow-blur-radius) * 1.6) var(--extension-popup-switch-on-primary-shadow-color);
 }
 
 .setting-switch .toggle-switch-text-off {
@@ -303,7 +303,7 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
   left: 5px;
   right: 5px;
   border-radius: 3px;
-  box-shadow: 0 0 6px var(--extension-popup-switch-on-secondary-shadow-color);
+  box-shadow: 0 0 calc(var(--extension-popup-text-glow-blur-radius) * 1.4) var(--extension-popup-switch-on-secondary-shadow-color);
 }
 
 /* Dropdown + Switch */
@@ -469,22 +469,19 @@ body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggl
 /* Brighter */
 body:has(#extension-activation-switch > .toggle-on) #title,
 body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:not(:has(~ .setting-switch)),
-body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:has(~ .setting-switch .toggle-on)
-
-,body:has(#extension-activation-switch > .toggle-on) .dropdown:not(:has(.setting-switch))::after
-,body:has(#extension-activation-switch > .toggle-on) .dropdown.switch:has(.setting-switch .toggle-on) .setting-switch::before
-
-{
+body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:has(~ .setting-switch .toggle-on),
+body:has(#extension-activation-switch > .toggle-on) .dropdown:not(:has(.setting-switch))::after,
+body:has(#extension-activation-switch > .toggle-on) .dropdown.switch:has(.setting-switch .toggle-on) .setting-switch::before {
   filter: opacity(1);
 }
 
 /* Glow */
 body:has(#extension-activation-switch > .toggle-on) #title {
-  text-shadow: 0 0 5px var(--extension-popup-glow-color);
+  text-shadow: 0 0 var(--extension-popup-text-glow-blur-radius) var(--extension-popup-glow-color);
 }
 
 body:has(#extension-activation-switch > .toggle-on) .dropdown.switch .setting-dropdown:has(~ .setting-switch .toggle-on) {
-  text-shadow: 0 0 3px var(--extension-popup-glow-color);
+  text-shadow: 0 0 calc(var(--extension-popup-text-glow-blur-radius) * 0.6) var(--extension-popup-glow-color);
 }
 
 /* Brighter + Glow */
@@ -492,7 +489,7 @@ body:has(#extension-activation-switch > .toggle-on) .tab-icon,
 body:has(#extension-activation-switch > .toggle-on) .tab.active .tab-name,
 body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(~ .setting-switch)),
 body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on) {
-  text-shadow: 0 0 3px var(--extension-popup-glow-color);
+  text-shadow: 0 0 calc(var(--extension-popup-text-glow-blur-radius) * 0.6) var(--extension-popup-glow-color);
   filter: opacity(1);
 }
 
