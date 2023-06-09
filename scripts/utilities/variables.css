@@ -602,19 +602,19 @@
   src: url('chrome-extension://__MSG_@@extension_id__/fonts/VeraSansMono/VeraSansMono-Bold.woff2') format('woff2');
 }
 
-/* Italic */
+/* Oblique */
 @font-face {
   font-family: 'Vera Sans Mono';
-  font-style: italic;
+  font-style: oblique;
   font-weight: 400;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/VeraSansMono/VeraSansMono-RegularItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/VeraSansMono/VeraSansMono-RegularOblique.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Vera Sans Mono';
-  font-style: italic;
+  font-style: oblique;
   font-weight: 700;
-  src: url('chrome-extension://__MSG_@@extension_id__/fonts/VeraSansMono/VeraSansMono-BoldItalic.woff2') format('woff2');
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/VeraSansMono/VeraSansMono-BoldOblique.woff2') format('woff2');
 }
 
 /* --- Ubuntu Mono --- */
