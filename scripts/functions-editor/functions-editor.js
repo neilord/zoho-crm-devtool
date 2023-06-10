@@ -152,22 +152,10 @@ async function beautifyCode() {
   createRemoveScriptElement('functions-editor/code-beautifier.js');
 }
 
-function disableEnableDarkReader(disable = true) {
-  let disabler = document.querySelector('meta[name="darkreader-lock"]');
-  if (disable && !disabler) {
-    disabler = document.createElement('meta');
-    disabler.name = 'darkreader-lock';
-    document.head.appendChild(disabler);
-  } else if (disabler) {
-    disabler.parentNode.removeChild(disabler);
-  }
-}
-
 function enchanceFunctionsEditor() {
   addLeftCloseButton();
   addFooter();
   beautifyCode();
-  disableEnableDarkReader();
   createRemoveScriptElement('functions-editor/functions-editor.css');
   applyRevertStyleSettings('website');
 }
@@ -175,7 +163,6 @@ function enchanceFunctionsEditor() {
 function revertFunctionsEditor() {
   removeLeftCloseButton();
   removeFooter();
-  disableEnableDarkReader(false);
   createRemoveScriptElement('functions-editor.css', false);
   applyRevertStyleSettings('website', false);
 }
@@ -214,7 +201,7 @@ async function observeFunctionsEditor() {
 
 observeFunctionsEditor();
 
-// Background Task
+// Other task
 
 changeGoToLinePlaceholder();
 
