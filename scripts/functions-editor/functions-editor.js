@@ -12,7 +12,7 @@ const editArgumentsButtonSelector = '.smalledit.pR';
 
 const goToLineInputSelector = '#customDelugeGoTo';
 
-// Enhance Functions Editor
+// Actions
 
 async function changeGoToLinePlaceholder() {
   await waitForElement(goToLineInputSelector);
@@ -146,23 +146,22 @@ function removeFooter() {
   }
 }
 
-async function beautifyCode() {
-  await waitForElementRemoval('.CodeMirror-code');
-  await waitForElement('.CodeMirror-code');
-  createRemoveScriptElement('functions-editor/code-beautifier.js');
-}
+// Apply
 
-function enchanceFunctionsEditor() {
+async function enchanceFunctionsEditor() {
   addLeftCloseButton();
   addFooter();
-  beautifyCode();
+  createRemoveScriptElement('base/variables.css');
   createRemoveScriptElement('functions-editor/functions-editor.css');
-  applyRevertStyleSettings('website');
+  applyRevertStyleSettings();
 }
 
 function revertFunctionsEditor() {
   removeLeftCloseButton();
   removeFooter();
+  createRemoveScriptElement('base/variables.css', false);
+  createRemoveScriptElement('functions-editor/functions-editor.css', false);
+  applyRevertStyleSettings(false);
   createRemoveScriptElement('functions-editor.css', false);
   applyRevertStyleSettings('website', false);
 }
@@ -199,23 +198,9 @@ async function observeFunctionsEditor() {
   observeFunctionsEditor();
 }
 
-observeFunctionsEditor();
-
-// Other task
-
-changeGoToLinePlaceholder();
-
-// Return storage settings if requested
-window.addEventListener('message', function (event) {
-  if (event.source !== window)
-    return;
-
-  if (event.data.type === 'GET_LOCAL_STORAGE') {
-    chrome.storage.local.get(null, function (result) {
-      window.postMessage({
-        type: 'LOCAL_STORAGE_RESPONSE',
-        data: result
-      }, '*');
-    });
-  }
-});
+async function manageEditorEnhancements() {
+  await setInitialSettings();
+  observeFunctionsEditor();
+  changeGoToLinePlaceholder();
+}
+manageEditorEnhancements();

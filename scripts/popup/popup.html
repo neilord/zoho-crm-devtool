@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="../base/variables.css" />
     <link rel="stylesheet" href="popup.css" />
-    <link rel="stylesheet" href="../utilities/variables.css" />
   </head>
 
   <body>
+    <script src="../base/utilities.js"></script>
     <script src="popup.js"></script>
-    <script src="../utilities/utilities.js"></script>
+
     <div id="extension-container">
       <div id="extension-header">
         <div id="title">Zoho CRM Enhancer</div>
@@ -22,183 +23,183 @@
       </div>
 
       <div id="settings">
-          <div id="theme" class="setting normal dropdown">
-            <label for="theme-select" class="setting-title">
-              <div class="setting-name">Theme</div>
+        <div id="theme" class="setting normal dropdown">
+          <label for="theme-select" class="setting-title">
+            <div class="setting-name">Theme</div>
+            <div class="setting-separator">:</div>
+          </label>
+          <select id="theme-select" class="setting-dropdown" data-key="theme">
+            <option value="night-owl">Night Owl</option>
+            <option value="classic-light">Classic Light</option>
+          </select>
+        </div>
+
+        <div class="settings-container vertical-settings-container">
+          <div id="font-family" class="setting normal dropdown">
+            <label for="font-family-select" class="setting-title">
+              <div class="setting-name">Font</div>
               <div class="setting-separator">:</div>
             </label>
-            <select id="theme-select" class="setting-dropdown" data-key="theme">
-              <option value="night-owl" selected>Night Owl</option>
-              <option value="night-owl-light">Night Owl Light</option>
+            <select id="font-family-select" class="setting-dropdown" data-key="--code-font-family">
+              <option value="JetBrains Mono NL,JetBrains Mono">JetBrains Mono</option>
+              <option value="Source Code Pro">Source Code Pro</option>
+              <option value="Menlo">Menlo</option>
+              <option value="Anonymous Pro">Anonymous Pro</option>
+              <option value="DejaVu Sans Mono">DejaVu Sans Mono</option>
+              <option value="Vera Sans Mono">Vera Sans Mono</option>
+              <option value="Ubuntu Mono">Ubuntu Mono</option>
+              <option value="Consolas">Consolas</option>
+              <option value="Monaco">Monaco (Zoho Default)</option>
+              <option value="Courier New">Courier New</option>
+              <option value="Terminus">Terminus</option>
+              <option value="Roboto Mono">Roboto Mono</option>
+              <option value="Droid Sans Mono">Droid Sans Mono</option>
+              <option value="Andale Mono">Andale Mono</option>
+              <option value="Lucida Console">Lucida Console</option>
+              <option value="Fixedsys">Fixedsys</option>
             </select>
           </div>
 
-          <div class="settings-container vertical-settings-container">
-            <div id="font-family" class="setting normal dropdown">
-              <label for="font-family-select" class="setting-title">
-                <div class="setting-name">Font</div>
+          <div class="settings-container horizontal-settings-container">
+            <div id="font-size" class="setting small dropdown">
+              <label for="font-size-select" class="setting-title">
+                <div class="setting-name">Size</div>
                 <div class="setting-separator">:</div>
               </label>
-              <select id="font-family-select" class="setting-dropdown" data-key="--code-font-family">
-                <option value="JetBrains Mono NL,JetBrains Mono">JetBrains Mono</option>
-                <option value="Source Code Pro">Source Code Pro</option>
-                <option value="Menlo">Menlo</option>
-                <option value="Anonymous Pro">Anonymous Pro</option>
-                <option value="DejaVu Sans Mono">DejaVu Sans Mono</option>
-                <option value="Vera Sans Mono">Vera Sans Mono</option>
-                <option value="Ubuntu Mono">Ubuntu Mono</option>
-                <option value="Consolas">Consolas</option>
-                <option value="Monaco">Monaco (Zoho Default)</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Terminus">Terminus</option>
-                <option value="Roboto Mono">Roboto Mono</option>
-                <option value="Droid Sans Mono">Droid Sans Mono</option>
-                <option value="Andale Mono">Andale Mono</option>
-                <option value="Lucida Console">Lucida Console</option>
-                <option value="Fixedsys">Fixedsys</option>
+              <select id="font-size-select" class="setting-dropdown" data-key="--code-font-size">
+                <option value="5px">5</option>
+                <option value="6px">6</option>
+                <option value="7px">7</option>
+                <option value="8px">8</option>
+                <option value="9px">9</option>
+                <option value="10px">10</option>
+                <option value="11px">11</option>
+                <option value="12px">12</option>
+                <option value="13px">13</option>
+                <option value="14px">14</option>
+                <option value="15px">15</option>
+                <option value="16px">16</option>
+                <option value="17px">17</option>
+                <option value="18px">18</option>
+                <option value="19px">19</option>
+                <option value="20px">20</option>
+                <option value="21px">21</option>
+                <option value="22px">22</option>
+                <option value="23px">23</option>
+                <option value="24px">24</option>
+                <option value="25px">25</option>
+                <option value="26px">26</option>
+                <option value="27px">27</option>
+                <option value="28px">28</option>
+                <option value="29px">29</option>
+                <option value="30px">30</option>
               </select>
             </div>
 
-            <div class="settings-container horizontal-settings-container">
-              <div id="font-size" class="setting small dropdown">
-                <label for="font-size-select" class="setting-title">
-                  <div class="setting-name">Size</div>
-                  <div class="setting-separator">:</div>
-                </label>
-                <select id="font-size-select" class="setting-dropdown" data-key="--code-font-size">
-                  <option value="5px">5</option>
-                  <option value="6px">6</option>
-                  <option value="7px">7</option>
-                  <option value="8px">8</option>
-                  <option value="9px">9</option>
-                  <option value="10px">10</option>
-                  <option value="11px">11</option>
-                  <option value="12px">12</option>
-                  <option value="13px">13</option>
-                  <option value="14px" selected>14</option>
-                  <option value="15px">15</option>
-                  <option value="16px">16</option>
-                  <option value="17px">17</option>
-                  <option value="18px">18</option>
-                  <option value="19px">19</option>
-                  <option value="20px">20</option>
-                  <option value="21px">21</option>
-                  <option value="22px">22</option>
-                  <option value="23px">23</option>
-                  <option value="24px">24</option>
-                  <option value="25px">25</option>
-                  <option value="26px">26</option>
-                  <option value="27px">27</option>
-                  <option value="28px">28</option>
-                  <option value="29px">29</option>
-                  <option value="30px">30</option>
-                </select>
-              </div>
-
-              <div id="font-weight" class="setting small dropdown">
-                <label for="font-weight-select" class="setting-title">
-                  <div class="setting-name">Weight</div>
-                  <div class="setting-separator">:</div>
-                </label>
-                <select id="font-weight-select" class="setting-dropdown" data-key="--code-font-weight"></select>
-              </div>
-            </div>
-
-            <div id="line-height" class="setting small dropdown">
-              <label for="line-height-select" class="setting-title">
-                <div class="setting-name">Line Height</div>
+            <div id="font-weight" class="setting small dropdown">
+              <label for="font-weight-select" class="setting-title">
+                <div class="setting-name">Weight</div>
                 <div class="setting-separator">:</div>
               </label>
-              <select id="line-height-select" class="setting-dropdown" data-key="--code-font-line-height">
-                <option value="1">1</option>
-                <option value="1.1">1.1</option>
-                <option value="1.2">1.2</option>
-                <option value="1.3">1.3</option>
-                <option value="1.4">1.4</option>
-                <option value="1.5" selected>1.5</option>
-                <option value="1.6">1.6</option>
-                <option value="1.7">1.7</option>
-                <option value="1.8">1.8</option>
-                <option value="1.9">1.9</option>
-                <option value="2">2</option>
-              </select>
-            </div>
-
-            <div id="font-feature-settings" class="setting normal dropdown switch">
-              <label for="font-feature-settings-select" class="setting-title">
-                <div class="setting-name">Ligatures</div>
-                <div class="setting-separator">:</div>
-              </label>
-              <select id="font-feature-settings-select" class="setting-dropdown" data-key="--font-feature-settings">
-                <option value="'calt', 'zero'" selected>Regular</option>
-                <option value="'calt', 'zero', 'ss01'">Neutral</option>
-                <option value="'calt', 'zero', 'ss02', 'cv03', 'cv04', 'cv16', 'cv18'">Dynamic</option>
-              </select>
-              <div id="font-feature-settings-switch" class="setting-switch" data-key="font-feature-settings-switch">
-                <div class="toggle-switch toggle-on">
-                  <div class="toggle-switch-text-off">OFF</div>
-                  <div class="glow-comp"></div>
-                  <div class="toggle-switch-button"></div>
-                  <div class="toggle-switch-text-on">ON</div>
-                </div>
-              </div>
+              <select id="font-weight-select" class="setting-dropdown" data-key="--code-font-weight"></select>
             </div>
           </div>
 
-          <div class="settings-container vertical-settings-container">
-            <div id="italics" class="setting normal switch">
-              <div class="setting-title">
-                <div class="setting-name">Italics</div>
-              </div>
-              <div id="italics-switch" class="setting-switch" data-key="italics-switch">
-                <div class="toggle-switch toggle-on">
-                  <div class="toggle-switch-text-off">OFF</div>
-                  <div class="glow-comp"></div>
-                  <div class="toggle-switch-button"></div>
-                  <div class="toggle-switch-text-on">ON</div>
-                </div>
-              </div>
-            </div>
-
-            <div id="indent-guides" class="setting normal switch">
-              <div class="setting-title">
-                <div class="setting-name">Indent Guides</div>
-              </div>
-              <div id="indent-guides-switch" class="setting-switch" data-key="indent-guides-switch">
-                <div class="toggle-switch toggle-on">
-                  <div class="toggle-switch-text-off">OFF</div>
-                  <div class="glow-comp"></div>
-                  <div class="toggle-switch-button"></div>
-                  <div class="toggle-switch-text-on">ON</div>
-                </div>
-              </div>
-            </div>
-
-            <div id="pro-syntax-higliting" class="setting normal switch">
-              <div class="setting-title">
-                <div class="setting-name">Pro Syntax Higliting</div>
-              </div>
-              <div id="pro-syntax-higliting-switch" class="setting-switch" data-key="pro-syntax-higliting-switch">
-                <div class="toggle-switch toggle-on">
-                  <div class="toggle-switch-text-off">OFF</div>
-                  <div class="glow-comp"></div>
-                  <div class="toggle-switch-button"></div>
-                  <div class="toggle-switch-text-on">ON</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="close-button" class="setting normal dropdown">
-            <label for="close-button-select" class="setting-title">
-              <div class="setting-name">Close Button</div>
+          <div id="line-height" class="setting small dropdown">
+            <label for="line-height-select" class="setting-title">
+              <div class="setting-name">Line Height</div>
               <div class="setting-separator">:</div>
             </label>
-            <select id="close-button-select" class="setting-dropdown" data-key="close-button-select">
-              <option value="right" selected>Right</option>
-              <option value="left">Left</option>
+            <select id="line-height-select" class="setting-dropdown" data-key="--code-font-line-height">
+              <option value="1">1</option>
+              <option value="1.1">1.1</option>
+              <option value="1.2">1.2</option>
+              <option value="1.3">1.3</option>
+              <option value="1.4">1.4</option>
+              <option value="1.5">1.5</option>
+              <option value="1.6">1.6</option>
+              <option value="1.7">1.7</option>
+              <option value="1.8">1.8</option>
+              <option value="1.9">1.9</option>
+              <option value="2">2</option>
             </select>
           </div>
+
+          <div id="font-feature-settings" class="setting normal dropdown switch">
+            <label for="font-feature-settings-select" class="setting-title">
+              <div class="setting-name">Ligatures</div>
+              <div class="setting-separator">:</div>
+            </label>
+            <select id="font-feature-settings-select" class="setting-dropdown" data-key="--font-feature-settings">
+              <option value="'calt', 'zero'">Regular</option>
+              <option value="'calt', 'zero', 'ss01'">Neutral</option>
+              <option value="'calt', 'zero', 'ss02', 'cv03', 'cv04', 'cv16', 'cv18'">Dynamic</option>
+            </select>
+            <div id="font-feature-settings-switch" class="setting-switch" data-key="font-feature-settings-switch">
+              <div class="toggle-switch toggle-on">
+                <div class="toggle-switch-text-off">OFF</div>
+                <div class="glow-comp"></div>
+                <div class="toggle-switch-button"></div>
+                <div class="toggle-switch-text-on">ON</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-container vertical-settings-container">
+          <div id="italics" class="setting normal switch">
+            <div class="setting-title">
+              <div class="setting-name">Italics</div>
+            </div>
+            <div id="italics-switch" class="setting-switch" data-key="italics-switch">
+              <div class="toggle-switch toggle-on">
+                <div class="toggle-switch-text-off">OFF</div>
+                <div class="glow-comp"></div>
+                <div class="toggle-switch-button"></div>
+                <div class="toggle-switch-text-on">ON</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="indent-guides" class="setting normal switch">
+            <div class="setting-title">
+              <div class="setting-name">Indent Guides</div>
+            </div>
+            <div id="indent-guides-switch" class="setting-switch" data-key="indent-guides-switch">
+              <div class="toggle-switch toggle-on">
+                <div class="toggle-switch-text-off">OFF</div>
+                <div class="glow-comp"></div>
+                <div class="toggle-switch-button"></div>
+                <div class="toggle-switch-text-on">ON</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="pro-syntax-higliting" class="setting normal switch">
+            <div class="setting-title">
+              <div class="setting-name">Pro Syntax Higliting</div>
+            </div>
+            <div id="pro-syntax-higliting-switch" class="setting-switch" data-key="pro-syntax-higliting-switch">
+              <div class="toggle-switch toggle-on">
+                <div class="toggle-switch-text-off">OFF</div>
+                <div class="glow-comp"></div>
+                <div class="toggle-switch-button"></div>
+                <div class="toggle-switch-text-on">ON</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="close-button" class="setting normal dropdown">
+          <label for="close-button-select" class="setting-title">
+            <div class="setting-name">Close Button</div>
+            <div class="setting-separator">:</div>
+          </label>
+          <select id="close-button-select" class="setting-dropdown" data-key="close-button-select">
+            <option value="right">Right</option>
+            <option value="left">Left</option>
+          </select>
+        </div>
       </div>
       <div id="footer">
         <div id="footer-buttons">
@@ -207,9 +208,9 @@
               <button id="request-feature-button" class="normal-button footer-button" role="button">
                 Request Feature
               </button>
-            <button id="donate-button" class="emphasized-button footer-button" role="button">
-              <span>Donate</span>
-            </button>
+              <button id="donate-button" class="emphasized-button footer-button" role="button">
+                <span>Donate</span>
+              </button>
               <button id="report-bug-button" class="normal-button footer-button" role="button">Report Bug</button>
             </div>
           </div>

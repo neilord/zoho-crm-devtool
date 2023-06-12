@@ -2,6 +2,7 @@ function createRemoveScriptElement(file, create = true) {
   const name = file.split('/').pop().split('.')[0];
   const id = name + '-script';
   const type = file.split('.').pop();
+  const isJS = type === 'js';
 
   const oldElement = document.getElementById(id);
   if (oldElement) {
@@ -10,14 +11,14 @@ function createRemoveScriptElement(file, create = true) {
 
   if (create) {
     const url = chrome.runtime.getURL('scripts/' + file);
-    const newElement = document.createElement(type === 'js' ? 'script' : 'link');
+    const newElement = document.createElement(isJS ? 'script' : 'link');
     newElement.id = id;
-    newElement.setAttribute(type === 'js' ? 'src' : 'href', url);
+    newElement.setAttribute(isJS ? 'src' : 'href', url);
     newElement.setAttribute(
-      type === 'js' ? 'type' : 'rel',
-      type === 'js' ? 'text/javascript' : 'stylesheet'
+      isJS ? 'type' : 'rel',
+      isJS ? 'text/javascript' : 'stylesheet',
     );
-    document.body.appendChild(newElement);
+    (isJS ? document.body : document.head).appendChild(newElement);
   }
 }
 
@@ -61,7 +62,7 @@ function waitForElementRemoval(selector) {
   });
 }
 
-function applyRevertStyleSettings(page, apply = true) {
+function applyRevertStyleSettings(apply = true) {
   const popupSettings = [
     'theme',
     '--code-font-family',
@@ -79,9 +80,11 @@ function applyRevertStyleSettings(page, apply = true) {
     'disable-darkreader-switch',
   ];
 
+  const isPopup = location.href.includes('chrome-extension://');
+
   function modifyStyles(changes) {
     for (const [key, value] of Object.entries(changes)) {
-      if (skipSettings.includes(key) || (page === 'popup' && !popupSettings.includes(key))) {
+      if (skipSettings.includes(key) || (isPopup && !popupSettings.includes(key))) {
         continue;
       }
 
@@ -96,13 +99,12 @@ function applyRevertStyleSettings(page, apply = true) {
           modifications[key] = value;
         }
         for (const [variable, value] of Object.entries(modifications)) {
-          console.log(variable + '   ' + value);
           document.documentElement.style.setProperty(variable, value);
         }
 
       } else if (key.endsWith('-switch')) {
         // Appending CSS for specific functionalities
-        const path = (page === 'popup' ? 'popup/' : 'functions-editor/') + 'settings-styles/';
+        const path = (isPopup ? 'popup/' : 'functions-editor/') + 'settings-styles/';
         const name = key.replace(/(-switch$)/, '');
         const create = apply && value;
         createRemoveScriptElement(path + name + '.css', create);
@@ -112,7 +114,7 @@ function applyRevertStyleSettings(page, apply = true) {
         createRemoveScriptElement('functions-editor/settings-styles/' + key + '.css', create);
 
       } else if (key === 'theme') {
-        createRemoveScriptElement('utilities/themes/' + value + '.css');
+        createRemoveScriptElement('base/themes/' + value + '.css');
       }
     }
   }
@@ -130,3 +132,32 @@ function applyRevertStyleSettings(page, apply = true) {
   };
   chrome.storage.onChanged[apply ? 'addListener' : 'removeListener'](settingsChangesListener);
 }
+
+function setDefaultSettings() {
+  return new Promise((resolve) => {
+    chrome.storage.local.clear(function () {
+      chrome.storage.local.set({
+        'extension-activation-switch': true,
+        'theme': 'classic-light',
+        '--code-font-family': 'JetBrains Mono NL,JetBrains Mono',
+        '--code-font-size': '14px',
+        '--code-font-weight': '400',
+        '--code-font-line-height': '1.5',
+        '--font-feature-settings': "'calt', 'zero'",
+        'font-feature-settings-switch': true,
+        'italics-switch': true,
+        'indent-guides-switch': true,
+        'pro-syntax-higliting-switch': true,
+        'close-button-select': 'right',
+      }, resolve);
+    });
+  });
+}
+
+async function setInitialSettings() {
+  const settings = await new Promise((resolve) => chrome.storage.local.get(null, resolve));
+  if (Object.keys(settings).length === 0 && settings.constructor === Object) {
+    await setDefaultSettings();
+  }
+}
+

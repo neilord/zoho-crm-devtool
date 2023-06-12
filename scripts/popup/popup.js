@@ -1,37 +1,29 @@
-function setSavedSettings() {
-  chrome.storage.local.get(null, (settings) => {
-    for (const [key, value] of Object.entries(settings)) {
-      const setting = document.querySelector('[data-key="' + key + '"]');
-      if (key.endsWith('-switch')) {
-        setting.children[0].classList[value ? 'add' : 'remove']('toggle-on');
-      } else {
-        setting.value = value;
+function showSavedSettings() {
+  return new Promise((resolve) => {
+    chrome.storage.local.get(null, (settings) => {
+      for (const [key, value] of Object.entries(settings)) {
+        const setting = document.querySelector('[data-key="' + key + '"]');
+        if (setting) {
+          if (key.endsWith('-switch')) {
+            setting.children[0].classList[value ? 'add' : 'remove']('toggle-on');
+          } else {
+            setting.value = value;
+          }
+        }
       }
-    }
+      resolve();
+    });
   });
 }
 
-async function setDefaultSettings() {
-  await new Promise((resolve) => chrome.storage.local.clear(resolve));
-
-  // Reset popup.html
-  let file = await fetch(chrome.runtime.getURL('scripts/popup/popup.html'));
-  let data = await file.text();
-  const original = new DOMParser().parseFromString(data, 'text/html');
-  document.body.innerHTML = original.body.innerHTML;
-
-  setupPopup();
-  startBackgroundTasks();
-}
-
-function saveSettings() {
+function startSettingsSave() {
   const settings = document.querySelectorAll('*[data-key]');
   for (const setting of settings) {
     const trigger = setting.id.endsWith('-switch') ? 'click' : 'change';
     const determineValue = (setting, trigger) =>
       trigger === 'click' ? !!setting.querySelector('.toggle-on') : setting.value;
 
-    updateStorageVariable(setting.dataset.key, determineValue(setting, trigger), false);
+    updateStorageVariable(setting.dataset.key, determineValue(setting, trigger));
     setting.addEventListener(trigger, () => {
       updateStorageVariable(setting.dataset.key, determineValue(document.getElementById(setting.id), trigger));
     });
@@ -46,16 +38,14 @@ async function updateStorageVariable(key, value, overwrite = true) {
   chrome.storage.local.set({ [key]: value });
 }
 
-function addAnimationsCSS() {
+async function setupPopup() {
+  await setInitialSettings();
+  await showSavedSettings();
+  await addAvailiableFontSettings();
+  startSettingsSave();
+  applyRevertStyleSettings();
 
-}
-
-function setupPopup() {
-  setSavedSettings();
-  saveSettings();
-  addAvailiableFontSettings();
-  applyRevertStyleSettings('popup');
-
+  // Enable animations.css
   requestAnimationFrame(() => {
     createRemoveScriptElement('popup/animations.css');
   });
@@ -71,131 +61,112 @@ function startBackgroundTasks() {
       }
     });
   };
-
-  // Reset Settings Button
-  const resetSettingsButton = document.querySelector('#reset-settings-button');
-  const textUnconfirmed = resetSettingsButton.textContent;
-
-  const textConfirmed = 'Really?'
-  const confirmationTime = 5000;
-
-  // When clicked show confirmation message for some time
-  let confirmed = false;
-  let resetTimeout;
-  resetSettingsButton.addEventListener('click', () => {
-    if (confirmed) {
-      setDefaultSettings();
-      confirmed = false;
-      resetSettingsButton.textContent = textUnconfirmed;
-      clearTimeout(resetTimeout);
-    } else {
-      confirmed = true;
-      resetSettingsButton.textContent = textConfirmed;
-      resetTimeout = setTimeout(() => {
-        confirmed = false;
-        resetSettingsButton.textContent = textUnconfirmed;
-      }, confirmationTime);
-    }
-  });
 }
 
 function addAvailiableFontSettings() {
-  fetch(chrome.runtime.getURL('scripts/utilities/variables.css'))
-    .then(response => response.text())
-    .then(variables => {
-      const fontFamiliesWeightsStyles = extractFontFamiliesWeightsStylesFromFontFaces(variables);
+  return new Promise((resolve) => {
+    fetch(chrome.runtime.getURL('scripts/base/variables.css'))
+      .then(response => response.text())
+      .then(variables => {
+        const fontFamiliesWeightsStyles = extractFontFamiliesWeightsStylesFromFontFaces(variables);
 
-      const fontFamilySelect = document.getElementById('font-family-select');
-      const fontWeightSelect = document.getElementById('font-weight-select');
+        const fontFamilySelect = document.getElementById('font-family-select');
+        const fontWeightSelect = document.getElementById('font-weight-select');
 
-      const getFontSettings = () => {
-        const selectedFontFamily = fontFamilySelect.value.split(',')[0].trim();
-        const selectedFontWeight = fontWeightSelect.value;
-        const weightsStyles = fontFamiliesWeightsStyles[selectedFontFamily];
-        return { selectedFontWeight, weightsStyles };
-      };
+        const getFontSettings = () => {
+          const selectedFontFamily = fontFamilySelect.value.split(',')[0].trim();
+          const selectedFontWeight = fontWeightSelect.value;
+          const weightsStyles = fontFamiliesWeightsStyles[selectedFontFamily];
+          return { selectedFontWeight, weightsStyles };
+        };
 
-      const handleFontWeightChange = () => {
-        const { selectedFontWeight, weightsStyles } = getFontSettings();
+        const handleFontWeightChange = () => {
+          const { selectedFontWeight, weightsStyles } = getFontSettings();
 
-        // Deactivate italics if font-weight don't have such version.        
-        const italicsSwitch = document.querySelector('#italics-switch');
-        if (
-          !weightsStyles.some(
-            (weightStyle) =>
-              weightStyle.weight === selectedFontWeight &&
-              (weightStyle.style === 'italic' || weightStyle.style === 'oblique')
-          )
-        ) {
-          italicsSwitch.classList.add('not-available');
-          italicsSwitch.children[0].classList.remove('toggle-on');
-          chrome.storage.local.set({ '--italics-switch': false });
-        } else {
-          italicsSwitch.classList.remove('not-available');
-        }
-
-        // Disable if only a single choice
-        if (fontWeightSelect.options.length <= 1) {
-          fontWeightSelect.disabled = true;
-        } else {
-          fontWeightSelect.disabled = false;
-        }
-      };
-
-      const handleFontFamilyChange = () => {
-        const { weightsStyles } = getFontSettings();
-
-        chrome.storage.local.get(['--code-font-weight']).then((result) => {
-          // Add weights to settings dropdown
-          let closestWeight = null;
-          let closestWeightDifference = Infinity;
-          fontWeightSelect.textContent = '';
-
-          weightsStyles.sort((a, b) => a.weight - b.weight).forEach(weightStyle => {
-            const weight = weightStyle.weight;
-
-            // Find closest font-weight selected in old font-family in new font-family
-            const weightDifference = Math.abs(weight - (result['--code-font-weight'] || 400));
-            if (weightDifference < closestWeightDifference) {
-              closestWeight = weight;
-              closestWeightDifference = weightDifference;
-            }
-
-            // Add option if it wasn't added before
-            if (!Array.from(fontWeightSelect.options).some(option => option.value === weight)) {
-              const option = document.createElement('option');
-              option.value = weight;
-              option.textContent = weight;
-              fontWeightSelect.appendChild(option);
-            }
-          });
-
-          // Select font-weight
-          if (closestWeight) {
-            fontWeightSelect.value = closestWeight;
-            fontWeightSelect.dispatchEvent(new Event('change'));
-            chrome.storage.local.set({ '--code-font-weight': closestWeight });
-          }
-
-          // Deactivate ligatures if font-family don't have such version.
-          const fontFeatureSettingsSwitch = document.querySelector('#font-feature-settings-switch');
-          const fontFeatureSettingsSelect = document.querySelector('#font-feature-settings-select');
-          if (fontFamilySelect.value.split(',').length !== 2) {
-            fontFeatureSettingsSwitch.classList.add('not-available');
-            fontFeatureSettingsSwitch.children[0].classList.remove('toggle-on');
-            fontFeatureSettingsSelect.disabled = true;
-            chrome.storage.local.set({ 'font-feature-settings-switch': false });
+          // Deactivate italics if font-weight don't have such version.        
+          const italicsSwitch = document.querySelector('#italics-switch');
+          if (
+            !weightsStyles.some(
+              (weightStyle) =>
+                weightStyle.weight === selectedFontWeight &&
+                (weightStyle.style === 'italic' || weightStyle.style === 'oblique')
+            )
+          ) {
+            italicsSwitch.classList.add('not-available');
+            italicsSwitch.children[0].classList.remove('toggle-on');
+            chrome.storage.local.set({ [italicsSwitch.dataset.key]: false });
           } else {
-            fontFeatureSettingsSwitch.classList.remove('not-available');
-            fontFeatureSettingsSelect.disabled = false;
+            italicsSwitch.classList.remove('not-available');
           }
-        });
-      };
 
-      fontFamilySelect.addEventListener('change', handleFontFamilyChange);
-      fontWeightSelect.addEventListener('change', handleFontWeightChange);
-      handleFontFamilyChange();
-    });
+          // Disable if only a single choice
+          if (fontWeightSelect.options.length <= 1) {
+            fontWeightSelect.disabled = true;
+          } else {
+            fontWeightSelect.disabled = false;
+          }
+        };
+
+        const handleFontFamilyChange = () => {
+          return new Promise((resolve) => {
+            const { weightsStyles } = getFontSettings();
+
+            chrome.storage.local.get(['--code-font-weight']).then((result) => {
+              // Add weights to settings dropdown
+              let closestWeight = null;
+              let closestWeightDifference = Infinity;
+              fontWeightSelect.textContent = '';
+
+              weightsStyles.sort((a, b) => a.weight - b.weight).forEach(weightStyle => {
+                const weight = weightStyle.weight;
+
+                // Find closest font-weight selected in old font-family in new font-family
+                const weightDifference = Math.abs(weight - (result['--code-font-weight'] || 400));
+                if (weightDifference < closestWeightDifference) {
+                  closestWeight = weight;
+                  closestWeightDifference = weightDifference;
+                }
+
+                // Add option if it wasn't added before
+                if (!Array.from(fontWeightSelect.options).some(option => option.value === weight)) {
+                  const option = document.createElement('option');
+                  option.value = weight;
+                  option.textContent = weight;
+                  fontWeightSelect.appendChild(option);
+                }
+              });
+
+              // Select font-weight
+              if (closestWeight) {
+                fontWeightSelect.value = closestWeight;
+                fontWeightSelect.dispatchEvent(new Event('change'));
+                chrome.storage.local.set({ [fontWeightSelect.dataset.key]: closestWeight });
+              }
+
+              // Deactivate ligatures if font-family don't have such version.
+              const fontFeatureSettingsSwitch = document.querySelector('#font-feature-settings-switch');
+              const fontFeatureSettingsSelect = document.querySelector('#font-feature-settings-select');
+              if (fontFamilySelect.value.split(',').length !== 2) {
+                fontFeatureSettingsSwitch.classList.add('not-available');
+                fontFeatureSettingsSwitch.children[0].classList.remove('toggle-on');
+                fontFeatureSettingsSelect.disabled = true;
+                chrome.storage.local.set({ [fontFeatureSettingsSwitch.dataset.key]: false });
+              } else {
+                fontFeatureSettingsSwitch.classList.remove('not-available');
+                fontFeatureSettingsSelect.disabled = false;
+              }
+              resolve();
+            });
+          });
+        };
+
+        fontFamilySelect.addEventListener('change', handleFontFamilyChange);
+        fontWeightSelect.addEventListener('change', handleFontWeightChange);
+        handleFontFamilyChange().then(() => {
+          resolve();
+        });
+      });
+  });
 }
 
 function extractFontFamiliesWeightsStylesFromFontFaces(cssText) {
