@@ -458,7 +458,7 @@ select:focus {
 }
 
 body:has(#extension-activation-switch > .toggle-on) .toggle-switch.toggle-on {
-  border-color: rgba(137, 194, 217, 0.4);
+  border-color: var(--extension-popup-switch-on-border-color);
 }
 
 .toggle-switch-button {
