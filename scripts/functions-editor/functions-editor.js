@@ -154,6 +154,9 @@ async function enchanceFunctionsEditor() {
   createRemoveScriptElement('base/variables.css');
   createRemoveScriptElement('functions-editor/functions-editor.css');
   applyRevertStyleSettings();
+  setTimeout(() => {
+    createRemoveScriptElement('functions-editor/deluge-editor-resize.js');
+  }, 100);
 }
 
 function revertFunctionsEditor() {
@@ -162,8 +165,9 @@ function revertFunctionsEditor() {
   createRemoveScriptElement('base/variables.css', false);
   createRemoveScriptElement('functions-editor/functions-editor.css', false);
   applyRevertStyleSettings(false);
-  createRemoveScriptElement('functions-editor.css', false);
-  applyRevertStyleSettings('website', false);
+  setTimeout(() => {
+    createRemoveScriptElement('functions-editor/deluge-editor-resize.js');
+  }, 100);
 }
 
 async function observeFunctionsEditor() {
