@@ -1111,7 +1111,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
   font-weight: inherit !important;
 }
 
-.CodeMirror-hint:not(.CodeMirror-hint.CodeMirror-hint-active) .partial-hint {
+.CodeMirror-hint .partial-hint {
   color: var(--hint-matching-symbols-color) !important;
   font-weight: bolder !important;
 }
