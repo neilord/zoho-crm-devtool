@@ -1,0 +1,42 @@
+:root {
+  /* --- Colors --- */
+
+  /* Text */
+  --editor-header-text-color: var(--primary-text-color) !important;
+  --editor-footer-text-color: var(--line-number-color) !important;
+
+  /* Backgrounds */
+  --editor-header-background-color: var(--primary-background-color) !important;
+  --editor-header-border-color: var(--secondary-background-color) !important;
+  --editor-header-shadow-color: var(--secondary-background-color) !important;
+  --editor-footer-background-color: var(--primary-background-color) !important;
+  --editor-code-line-numbers-background-color: var(--primary-background-color) !important;
+  --editor-code-line-numbers-border-color: var(--primary-background-color) !important;
+
+  /* Buttons */
+  --general-button-text-color: var(--primary-text-color) !important;
+  --general-normal-button-background-color: var(--tertiary-background-color) !important;
+  --general-normal-button-border-color: var(--save-arguments-normal-button-border-color) !important;
+  --general-normal-button-shadow-color: var(--save-arguments-normal-button-shadow-color) !important;
+  --general-hover-button-background-color: var(--save-arguments-hover-button-background-color) !important;
+  --general-press-button-background-color: var(--save-arguments-press-button-background-color) !important;
+  --general-press-button-border-color: var(--save-arguments-press-button-border-color) !important;
+
+  --close-button-text-color: var(--primary-text-color) !important;
+  --close-normal-button-background-color: var(--tertiary-background-color) !important;
+  --close-normal-button-border-color: var(--save-arguments-normal-button-border-color) !important;
+  --close-normal-button-shadow-color: var(--save-arguments-normal-button-shadow-color) !important;
+  --close-hover-button-background-color: var(--save-arguments-hover-button-background-color) !important;
+  --close-press-button-background-color: var(--save-arguments-press-button-background-color) !important;
+  --close-press-button-border-color: var(--save-arguments-press-button-border-color) !important;
+
+  --save-arguments-button-text-color: var(--primary-text-color) !important;
+  --save-arguments-normal-button-background-color: var(--secondary-background-color) !important;
+
+  /* --- Other --- */
+
+  /* Fonts */
+  --editor-header-font-family: var(--code-font-family) !important;
+  --editor-footer-font-family: var(--code-font-family) !important;
+  --editor-buttons-font-family: var(--code-font-family) !important;
+}

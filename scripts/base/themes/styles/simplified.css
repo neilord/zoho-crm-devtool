@@ -1,0 +1,22 @@
+:root {
+  /* --- Colors --- */
+
+  /* Text */
+  --editor-footer-text-color: var(--line-number-color) !important;
+
+  /* Backgrounds */
+  --editor-footer-background-color: var(--primary-background-color) !important;
+  --editor-code-line-numbers-background-color: var(--primary-background-color) !important;
+  --editor-code-line-numbers-border-color: var(--primary-background-color) !important;
+
+  /* Buttons */
+  --save-arguments-button-text-color: var(--primary-text-color) !important;
+  --save-arguments-normal-button-background-color: var(--secondary-background-color) !important;
+
+  /* --- Other --- */
+
+  /* Fonts */
+  --editor-header-font-family: var(--editor-font-family) !important;
+  --editor-footer-font-family: var(--code-font-family) !important;
+  --editor-buttons-font-family: var(--editor-font-family) !important;
+}

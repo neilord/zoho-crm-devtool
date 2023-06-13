@@ -65,6 +65,7 @@ function waitForElementRemoval(selector) {
 function applyRevertStyleSettings(apply = true) {
   const popupSettings = [
     'theme',
+    'style',
     '--code-font-family',
     '--font-feature-settings',
     'font-feature-settings-switch',
@@ -83,7 +84,7 @@ function applyRevertStyleSettings(apply = true) {
   const isPopup = location.href.includes('chrome-extension://');
 
   function modifyStyles(changes) {
-    for (const [key, value] of Object.entries(changes)) {
+    for (const [key, { oldValue, newValue }] of changes) {
       if (skipSettings.includes(key) || (isPopup && !popupSettings.includes(key))) {
         continue;
       }
@@ -91,12 +92,12 @@ function applyRevertStyleSettings(apply = true) {
       if (key.startsWith('--')) {
         // CSS Variables
         let modifications = {};
-        if (key === '--code-font-family' && value) {
-          const fontFamilies = value.split(',');
+        if (key === '--code-font-family' && newValue) {
+          const fontFamilies = newValue.split(',');
           modifications['--code-font-family'] = fontFamilies[0];
           modifications['--code-font-family-ligatures'] = fontFamilies[1] || fontFamilies[0];
         } else {
-          modifications[key] = value;
+          modifications[key] = newValue;
         }
         for (const [variable, value] of Object.entries(modifications)) {
           document.documentElement.style.setProperty(variable, value);
@@ -106,31 +107,41 @@ function applyRevertStyleSettings(apply = true) {
         // Appending CSS for specific functionalities
         const path = (isPopup ? 'popup/' : 'functions-editor/') + 'settings-styles/';
         const name = key.replace(/(-switch$)/, '');
-        const create = apply && value;
+        const create = apply && newValue;
         createRemoveScriptElement(path + name + '.css', create);
 
       } else if (key === 'close-button-select') {
-        const create = apply && value === 'left';
+        const create = apply && newValue === 'left';
         createRemoveScriptElement('functions-editor/settings-styles/' + key + '.css', create);
 
       } else if (key === 'theme') {
-        createRemoveScriptElement('base/themes/' + value + '.css');
+        createRemoveScriptElement('base/themes/' + oldValue + '.css', false);
+        createRemoveScriptElement('base/themes/' + newValue + '.css');
+
+      } else if (key === 'style') {
+        createRemoveScriptElement('base/themes/styles/' + oldValue + '.css', false);
+        createRemoveScriptElement('base/themes/styles/' + newValue + '.css');
       }
     }
   }
 
   // Immediately apply changes
-  chrome.storage.local.get(null, modifyStyles);
+  chrome.storage.local.get(null, (changes) => {
+    let formattedChanges = [];
+    for (const [key, value] of Object.entries(changes)) {
+      formattedChanges.push([key, { oldValue: value, newValue: value }]);
+    }
+    modifyStyles(formattedChanges);
+  });
 
   // Listen for changes
-  const settingsChangesListener = (changes) => {
-    const simplifiedChanges = {};
-    for (const [key, { newValue }] of Object.entries(changes)) {
-      simplifiedChanges[key] = newValue;
+  chrome.storage.onChanged[apply ? 'addListener' : 'removeListener']( (changes) => {
+    let formattedChanges = [];
+    for (let key in changes) {
+      formattedChanges.push([key, { oldValue: changes[key].oldValue, newValue: changes[key].newValue }]);
     }
-    modifyStyles(simplifiedChanges);
-  };
-  chrome.storage.onChanged[apply ? 'addListener' : 'removeListener'](settingsChangesListener);
+    modifyStyles(formattedChanges);
+  });
 }
 
 function setDefaultSettings() {
@@ -138,7 +149,8 @@ function setDefaultSettings() {
     chrome.storage.local.clear(function () {
       chrome.storage.local.set({
         'extension-activation-switch': true,
-        'theme': 'classic-light',
+        'theme': 'zoho-default-light',
+        'style': 'classic',
         '--code-font-family': 'JetBrains Mono NL,JetBrains Mono',
         '--code-font-size': '14px',
         '--code-font-weight': '400',

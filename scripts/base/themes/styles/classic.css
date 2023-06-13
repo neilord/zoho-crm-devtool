@@ -1,0 +1,8 @@
+:root {
+  /* --- Other --- */
+
+  /* Fonts */
+  --editor-header-font-family: var(--editor-font-family) !important;
+  --editor-footer-font-family: var(--editor-font-family) !important;
+  --editor-buttons-font-family: var(--editor-font-family) !important;
+}
