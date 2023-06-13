@@ -59,7 +59,7 @@ async function addFooter() {
 
     font-family: var(--editor-footer-font-family);
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 600;
     color: var(--editor-footer-text-color);
     background: var(--editor-footer-background-color);
   `;
