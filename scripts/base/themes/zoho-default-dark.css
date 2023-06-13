@@ -42,6 +42,7 @@
   --system-functions-color: #ffb77d;
   --variable-color: #81adf4;
   --affected-variable-color: #4facde;
+  --declared-variable-color: violet;
   --strings-color: #ff6464;
   --constants-color: #ff5b8a;
   --math-operators-color: #a1a1ab;
