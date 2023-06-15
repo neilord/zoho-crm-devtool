@@ -1,32 +1,14 @@
-const visableTopBarSelecter = '#tabLayer:not([style*="display: none"])';
-const hiddenTopBarWithCodeFrameSelecter =
-  '#basic:has(#tabLayer[style*="display: none"]) ~ #createfunctionpopdiv';
-
-const headerSelector = '.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70';
-const functionNameSelector = '#dreFunctionName';
-const functionParametersSelector = '#functionArguments';
-const functionDescriptionId = 'templateSubject';
-
-const buttonsSelector = '.dIB.mL10.viewaschartbtn.addchartbtnhere.vam';
-const editArgumentsButtonSelector = '.smalledit.pR';
-
-const goToLineInputSelector = '#customDelugeGoTo';
-
 // Actions
 
 async function changeGoToLinePlaceholder() {
-  await waitForElement(goToLineInputSelector);
-
-  goToLineInput = document.querySelector(goToLineInputSelector);
-  goToLineInput.setAttribute('placeholder', 'Go to line number..');
-
-  await waitForElementRemoval(goToLineInputSelector);
-  changeGoToLinePlaceholder();
+  (await waitForElement('#customDelugeGoTo')).setAttribute('placeholder', 'Go to line number..');
+  await waitForElementRemoval('#customDelugeGoTo');
+  setTimeout(changeGoToLinePlaceholder, 0);
 }
 
 function addLeftCloseButton() {
   const leftCloseButton = document.createElement('lyte-button');
-  document.querySelector(headerSelector).children[0].before(leftCloseButton);
+  document.querySelector('.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70').children[0].before(leftCloseButton);
   leftCloseButton.setAttribute('id', 'functionCancelLeft');
   leftCloseButton.firstElementChild.textContent = 'Close';
   leftCloseButton.onclick = () => {
@@ -73,16 +55,14 @@ async function addFooter() {
   `;
 
   // Function Name
-  await waitForElement(functionNameSelector);
-  const headerFunctionName = document.querySelector(functionNameSelector);
+  const headerFunctionName = await waitForElement('#dreFunctionName')
 
   const functionName = document.createElement('div');
   functionDetails.appendChild(functionName);
   functionName.textContent = headerFunctionName.textContent;
 
   // Function Parameters
-  await waitForElement(functionParametersSelector);
-  const headerFunctionParameters = document.querySelector(functionParametersSelector);
+  const headerFunctionParameters = await waitForElement('#functionArguments')
 
   const functionParameters = document.createElement('div');
   functionDetails.appendChild(functionParameters);
@@ -96,7 +76,7 @@ async function addFooter() {
   functionDetails.appendChild(functionEditArguments);
   functionEditArguments.textContent = 'Edit Arguments';
   functionEditArguments.onclick = () => {
-    document.querySelector(editArgumentsButtonSelector).click();
+    document.querySelector('.smalledit.pR').click();
   };
   functionEditArguments.style = `
     margin-left: 8px;
@@ -105,12 +85,11 @@ async function addFooter() {
   `;
 
   // Function Description
-  await waitForElement('#' + functionDescriptionId);
-  const headerFunctionDescription = document.getElementById(functionDescriptionId);
+  const headerFunctionDescription = await waitForElement('lyte-input[data-zcqa="cf_functionDesc"]');
 
   const functionDescription = document.createElement('input');
   footer.appendChild(functionDescription);
-  functionDescription.setAttribute('id', functionDescriptionId);
+  functionDescription.setAttribute('id', 'templateSubject');
   functionDescription.setAttribute('placeholder', 'Function Description');
   functionDescription.setAttribute('autocomplete', 'off');
   functionDescription.setAttribute('value', headerFunctionDescription.getAttribute('value'));
@@ -167,6 +146,9 @@ function revertFunctionsEditor() {
 }
 
 async function observeFunctionsEditor() {
+  const visableTopBarSelecter = '#tabLayer:not([style*="display: none"])';
+  const hiddenTopBarWithCodeFrameSelecter = '#basic:has(#tabLayer[style*="display: none"]) ~ #createfunctionpopdiv';
+
   // Opened
   await waitForElement(hiddenTopBarWithCodeFrameSelecter);
 
