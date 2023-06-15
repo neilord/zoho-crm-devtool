@@ -2,6 +2,6 @@
   display: inline-block !important;
 }
 
-#functionCancel {
+lyte-button[data-zcqa="cf_functionCancel"] {
   display: none !important;
 }

@@ -42,11 +42,11 @@
   margin-left: 10px !important;
 }
 
-.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button:not([id='#functionSaveAndExecute']) {
+.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 lyte-button:not([data-zcqa="cf_functionSaveExecute"]) button {
   width: 100px !important;
 }
 
-#functionSaveAndExecute button {
+lyte-button[data-zcqa="cf_functionSaveExecute"] button {
   width: 150px !important;
 }
 
@@ -190,7 +190,7 @@
 }
 
 /* Close */
-#functionCancel button,
+lyte-button[data-zcqa="cf_functionCancel"] button,
 #functionCancelLeft button {
   color: var(--close-button-text-color) !important;
   background: var(--close-normal-button-background-color) !important;
@@ -198,12 +198,12 @@
   box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--close-normal-button-shadow-color) !important;
 }
 
-#functionCancel button:hover,
+lyte-button[data-zcqa="cf_functionCancel"] button:hover,
 #functionCancelLeft button:hover {
   background: var(--close-hover-button-background-color) !important;
 }
 
-#functionCancel button:active,
+lyte-button[data-zcqa="cf_functionCancel"] button:active,
 #functionCancelLeft button:active {
   background: var(--close-press-button-background-color) !important;
   border-color: var(--close-press-button-border-color) !important;
