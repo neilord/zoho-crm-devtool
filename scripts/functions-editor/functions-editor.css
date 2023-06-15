@@ -1153,7 +1153,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
   border: 0px !important;
 }
 
-#outputToggleHook {
+div[data-zcqa="functionConsoleToggle"] {
   height: 100px !important;
   width: 25px !important;
   display: flex !important;
@@ -1164,6 +1164,16 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
   margin-left: 2px !important;
   padding: 0px !important;
   box-shadow: none !important;
+}
+
+div[data-zcqa="functionConsoleToggle"] .dIB.mT5.vam {
+  font-family: var(--code-font-family) !important;
+  font-weight: 600 !important;
+  margin-top: 5px !important;
+}
+
+.lyteResizeHandle.lyteResizeW {
+  background: var(--quaternary-background-color) !important;
 }
 
 #functioneditortabs {
@@ -1180,14 +1190,8 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
   filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
 }
 
-#outputToggleHook .dIB.mT5.vam {
-  font-family: var(--code-font-family) !important;
-  font-weight: 600 !important;
-  margin-top: 5px !important;
-}
-
 .functionoutputCont.infoTagClass.wbBreakAll .dIB.vam.outputSubjCont.crm-font-bold.pL10,
-.functionoutput.outputInfoMsg {
+ul[data-zcqa="outputInfoMsgQA"] {
   color: var(--primary-text-color) !important;
 }
 
