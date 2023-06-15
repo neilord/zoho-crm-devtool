@@ -16,22 +16,27 @@
   /* Buttons */
   --general-button-text-color: var(--primary-text-color) !important;
   --general-normal-button-background-color: var(--tertiary-background-color) !important;
-  --general-normal-button-border-color: var(--save-arguments-normal-button-border-color) !important;
-  --general-normal-button-shadow-color: var(--save-arguments-normal-button-shadow-color) !important;
-  --general-hover-button-background-color: var(--save-arguments-hover-button-background-color) !important;
-  --general-press-button-background-color: var(--save-arguments-press-button-background-color) !important;
-  --general-press-button-border-color: var(--save-arguments-press-button-border-color) !important;
+  --general-normal-button-border-color: var(--editor-footer-border-color) !important;
+  --general-normal-button-shadow-color: var(--line-number-color) !important;
+  --general-hover-button-background-color: var(--editor-footer-border-color) !important;
+  --general-press-button-background-color: var(--line-number-color) !important;
+  --general-press-button-border-color: var(--line-number-color) !important;
 
   --close-button-text-color: var(--primary-text-color) !important;
   --close-normal-button-background-color: var(--tertiary-background-color) !important;
-  --close-normal-button-border-color: var(--save-arguments-normal-button-border-color) !important;
-  --close-normal-button-shadow-color: var(--save-arguments-normal-button-shadow-color) !important;
-  --close-hover-button-background-color: var(--save-arguments-hover-button-background-color) !important;
-  --close-press-button-background-color: var(--save-arguments-press-button-background-color) !important;
-  --close-press-button-border-color: var(--save-arguments-press-button-border-color) !important;
+  --general-normal-button-border-color: var(--editor-footer-border-color) !important;
+  --general-normal-button-shadow-color: var(--line-number-color) !important;
+  --general-hover-button-background-color: var(--editor-footer-border-color) !important;
+  --general-press-button-background-color: var(--line-number-color) !important;
+  --general-press-button-border-color: var(--line-number-color) !important;
 
   --save-arguments-button-text-color: var(--primary-text-color) !important;
   --save-arguments-normal-button-background-color: var(--secondary-background-color) !important;
+  --save-arguments-normal-button-border-color: var(--editor-footer-border-color) !important;
+  --save-arguments-normal-button-shadow-color: var(--line-number-color) !important;
+  --save-arguments-hover-button-background-color: var(--editor-footer-border-color) !important;
+  --save-arguments-press-button-background-color: var(--line-number-color) !important;
+  --save-arguments-press-button-border-color: var(--line-number-color) !important;
 
   /* --- Other --- */
 
