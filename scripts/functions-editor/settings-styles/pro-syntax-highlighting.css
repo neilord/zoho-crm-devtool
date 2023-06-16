@@ -35,13 +35,5 @@ coloring of every uncompleted line that contains ony variable */
 .cm-variable:first-child:has(+ .cm-semicolon),
 .cm-tab + .cm-variable:has(+ .cm-semicolon),
 .cm-semicolon + .cm-variable:has(+ .cm-semicolon) {
-  color: var(--system-operators-color) !important;
-}
-
-.cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):has(+ .cm-variable + .cm-brackets) {
-  color: var(--system-zoho-object-color) !important;
-}
-
-.cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):has(+ .cm-variable + .cm-brackets) + .cm-variable {
-  color: var(--system-zoho-method-color) !important;
+  color: var(--system-flow-control-color) !important;
 }
