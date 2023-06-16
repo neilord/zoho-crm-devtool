@@ -135,7 +135,7 @@ function applyRevertStyleSettings(apply = true) {
   });
 
   // Listen for changes
-  chrome.storage.onChanged[apply ? 'addListener' : 'removeListener']( (changes) => {
+  chrome.storage.onChanged[apply ? 'addListener' : 'removeListener']((changes) => {
     let formattedChanges = [];
     for (let key in changes) {
       formattedChanges.push([key, { oldValue: changes[key].oldValue, newValue: changes[key].newValue }]);
@@ -172,4 +172,3 @@ async function setInitialSettings() {
     await setDefaultSettings();
   }
 }
-
