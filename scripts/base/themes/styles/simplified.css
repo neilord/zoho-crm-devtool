@@ -5,6 +5,7 @@
   --editor-footer-text-color: var(--line-number-color) !important;
 
   /* Backgrounds */
+  --editor-header-border-color: var(--editor-header-background-color) !important;
   --editor-footer-background-color: var(--primary-background-color) !important;
   --editor-code-line-numbers-background-color: var(--primary-background-color) !important;
   --editor-code-line-numbers-border-color: var(--primary-background-color) !important;
