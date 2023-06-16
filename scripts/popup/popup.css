@@ -251,8 +251,8 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
 /* Dropdown + Switch */
 
 .dropdown.switch .setting-dropdown {
-  text-align: right;
-  color: var(--extension-popup-glow-color);
+  text-align: center;
+  /* color: var(--extension-popup-glow-color); */
   padding-right: 20px;
 }
 
@@ -388,10 +388,10 @@ body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggl
 }
 
 .dropdown.switch .setting-switch::before {
-  left: -17px;
+  left: -30px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--extension-popup-glow-color);
+  /* color: var(--extension-popup-glow-color); */
 }
 
 
