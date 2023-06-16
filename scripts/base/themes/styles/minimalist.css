@@ -12,6 +12,7 @@
   --editor-footer-background-color: var(--primary-background-color) !important;
   --editor-code-line-numbers-background-color: var(--primary-background-color) !important;
   --editor-code-line-numbers-border-color: var(--primary-background-color) !important;
+  --editor-console-toggle-background-color: var(--secondary-background-color) !important;
 
   /* Buttons */
   --general-button-text-color: var(--primary-text-color) !important;
