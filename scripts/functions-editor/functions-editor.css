@@ -171,6 +171,10 @@ lyte-button[data-zcqa="cf_functionSaveExecute"] button {
   border-width: var(--button-border-width), var(--button-border-width), 0px, var(--button-border-width) !important;
 }
 
+.alignright.pB10.pT7.mT10 {
+  padding: 0px;
+}
+
 /* Save, Save & Execute */
 lyte-button[data-zcqa="cf_functionSave"] button,
 lyte-button[data-zcqa="cf_functionSaveExecute"] button {
