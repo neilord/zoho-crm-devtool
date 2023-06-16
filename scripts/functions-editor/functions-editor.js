@@ -85,7 +85,7 @@ async function addFooter() {
   `;
 
   // Function Description
-  const headerFunctionDescription = await waitForElement('lyte-input[data-zcqa="cf_functionDesc"]');
+  const headerFunctionDescription = await waitForElement('lyte-input[data-zcqa="cf_functionDesc"] input[value]');
 
   const functionDescription = document.createElement('input');
   footer.appendChild(functionDescription);
