@@ -171,19 +171,22 @@ lyte-button[data-zcqa="cf_functionSaveExecute"] button {
   border-width: var(--button-border-width), var(--button-border-width), 0px, var(--button-border-width) !important;
 }
 
-/* Save, Save & Execute, Close */
-.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button {
+/* Save, Save & Execute */
+lyte-button[data-zcqa="cf_functionSave"] button,
+lyte-button[data-zcqa="cf_functionSaveExecute"] button {
   color: var(--general-button-text-color) !important;
   background: var(--general-normal-button-background-color) !important;
   border-color: var(--general-normal-button-border-color) !important;
   box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--general-normal-button-shadow-color) !important;
 }
 
-.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button:hover {
+lyte-button[data-zcqa="cf_functionSave"]:hover button,
+lyte-button[data-zcqa="cf_functionSaveExecute"]:hover button {
   background: var(--general-hover-button-background-color) !important;
 }
 
-.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70 .lyte-button:active {
+lyte-button[data-zcqa="cf_functionSave"]:active button,
+lyte-button[data-zcqa="cf_functionSaveExecute"]:active button {
   background: var(--general-press-button-background-color) !important;
   border-color: var(--general-press-button-border-color) !important;
   top: 1px !important;
