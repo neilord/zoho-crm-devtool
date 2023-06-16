@@ -159,7 +159,7 @@ function setDefaultSettings() {
         'font-feature-settings-switch': true,
         'italics-switch': true,
         'indent-guides-switch': true,
-        'pro-syntax-higliting-switch': true,
+        'pro-syntax-highlighting-switch': true,
         'close-button-select': 'right',
       }, resolve);
     });

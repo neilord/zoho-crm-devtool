@@ -1,0 +1,47 @@
+.cm-variable:has(+ .cm-syntax) {
+  color: var(--affected-variable-color) !important;
+  font-style: var(--italics) !important;
+}
+
+.cm-variable:first-child:has(+ .cm-operator),
+.cm-tab + .cm-variable:has(+ .cm-operator),
+.cm-semicolon + .cm-variable:has(+ .cm-operator) {
+  color: var(--declared-variable-color) !important;
+}
+
+.cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):first-child:has(+ .cm-brackets),
+.cm-tab + .cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):has(+ .cm-brackets),
+.cm-semicolon + .cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):has(+ .cm-brackets),
+
+.cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):first-child:has(+ .cm-variable + .cm-relop),
+.cm-tab + .cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):has(+ .cm-variable + .cm-relop),
+.cm-semicolon + .cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):has(+ .cm-variable + .cm-relop),
+
+.cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):first-child:last-child,
+.cm-tab + .cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):last-child,
+.cm-semicolon + .cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):last-child,
+
+.cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):first-child:has(+ .cm-semicolon),
+.cm-tab + .cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):has(+ .cm-semicolon),
+.cm-semicolon + .cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):has(+ .cm-semicolon),
+
+/* .cm-variable:first-child:last-child,
+.cm-tab + .cm-variable:last-child,
+.cm-semicolon + .cm-variable:last-child, */
+
+/* Adding this fix "try" of try-catch coloring but cause
+coloring of every uncompleted line that contains ony variable */
+
+.cm-variable:first-child:has(+ .cm-semicolon),
+.cm-tab + .cm-variable:has(+ .cm-semicolon),
+.cm-semicolon + .cm-variable:has(+ .cm-semicolon) {
+  color: var(--system-operators-color) !important;
+}
+
+.cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):has(+ .cm-variable + .cm-brackets) {
+  color: var(--system-zoho-object-color) !important;
+}
+
+.cm-syntax:not(.cm-operator + .cm-syntax:has(+ .cm-tag)):has(+ .cm-variable + .cm-brackets) + .cm-variable {
+  color: var(--system-zoho-method-color) !important;
+}
