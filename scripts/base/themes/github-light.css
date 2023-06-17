@@ -1,0 +1,120 @@
+:root {
+  /* --- Colors --- */
+
+  /* Text */
+  --primary-text-color: #181818;
+  --secondary-text-color: #444444;
+  --tertiary-text-color: #5c5c5c;
+  --placeholder-color: #767676;
+  --error-text-color: #f22c3e;
+
+  --editor-header-text-color: #444444;
+  --editor-footer-text-color: #777c83;
+
+  /* Backgrounds */
+  --primary-background-color: #ffffff;
+  --secondary-background-color: #efefef;
+  --tertiary-background-color: #f6f8fa;
+  --quaternary-background-color: #cccccc;
+
+  --editor-header-background-color: #f6f8fa;
+  --editor-header-border-color: #e2e4e8;
+  --editor-header-shadow-color: #c9cacdbf;
+  --editor-footer-background-color: #f6f8fa;
+  --editor-footer-border-color: #e2e4e8;
+  --editor-code-line-numbers-background-color: #f6f8fa;
+  --editor-code-line-numbers-border-color: #e2e4e8;
+  --editor-console-toggle-background-color: #f6f8fa;
+
+  /* Editor */
+  --cursor-color: #1b4184;
+  --line-number-color: #babbbc;
+  --active-line-number-color: #25292e;
+  --active-line-background-color: #f6f8fa;
+  --selected-text-background-color: #e1e9f8;
+  --selected-searching-text-background-color: #fae073;
+  --searching-text-background-color: #fef9574d;
+  --indent-guides-color: #f0f2f6;
+  --hint-matching-symbols-color: #2a64b9;
+  --tooltip-border-color: #c8c8c8;
+
+
+  /* Syntax */
+  --comments-color: #6d747d;
+  --system-functions-color: #6944ba;
+  --system-flow-control-color: #c6474e;
+  --variable-color: #41454a;
+  --declared-variable-color: #41454a;
+  --affected-variable-color: #002149;
+  --strings-color: #112e5f;
+  --constants-color: #265bbe;
+  --math-operators-color: #C6474e;
+  --logical-operators-color: #C6474e;
+  --separators-color: #25292e;
+  --semicolons-color: #25292e;
+  --brackets-color: #265bbe;
+  --matching-brackets-background-color: #e2edd5;
+  --matching-brackets-border-color: #d2eeb1;
+  --nonmatching-brackets-text-color: #050404;
+
+  /* Buttons */
+  --general-button-text-color: #25292e;
+  --general-normal-button-background-color: linear-gradient(0deg, #f9a18d, #ed9885);
+  --general-normal-button-border-color: #e29082;
+  --general-normal-button-shadow-color: #db816f;
+  --general-hover-button-background-color: linear-gradient(0deg, #e29082, #da816f);
+  --general-press-button-background-color: linear-gradient(0deg, #db816f, #c88064);
+  --general-press-button-border-color: #db816f;
+
+  --close-button-text-color: #25292e;
+  --close-normal-button-background-color: linear-gradient(0deg, #c7edf0, #b8e3e5);
+  --close-normal-button-border-color: #bae0de;
+  --close-normal-button-shadow-color: #a8c5ca;
+  --close-hover-button-background-color: linear-gradient(0deg, #bae0de, #a8c4c9);
+  --close-press-button-background-color: linear-gradient(0deg, #a8c5ca, #94b3b7);
+  --close-press-button-border-color: #a8c5ca;
+
+  --save-arguments-button-text-color: #25292e;
+  --save-arguments-normal-button-background-color: linear-gradient(0deg, #f9a18d, #ed9885);
+  --save-arguments-normal-button-border-color: #e29082;
+  --save-arguments-normal-button-shadow-color: #db816f;
+  --save-arguments-hover-button-background-color: linear-gradient(0deg, #e29082, #da816f);
+  --save-arguments-press-button-background-color: linear-gradient(0deg, #db816f, #c88064);
+  --save-arguments-press-button-border-color: #db816f;
+
+  --safe-button-text-color: #efefef;
+  --safe-normal-button-background-color: linear-gradient(0deg, #009e00, #00b400);
+  --safe-normal-button-border-color: #018e01;
+  --safe-normal-button-shadow-color: #008200;
+  --safe-hover-button-background-color: linear-gradient(0deg, #018e01, #00b700);
+  --safe-press-button-background-color: linear-gradient(0deg, #008200, #009a00);
+  --safe-press-button-border-color: #008200;
+
+  --dangerous-button-text-color: #efefef;
+  --dangerous-normal-button-background-color: linear-gradient(0deg, #c92d3a, #e93745);
+  --dangerous-normal-button-border-color: #b62935;
+  --dangerous-normal-button-shadow-color: #ac2732;
+  --dangerous-hover-button-background-color: linear-gradient(0deg, #b62935, #f13645);
+  --dangerous-press-button-background-color: linear-gradient(0deg, #ac2732, #d92d3b);
+  --dangerous-press-button-border-color: #ac2732;
+
+  /* Extension Pupup */
+  --extension-popup-glow-color: #d1d3d4;
+  --extension-popup-text-glow-blur-radius: 0px;
+
+  --extension-popup-switch-off-color: #a5a6a6;
+  --extension-popup-switch-on-primary-background-color: #bcbdbd;
+  --extension-popup-switch-on-secondary-background-color: #c5e9e91a;
+  --extension-popup-switch-on-primary-shadow-color: #696d6d;
+  --extension-popup-switch-on-secondary-shadow-color: #575f5f33;
+  --extension-popup-switch-on-text-color: #343636;
+  --extension-popup-switch-on-border-color: #4b4d4d66;
+
+  --extension-popup-dangerous-button-text-color: #ff2335;
+  --extension-popup-dangerous-button-background-color: #ff2335;
+
+  /* --- Other --- */
+
+  /* Theme */
+  --is-dark-theme: 0;
+}
