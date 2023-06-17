@@ -98,11 +98,11 @@
   --dangerous-press-button-border-color: #9e0e1a;
 
   /* Extension Pupup */
-  --extension-popup-glow-color: #828282;
+  --extension-popup-glow-color: #717171;
   --extension-popup-text-glow-blur-radius: 0px;
 
   --extension-popup-switch-off-color: #6c6c6c;
-  --extension-popup-switch-on-primary-background-color: #b9b9b9;
+  --extension-popup-switch-on-primary-background-color: #9b9b9b;
   --extension-popup-switch-on-secondary-background-color: #bababa1a;
   --extension-popup-switch-on-primary-shadow-color: #bababa;
   --extension-popup-switch-on-secondary-shadow-color: #6b696933;

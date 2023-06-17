@@ -15,15 +15,15 @@
   --primary-background-color: #061626;
   --secondary-background-color: #05131f;
   --tertiary-background-color: #122438;
-  --quaternary-background-color: #475c70;
+  --quaternary-background-color: #657D95;
 
   --editor-header-background-color: #132840;
-  --editor-header-border-color: #22364a;
+  --editor-header-border-color: #0e1e31;
   --editor-header-shadow-color: #020910bf;
   --editor-footer-background-color: #0e2034;
-  --editor-footer-border-color: #203445;
+  --editor-footer-border-color: #08121d;
   --editor-code-line-numbers-background-color: #0e2034;
-  --editor-code-line-numbers-border-color: #203445;
+  --editor-code-line-numbers-border-color: #08121d;
   --editor-console-toggle-background-color: #142942;
 
   /* Editor */
@@ -32,11 +32,11 @@
   --active-line-number-color: #cbe3fa;
   --active-line-background-color: #05121e;
   --selected-text-background-color: #1d3b53;
-  --selected-searching-text-background-color: #0f2d45;
-  --searching-text-background-color: #008cff4d;
-  --indent-guides-color: #283b5f;
-  --hint-matching-symbols-color: #cbe386;
-  --tooltip-border-color: #657d95;
+  --selected-searching-text-background-color: #565B88;
+  --searching-text-background-color: #126db74d;
+  --indent-guides-color: #25385A;
+  --hint-matching-symbols-color: #FFFFFF;
+  --tooltip-border-color: #4d657d;
 
   /* Syntax */
   --comments-color: #677677;
@@ -66,20 +66,20 @@
   --general-press-button-border-color: #527798;
 
   --close-button-text-color: #000018;
-  --close-normal-button-background-color: linear-gradient(0deg, #eba57f, #eba57f);
-  --close-normal-button-border-color: #d3845a;
-  --close-normal-button-shadow-color: #af663f;
-  --close-hover-button-background-color: linear-gradient(0deg, #d3845a, #dd956f);
-  --close-press-button-background-color: linear-gradient(0deg, #af663f, #c67d56);
-  --close-press-button-border-color: #af663f;
+  --close-normal-button-background-color: linear-gradient(0deg, #e5e2dc, #cfccc7);
+  --close-normal-button-border-color: #cfccc7;
+  --close-normal-button-shadow-color: #bab8b3;
+  --close-hover-button-background-color: linear-gradient(0deg, #cfccc7, #b7b5b0);
+  --close-press-button-background-color: linear-gradient(0deg, #bab8b3, #a4a39f);
+  --close-press-button-border-color: #bab8b3;
 
   --save-arguments-button-text-color: #00003D;
-  --save-arguments-normal-button-background-color: linear-gradient(0deg, #a1c6e7, #c7e0f5);
-  --save-arguments-normal-button-border-color: #749abb;
-  --save-arguments-normal-button-shadow-color: #527798;
-  --save-arguments-hover-button-background-color: linear-gradient(0deg, #749abb, #8aabc8);
-  --save-arguments-press-button-background-color: linear-gradient(0deg, #527798, #6e90ae);
-  --save-arguments-press-button-border-color: #527798;
+  --save-arguments-normal-button-background-color: linear-gradient(0deg, #a1c6e7, #96bad9);
+  --save-arguments-normal-button-border-color: #93b6d5;
+  --save-arguments-normal-button-shadow-color: #85a5c2;
+  --save-arguments-hover-button-background-color: linear-gradient(0deg, #93b6d5, #83a3bf);
+  --save-arguments-press-button-background-color: linear-gradient(0deg, #85a5c2, #728ea7);
+  --save-arguments-press-button-border-color: #85a5c2;
 
   --safe-button-text-color: #ffffff;
   --safe-normal-button-background-color: linear-gradient(0deg, #00b200, #0eb50e);
@@ -98,15 +98,15 @@
   --dangerous-press-button-border-color: #9e0e1a;
 
   /* Extension Pupup */
-  --extension-popup-glow-color: #76aec6;
+  --extension-popup-glow-color: #5a8496;
   --extension-popup-text-glow-blur-radius: 0px;
 
   --extension-popup-switch-off-color: #5e6368;
-  --extension-popup-switch-on-primary-background-color: #89c2da;
+  --extension-popup-switch-on-primary-background-color: #73a1b6;
   --extension-popup-switch-on-secondary-background-color: #4b7a8d1a;
   --extension-popup-switch-on-primary-shadow-color: #4b7a8d;
   --extension-popup-switch-on-secondary-shadow-color: #4d7a8d33;
-  --extension-popup-switch-on-text-color: #3b6a7d;
+  --extension-popup-switch-on-text-color: #2b4c5a;
   --extension-popup-switch-on-border-color: #89c2d966;
 
   --extension-popup-dangerous-button-text-color: #ff2335;
