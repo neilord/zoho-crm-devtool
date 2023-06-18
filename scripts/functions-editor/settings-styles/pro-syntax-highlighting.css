@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: >0.3%,last 4 version,not dead,Firefox ESR
+*/
+
 .cm-variable:has(+ .cm-syntax) {
   color: var(--affected-variable-color) !important;
   font-style: var(--italics) !important;

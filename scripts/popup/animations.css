@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: >0.3%,last 4 version,not dead,Firefox ESR
+*/
+
 /* ------------------------ Settings ------------------------- */
 
 /* Reset Settings Button */
@@ -15,7 +22,9 @@
 .setting-dropdown,
 .dropdown:not(:has(.setting-switch))::after,
 .dropdown.switch .setting-switch::before {
+  transition: text-shadow 0.3s ease, -webkit-filter 0.3s ease;
   transition: text-shadow 0.3s ease, filter 0.3s ease;
+  transition: text-shadow 0.3s ease, filter 0.3s ease, -webkit-filter 0.3s ease;
 }
 
 
@@ -66,7 +75,8 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .glow-comp {
 /* Buttons */
 
 .footer-button:active {
-  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .normal-button:hover {

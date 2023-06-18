@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: >0.3%,last 4 version,not dead,Firefox ESR
+*/
+
 /* ------------------------- Header -------------------------- */
 
 #templateName,
@@ -132,6 +139,34 @@ lyte-button[data-zcqa="cf_functionSaveExecute"] button {
   display: none !important;
 }
 
+#templateSubject::-webkit-input-placeholder {
+  position: unset !important;
+  flex-grow: 1 !important;
+  font-family: var(--editor-footer-font-family) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--editor-footer-text-color) !important;
+  background: var(--editor-footer-background-color) !important;
+  border: 0px !important;
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+  text-align: left !important;
+}
+
+#templateSubject::-moz-placeholder {
+  position: unset !important;
+  flex-grow: 1 !important;
+  font-family: var(--editor-footer-font-family) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--editor-footer-text-color) !important;
+  background: var(--editor-footer-background-color) !important;
+  border: 0px !important;
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+  text-align: left !important;
+}
+
 #templateSubject,
 #templateSubject::placeholder {
   position: unset !important;
@@ -145,6 +180,14 @@ lyte-button[data-zcqa="cf_functionSaveExecute"] button {
   margin-left: 30px !important;
   margin-right: 30px !important;
   text-align: left !important;
+}
+
+#templateSubject::-webkit-input-placeholder {
+  font-style: italic !important;
+}
+
+#templateSubject::-moz-placeholder {
+  font-style: italic !important;
 }
 
 #templateSubject::placeholder {
@@ -280,6 +323,14 @@ lyte-button[data-zcqa="cf_functionCancel"] button:active,
   font-weight: var(--code-font-weight) !important;
 }
 
+#customParamFunctionName input::-webkit-input-placeholder {
+  opacity: 0 !important;
+}
+
+#customParamFunctionName input::-moz-placeholder {
+  opacity: 0 !important;
+}
+
 #customParamFunctionName input::placeholder {
   opacity: 0 !important;
 }
@@ -339,6 +390,16 @@ lyte-button[data-zcqa="cf_functionCancel"] button:active,
   padding-left: 5px !important;
 }
 
+.dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input::-webkit-input-placeholder {
+  font-family: var(--code-font-family) !important;
+  font-weight: var(--code-font-weight) !important;
+}
+
+.dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input::-moz-placeholder {
+  font-family: var(--code-font-family) !important;
+  font-weight: var(--code-font-weight) !important;
+}
+
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input,
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input::placeholder {
   font-family: var(--code-font-family) !important;
@@ -347,6 +408,14 @@ lyte-button[data-zcqa="cf_functionCancel"] button:active,
 
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox>.lyteField>input {
   color: var(--primary-text-color) !important;
+}
+
+.dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox>.lyteField[class='lyteField  ']>input::-webkit-input-placeholder {
+  color: var(--placeholder-color) !important;
+}
+
+.dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox>.lyteField[class='lyteField  ']>input::-moz-placeholder {
+  color: var(--placeholder-color) !important;
 }
 
 .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox>.lyteField[class='lyteField  ']>input,
@@ -424,7 +493,8 @@ lyte-button[data-zcqa="cf_functionCancel"] button:active,
 
 .zcicn_embedSvg.zcicn-edit-filled-md.zcicn12.crmBaseIcon:not(:hover),
 .zcicn_embedSvg.zcicn-close-9.zcicn9.crmBaseIcon {
-  filter: invert(var(--is-dark-theme)) !important;
+  -webkit-filter: invert(var(--is-dark-theme)) !important;
+          filter: invert(var(--is-dark-theme)) !important;
 }
 
 .lytePopover.lytePopoverVisible {
@@ -474,12 +544,14 @@ lyte-button[data-zcqa="cf_functionCancel"] button:active,
 }
 
 .maxW200.mergefieldDropdownEle lyte-drop-button>.dropdown {
-  filter: invert(var(--is-dark-theme)) !important;
+  -webkit-filter: invert(var(--is-dark-theme)) !important;
+          filter: invert(var(--is-dark-theme)) !important;
 }
 
 .mergeFieldDropdownArrow.dIB.mLR10.crmcssBaseIcon.zcicn-arrow-solid-right-sm,
 .lyteSearchInput.lyteInput.vertical .searchIcon {
-  filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
+  -webkit-filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
+          filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
 }
 
 .multilevelmergefieldDropdown.crmBoxDropbox.lyteDropdownCurve.lyteDropdownDown {
@@ -509,7 +581,8 @@ lyte-button[data-zcqa="cf_functionCancel"] button:active,
 
 .multilevelmergefieldDropdown.crmBoxDropbox.lyteDropdownCurve.lyteDropdownDown lyte-drop-item::before {
   top: 6px !important;
-  filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
+  -webkit-filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
+          filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
 }
 
 lyte-drop-label {
@@ -522,10 +595,28 @@ lyte-drop-label {
   border-radius: 10px !important;
 }
 
+.lyteSearchInput.lyteInput.vertical input::-webkit-input-placeholder {
+  font-family: var(--code-font-family) !important;
+  font-weight: var(--code-font-weight) !important;
+}
+
+.lyteSearchInput.lyteInput.vertical input::-moz-placeholder {
+  font-family: var(--code-font-family) !important;
+  font-weight: var(--code-font-weight) !important;
+}
+
 .lyteSearchInput.lyteInput.vertical input,
 .lyteSearchInput.lyteInput.vertical input::placeholder {
   font-family: var(--code-font-family) !important;
   font-weight: var(--code-font-weight) !important;
+}
+
+.lyteSearchInput.lyteInput.vertical input::-webkit-input-placeholder {
+  color: var(--placeholder-color) !important;
+}
+
+.lyteSearchInput.lyteInput.vertical input::-moz-placeholder {
+  color: var(--placeholder-color) !important;
 }
 
 .lyteSearchInput.lyteInput.vertical input::placeholder {
@@ -635,7 +726,8 @@ lyte-modal-header {
   position: relative !important;
   margin-right: 0px !important;
   margin-left: 20px !important;
-  filter: invert(var(--is-dark-theme)) !important;
+  -webkit-filter: invert(var(--is-dark-theme)) !important;
+          filter: invert(var(--is-dark-theme)) !important;
 }
 
 #dreEditParamsAddBtn {
@@ -780,7 +872,8 @@ lyte-modal-footer {
 }
 
 .dre-ep-close.deluge-close {
-  filter: invert(var(--is-dark-theme)) !important;
+  -webkit-filter: invert(var(--is-dark-theme)) !important;
+          filter: invert(var(--is-dark-theme)) !important;
 }
 
 #dreExecuteParamsSaveBtn,
@@ -858,7 +951,8 @@ lyte-modal-footer {
 }
 
 #IMPORTNOTIFICATIONPOP1 .migCardTitle .pA.dIB.svgIconsImg.migCardClose.ico-close-white-small2.cP {
-  filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85))) !important;
+  -webkit-filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85))) !important;
+          filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85))) !important;
   /* this change 0 -> 1 and 1 -> 0 to get a reverse of --is-dark-theme, kinda --is-light-theme */
 }
 
@@ -889,7 +983,8 @@ lyte-modal-footer {
 
 #fin_notification .pA.svgIconsImg.top15.right15.ico-close-white-small2.cP {
   top: 10px !important;
-  filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85))) !important;
+  -webkit-filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85))) !important;
+          filter: invert(calc(calc(calc(var(--is-dark-theme) - 1) * calc(calc(var(--is-dark-theme) - 1)) * 0.85))) !important;
 }
 
 
@@ -1195,7 +1290,8 @@ div[data-zcqa="functionConsoleToggle"] .dIB.mT5.vam {
 }
 
 .dIB.zcicn-arrow-solid-left-md.outputContHookIcon.vam {
-  filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
+  -webkit-filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
+          filter: invert(calc(var(--is-dark-theme) * 0.85)) !important;
 }
 
 .functionoutputCont.infoTagClass.wbBreakAll .dIB.vam.outputSubjCont.crm-font-bold.pL10,
@@ -1221,6 +1317,22 @@ ul[data-zcqa="outputInfoMsgQA"] {
   background: var(--secondary-background-color) !important;
 }
 
+#findBtn::-webkit-input-placeholder, #replacementText::-webkit-input-placeholder, #customDelugeGoTo::-webkit-input-placeholder {
+  font-family: var(--code-font-family) !important;
+  color: var(--primary-text-color) !important;
+  background: var(--tertiary-background-color) !important;
+  border-color: var(--secondary-background-color) !important;
+  box-shadow: none !important;
+}
+
+#findBtn::-moz-placeholder, #replacementText::-moz-placeholder, #customDelugeGoTo::-moz-placeholder {
+  font-family: var(--code-font-family) !important;
+  color: var(--primary-text-color) !important;
+  background: var(--tertiary-background-color) !important;
+  border-color: var(--secondary-background-color) !important;
+  box-shadow: none !important;
+}
+
 #findBtn,
 #findBtn::placeholder,
 #replacementText,
@@ -1234,6 +1346,14 @@ ul[data-zcqa="outputInfoMsgQA"] {
   box-shadow: none !important;
 }
 
+#findBtn::-webkit-input-placeholder, #replacementText::-webkit-input-placeholder, #customDelugeGoTo::-webkit-input-placeholder {
+  color: var(--placeholder-color) !important;
+}
+
+#findBtn::-moz-placeholder, #replacementText::-moz-placeholder, #customDelugeGoTo::-moz-placeholder {
+  color: var(--placeholder-color) !important;
+}
+
 #findBtn::placeholder,
 #replacementText::placeholder,
 #customDelugeGoTo::placeholder {
@@ -1242,7 +1362,8 @@ ul[data-zcqa="outputInfoMsgQA"] {
 
 .close-icon::before,
 .close-icon::after {
-  filter: invert(var(--is-dark-theme)) !important;
+  -webkit-filter: invert(var(--is-dark-theme)) !important;
+          filter: invert(var(--is-dark-theme)) !important;
 }
 
 .custom-ds-row-div,

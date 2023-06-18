@@ -1,6 +1,22 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: >0.3%,last 4 version,not dead,Firefox ESR
+*/
+
 :root {
   --code-font-family: var(--code-font-family-ligatures) !important;
   --editor-font-family: var(--editor-font-family-ligatures) !important;
+}
+
+#templateSubject::-webkit-input-placeholder, .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input::-webkit-input-placeholder, .lyteSearchInput.lyteInput.vertical input::-webkit-input-placeholder, #findBtn::-webkit-input-placeholder, #replacementText::-webkit-input-placeholder, #customDelugeGoTo::-webkit-input-placeholder {
+  -webkit-font-feature-settings: var(--font-feature-settings) !important;
+          font-feature-settings: var(--font-feature-settings) !important;
+}
+
+#templateSubject::-moz-placeholder, .dIB.w100p.mB20.wfDelugeArgumentInput.horizontal.lyteInputBox input::-moz-placeholder, .lyteSearchInput.lyteInput.vertical input::-moz-placeholder, #findBtn::-moz-placeholder, #replacementText::-moz-placeholder, #customDelugeGoTo::-moz-placeholder {
+  font-feature-settings: var(--font-feature-settings) !important;
 }
 
 #templateName,
@@ -38,5 +54,6 @@
 #customDelugeGoTo,
 #customDelugeGoTo::placeholder,
 #functionFooter {
-  font-feature-settings: var(--font-feature-settings) !important;
+  -webkit-font-feature-settings: var(--font-feature-settings) !important;
+          font-feature-settings: var(--font-feature-settings) !important;
 }

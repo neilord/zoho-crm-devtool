@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: >0.3%,last 4 version,not dead,Firefox ESR
+*/
+
 /* ------------------- Extension Container ------------------- */
 
 body {
@@ -191,7 +198,9 @@ body:not(:has(#extension-activation-switch > .toggle-on)) .setting * {
 .setting-dropdown {
   flex-grow: 1;
   line-height: 25px;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 /* Switch */
@@ -273,7 +282,8 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
   outline: none;
   text-align: center;
   text-decoration: none;
-  user-select: none;
+  -moz-user-select: none;
+       user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   width: 100%;
@@ -289,12 +299,14 @@ body:has(#extension-activation-switch > .toggle-on) .setting-switch .toggle-on .
   color: #ffffff;
   background-color: var(--extension-popup-dangerous-button-background-color);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
 }
 
 #reset-settings-button:active {
   box-shadow: none;
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 
@@ -390,7 +402,8 @@ body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggl
 .dropdown.switch .setting-switch::before {
   left: -30px;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   /* color: var(--extension-popup-glow-color); */
 }
 
@@ -404,7 +417,8 @@ body:not(:has(#extension-activation-switch > .toggle-on)) .setting-switch .toggl
 .setting-dropdown,
 .dropdown:not(:has(.setting-switch))::after,
 .dropdown.switch .setting-switch::before {
-  filter: opacity(0.5);
+  -webkit-filter: opacity(0.5);
+          filter: opacity(0.5);
 }
 
 /* Brighter */
@@ -413,7 +427,8 @@ body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:not(:has(o
 body:has(#extension-activation-switch > .toggle-on) .setting-dropdown:has(~ .setting-switch .toggle-on),
 body:has(#extension-activation-switch > .toggle-on) .dropdown:not(:has(option:only-child)):not(:has(.setting-switch))::after,
 body:has(#extension-activation-switch > .toggle-on) .dropdown.switch:has(.setting-switch .toggle-on) .setting-switch::before {
-  filter: opacity(1);
+  -webkit-filter: opacity(1);
+          filter: opacity(1);
 }
 
 /* Glow */
@@ -429,7 +444,8 @@ body:has(#extension-activation-switch > .toggle-on) .dropdown.switch .setting-dr
 body:has(#extension-activation-switch > .toggle-on) .setting-title:not(:has(+ .setting-dropdown option:only-child)):not(:has(~ .setting-switch)),
 body:has(#extension-activation-switch > .toggle-on) .setting-title:has(~ .setting-switch .toggle-on) {
   text-shadow: 0 0 calc(var(--extension-popup-text-glow-blur-radius) * 0.6) var(--extension-popup-glow-color);
-  filter: opacity(1);
+  -webkit-filter: opacity(1);
+          filter: opacity(1);
 }
 
 
@@ -454,7 +470,9 @@ select:focus {
   position: absolute;
   border: 0px solid var(--extension-popup-switch-off-color);
   box-sizing: border-box;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 body:has(#extension-activation-switch > .toggle-on) .toggle-switch.toggle-on {
@@ -517,10 +535,14 @@ body:has(#extension-activation-switch > .toggle-on) .toggle-on .glow-comp {
 /* Buttons */
 
 button {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   font-family: var(--code-font-family);
   font-weight: 700;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 /* Normal */
@@ -589,7 +611,22 @@ button {
   position: relative;
   text-decoration: none;
   background-size: 600% 600%;
-  animation: gradient 100s ease infinite;
+  -webkit-animation: gradient 100s ease infinite;
+          animation: gradient 100s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes gradient {
