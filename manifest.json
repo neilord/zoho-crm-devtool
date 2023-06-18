@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Zoho CRM Enhancer",
+  "name": "Zoho CRM DevTool",
   "version": "1.0",
   "description": "UI and UX improvements for Zoho CRM.",
 
@@ -14,7 +14,7 @@
   "permissions": ["storage"],
 
   "action": {
-    "default_title": "Zoho CRM Enhancer",
+    "default_title": "Zoho CRM DevTool",
     "default_popup": "scripts/popup/popup.html"
   },
 
