@@ -5,17 +5,17 @@
   --primary-text-color: #ebdb97;
   --secondary-text-color: #d3c588;
   --tertiary-text-color: #cbbe85;
-  --placeholder-color: #9F96DE;
+  --placeholder-color: #9f96de;
   --error-text-color: #ff653e;
 
   --editor-header-text-color: #ebdb97;
-  --editor-footer-text-color: #5d568a;
+  --editor-footer-text-color: #aea371;
 
   /* Backgrounds */
-  --primary-background-color: #2D2B52;
+  --primary-background-color: #2d2b52;
   --secondary-background-color: #181835;
   --tertiary-background-color: #20203f;
-  --quaternary-background-color: #2D2B52;
+  --quaternary-background-color: #3e3b76;
 
   --editor-header-background-color: #1d1b38;
   --editor-header-border-color: #18162f;
@@ -27,37 +27,37 @@
   --editor-console-toggle-background-color: #1c1a35;
 
   /* Editor */
-  --cursor-color: #F3D246;
-  --line-number-color: #A399E3;
-  --active-line-number-color: #C6C6C6;
-  --active-line-background-color: #1F1F3F;
-  --selected-text-background-color: #6E4AAA;
-  --selected-searching-text-background-color: #A95D35;
+  --cursor-color: #f3d246;
+  --line-number-color: #a399e3;
+  --active-line-number-color: #c6c6c6;
+  --active-line-background-color: #1f1f3f;
+  --selected-text-background-color: #6e4aaa;
+  --selected-searching-text-background-color: #a95d35;
   --searching-text-background-color: #78785f4d;
-  --indent-guides-color: #3C3965;
-  --hint-matching-symbols-color: #F3D246;
+  --indent-guides-color: #3c3965;
+  --hint-matching-symbols-color: #f3d246;
   --tooltip-border-color: #37346f;
 
   /* Syntax */
-  --comments-color: #A665F5;
-  --system-functions-color: #F3D246;
-  --system-flow-control-color: #E89D3A;
-  --variable-color: #AAEFF2;
-  --declared-variable-color: #AAEFF2;
+  --comments-color: #a665f5;
+  --system-functions-color: #f3d246;
+  --system-flow-control-color: #e89d3a;
+  --variable-color: #aaeff2;
+  --declared-variable-color: #aaeff2;
   --affected-variable-color: #64eaf1;
-  --strings-color: #B9FD9C;
-  --constants-color: #ED6C8D;
-  --math-operators-color: #F1A239;
-  --logical-operators-color: #F1A239;
-  --separators-color: #E4EFFD;
-  --semicolons-color: #E4EFFD;
-  --brackets-color: #F9D849;
+  --strings-color: #b9fd9c;
+  --constants-color: #ed6c8d;
+  --math-operators-color: #f1a239;
+  --logical-operators-color: #f1a239;
+  --separators-color: #e4effd;
+  --semicolons-color: #e4effd;
+  --brackets-color: #f9d849;
   --matching-brackets-background-color: #443671;
-  --matching-brackets-border-color: #5F4796;
-  --nonmatching-brackets-text-color: #C2332F;
+  --matching-brackets-border-color: #5f4796;
+  --nonmatching-brackets-text-color: #c2332f;
 
   /* Buttons */
-  --general-button-text-color: #2D2B52;
+  --general-button-text-color: #2d2b52;
   --general-normal-button-background-color: linear-gradient(0deg, #ebdb97, #d4c688);
   --general-normal-button-border-color: #d7c98a;
   --general-normal-button-shadow-color: #c3b67e;
@@ -73,7 +73,7 @@
   --close-press-button-background-color: linear-gradient(0deg, #554fa7, #494390);
   --close-press-button-border-color: #554fa7;
 
-  --save-arguments-button-text-color: #2D2B52;
+  --save-arguments-button-text-color: #2d2b52;
   --save-arguments-normal-button-background-color: linear-gradient(0deg, #ebdb97, #d4c688);
   --save-arguments-normal-button-border-color: #d7c98a;
   --save-arguments-normal-button-shadow-color: #c3b67e;
@@ -90,7 +90,7 @@
   --safe-press-button-border-color: #97b270;
 
   --dangerous-button-text-color: #181835;
-  --dangerous-normal-button-background-color: linear-gradient(0deg, #CF8F8E, #be8382);
+  --dangerous-normal-button-background-color: linear-gradient(0deg, #cf8f8e, #be8382);
   --dangerous-normal-button-border-color: #c18786;
   --dangerous-normal-button-shadow-color: #a97574;
   --dangerous-hover-button-background-color: linear-gradient(0deg, #c18786, #b37c7b);
@@ -106,7 +106,7 @@
   --extension-popup-switch-on-secondary-background-color: #c9bb7c1a;
   --extension-popup-switch-on-primary-shadow-color: #cebf7c;
   --extension-popup-switch-on-secondary-shadow-color: #c6b87733;
-  --extension-popup-switch-on-text-color: #2D2B52;
+  --extension-popup-switch-on-text-color: #2d2b52;
   --extension-popup-switch-on-border-color: #ebdb9766;
 
   --extension-popup-dangerous-button-text-color: #ff2335;

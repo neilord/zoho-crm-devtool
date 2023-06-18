@@ -32,8 +32,8 @@
   --active-line-number-color: #f0f0f0;
   --active-line-background-color: #202326;
   --selected-text-background-color: #313338;
-  --selected-searching-text-background-color: #2a2929;
-  --searching-text-background-color: #aaaaaa4d;
+  --selected-searching-text-background-color: #5d5d5d;
+  --searching-text-background-color: #9191914d;
   --indent-guides-color: #3c3c42;
   --hint-matching-symbols-color: #ffb77d;
   --tooltip-border-color: #3a3a3a;
@@ -101,7 +101,7 @@
   --extension-popup-glow-color: #707076;
   --extension-popup-text-glow-blur-radius: 0px;
 
-  --extension-popup-switch-off-color: #66666d;
+  --extension-popup-switch-off-color: #5b5b5b;
   --extension-popup-switch-on-primary-background-color: #98989e;
   --extension-popup-switch-on-secondary-background-color: #7c767e1a;
   --extension-popup-switch-on-primary-shadow-color: #827c83;

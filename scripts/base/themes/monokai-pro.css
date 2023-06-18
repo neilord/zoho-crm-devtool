@@ -5,16 +5,16 @@
   --primary-text-color: #ffffda;
   --secondary-text-color: #e7e7c8;
   --tertiary-text-color: #d1d1b4;
-  --placeholder-color: #6A686A;
+  --placeholder-color: #6a686a;
   --error-text-color: #ff653e;
 
   --editor-header-text-color: #ffffda;
   --editor-footer-text-color: #868673;
 
   /* Backgrounds */
-  --primary-background-color: #2C2A2E;
-  --secondary-background-color: #211F22;
-  --tertiary-background-color: #403E41;
+  --primary-background-color: #2c2a2e;
+  --secondary-background-color: #211f22;
+  --tertiary-background-color: #403e41;
   --quaternary-background-color: #727072;
 
   --editor-header-background-color: #1e1d20;
@@ -27,59 +27,59 @@
   --editor-console-toggle-background-color: #222024;
 
   /* Editor */
-  --cursor-color: #FCFCFA;
-  --line-number-color: #5B595C;
-  --active-line-number-color: #C1C0C0;
+  --cursor-color: #fcfcfa;
+  --line-number-color: #5b595c;
+  --active-line-number-color: #c1c0c0;
   --active-line-background-color: #373539;
   --selected-text-background-color: #424144;
   --selected-searching-text-background-color: #b1b36c;
   --searching-text-background-color: #9492974d;
-  --indent-guides-color: #403E41;
-  --hint-matching-symbols-color: #F0D277;
+  --indent-guides-color: #403e41;
+  --hint-matching-symbols-color: #f0d277;
   --tooltip-border-color: #524f55;
 
   /* Syntax */
   --comments-color: #727072;
-  --system-functions-color: #B3DB82;
-  --system-flow-control-color: #ED6C89;
-  --variable-color: #E0E0DF;
-  --declared-variable-color: #E0E0DF;
+  --system-functions-color: #b3db82;
+  --system-flow-control-color: #ed6c89;
+  --variable-color: #e0e0df;
+  --declared-variable-color: #e0e0df;
   --affected-variable-color: #f1f1a3;
-  --strings-color: #F2D375;
-  --constants-color: #A99DEC;
-  --math-operators-color: #EB6C88;
-  --logical-operators-color: #EB6C88;
+  --strings-color: #f2d375;
+  --constants-color: #a99dec;
+  --math-operators-color: #eb6c88;
+  --logical-operators-color: #eb6c88;
   --separators-color: #939293;
   --semicolons-color: #939293;
-  --brackets-color: #ED6C89;
-  --matching-brackets-background-color: #2C2A2E;
+  --brackets-color: #ed6c89;
+  --matching-brackets-background-color: #2c2a2e;
   --matching-brackets-border-color: #727072;
-  --nonmatching-brackets-text-color: #C6372C;
+  --nonmatching-brackets-text-color: #c6372c;
 
   /* Buttons */
-  --general-button-text-color: #fdfdc4;
-  --general-normal-button-background-color: linear-gradient(0deg, #0d0d0e, #0d0d0e);
-  --general-normal-button-border-color: #0a0a0b;
-  --general-normal-button-shadow-color: #020202;
-  --general-hover-button-background-color: linear-gradient(0deg, #0a0a0b, #090909);
-  --general-press-button-background-color: linear-gradient(0deg, #020202, #000000);
-  --general-press-button-border-color: #020202;
+  --general-button-text-color: #0d0d0e;
+  --general-normal-button-background-color: linear-gradient(0deg, #b3b377, #b3b377);
+  --general-normal-button-border-color: #abab6f;
+  --general-normal-button-shadow-color: #9a9a65;
+  --general-hover-button-background-color: linear-gradient(0deg, #abab6f, #9c9c60);
+  --general-press-button-background-color: linear-gradient(0deg, #9a9a65, #8b8b57);
+  --general-press-button-border-color: #9a9a65;
 
-  --close-button-text-color: #0d0d0e;
-  --close-normal-button-background-color: linear-gradient(0deg, #c3c387, #c3c387);
-  --close-normal-button-border-color: #bbbb7f;
-  --close-normal-button-shadow-color: #a9a973;
-  --close-hover-button-background-color: linear-gradient(0deg, #bbbb7f, #abab74);
-  --close-press-button-background-color: linear-gradient(0deg, #a9a973, #979767);
-  --close-press-button-border-color: #a9a973;
+  --close-button-text-color: #fdfdc4;
+  --close-normal-button-background-color: linear-gradient(0deg, #0d0d0e, #0d0d0e);
+  --close-normal-button-border-color: #0a0a0b;
+  --close-normal-button-shadow-color: #020202;
+  --close-hover-button-background-color: linear-gradient(0deg, #0a0a0b, #090909);
+  --close-press-button-background-color: linear-gradient(0deg, #020202, #000000);
+  --close-press-button-border-color: #020202;
 
-  --save-arguments-button-text-color: #fdfdc4;
-  --save-arguments-normal-button-background-color: linear-gradient(0deg, #0d0d0e, #0d0d0e);
-  --save-arguments-normal-button-border-color: #0a0a0b;
-  --save-arguments-normal-button-shadow-color: #020202;
-  --save-arguments-hover-button-background-color: linear-gradient(0deg, #0a0a0b, #090909);
-  --save-arguments-press-button-background-color: linear-gradient(0deg, #020202, #000000);
-  --save-arguments-press-button-border-color: #020202;
+  --save-arguments-button-text-color: #0d0d0e;
+  --save-arguments-normal-button-background-color: linear-gradient(0deg, #b3b377, #b3b377);
+  --save-arguments-normal-button-border-color: #abab6f;
+  --save-arguments-normal-button-shadow-color: #9a9a65;
+  --save-arguments-hover-button-background-color: linear-gradient(0deg, #abab6f, #9c9c60);
+  --save-arguments-press-button-background-color: linear-gradient(0deg, #9a9a65, #8b8b57);
+  --save-arguments-press-button-border-color: #9a9a65;
 
   --safe-button-text-color: #0d0d0e;
   --safe-normal-button-background-color: linear-gradient(0deg, #afcf83, #a1bf78);
@@ -90,7 +90,7 @@
   --safe-press-button-border-color: #97b270;
 
   --dangerous-button-text-color: #0d0d0e;
-  --dangerous-normal-button-background-color: linear-gradient(0deg, #CF8F8E, #be8382);
+  --dangerous-normal-button-background-color: linear-gradient(0deg, #cf8f8e, #be8382);
   --dangerous-normal-button-border-color: #c18786;
   --dangerous-normal-button-shadow-color: #a97574;
   --dangerous-hover-button-background-color: linear-gradient(0deg, #c18786, #b37c7b);

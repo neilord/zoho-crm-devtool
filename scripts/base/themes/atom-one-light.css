@@ -2,20 +2,20 @@
   /* --- Colors --- */
 
   /* Text */
-  --primary-text-color: #626262;
-  --secondary-text-color: #707070;
-  --tertiary-text-color: #7f7f7f;
-  --placeholder-color: #B1B1B1;
+  --primary-text-color: #4b4b4b;
+  --secondary-text-color: #5c5c5c;
+  --tertiary-text-color: #707070;
+  --placeholder-color: #b1b1b1;
   --error-text-color: #ff3e4e;
 
   --editor-header-text-color: #535353;
   --editor-footer-text-color: #676767;
 
   /* Backgrounds */
-  --primary-background-color: #FAFAFA;
+  --primary-background-color: #fafafa;
   --secondary-background-color: #d6d6d6;
   --tertiary-background-color: #e7e7e7;
-  --quaternary-background-color: #e2e2e2;
+  --quaternary-background-color: #ffffff;
 
   --editor-header-background-color: #dddddd;
   --editor-header-border-color: #d2d2d2;
@@ -27,34 +27,34 @@
   --editor-console-toggle-background-color: #e2e2e2;
 
   /* Editor */
-  --cursor-color: #586EF6;
-  --line-number-color: #9D9D9F;
-  --active-line-number-color: #383A41;
-  --active-line-background-color: #F0F0F0;
-  --selected-text-background-color: #E5E5E6;
-  --selected-searching-text-background-color: #A9AC96;
+  --cursor-color: #586ef6;
+  --line-number-color: #9d9d9f;
+  --active-line-number-color: #383a41;
+  --active-line-background-color: #f0f0f0;
+  --selected-text-background-color: #e5e5e6;
+  --selected-searching-text-background-color: #a9ac96;
   --searching-text-background-color: #acb5f54d;
   --indent-guides-color: #d3d4d5;
   --hint-matching-symbols-color: #121417;
-  --tooltip-border-color: #DBDBDC;
+  --tooltip-border-color: #dbdbdc;
 
   /* Syntax */
-  --comments-color: #A3A4A9;
-  --system-functions-color: #4E77EA;
-  --system-flow-control-color: #99329F;
-  --variable-color: #3D3F45;
-  --declared-variable-color: #3D3F45;
-  --affected-variable-color: #313d67;
-  --strings-color: #70A664;
-  --constants-color: #916A22;
-  --math-operators-color: #5D99C3;
-  --logical-operators-color: #5D99C3;
-  --separators-color: #383A41;
-  --semicolons-color: #383A41;
-  --brackets-color: #1330F0;
-  --matching-brackets-background-color: #DCE2DA;
-  --matching-brackets-border-color: #B9B9B9;
-  --nonmatching-brackets-text-color: #EB5D53;
+  --comments-color: #a3a4a9;
+  --system-functions-color: #4e77ea;
+  --system-flow-control-color: #99329f;
+  --variable-color: #3d3f45;
+  --declared-variable-color: #3d3f45;
+  --affected-variable-color: #d36050;
+  --strings-color: #70a664;
+  --constants-color: #916a22;
+  --math-operators-color: #5d99c3;
+  --logical-operators-color: #5d99c3;
+  --separators-color: #383a41;
+  --semicolons-color: #383a41;
+  --brackets-color: #1330f0;
+  --matching-brackets-background-color: #dce2da;
+  --matching-brackets-border-color: #b9b9b9;
+  --nonmatching-brackets-text-color: #eb5d53;
 
   /* Buttons */
   --general-button-text-color: #000000;
