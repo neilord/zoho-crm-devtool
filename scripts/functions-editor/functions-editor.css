@@ -572,8 +572,9 @@ lyte-modal-header {
   padding-top: 5px !important;
 }
 
-.deluge-popup.dre-edit-params-popup {
-  background: var(--secondary-background-color) !important;
+.deluge-popup.dre-edit-params-popup,
+#dreEditParams {
+  background: var(--tertiary-background-color) !important;
 }
 
 .dre-ep-params-title,
