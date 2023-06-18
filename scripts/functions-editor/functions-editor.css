@@ -688,7 +688,7 @@ lyte-modal-freeze {
 }
 
 .deluge-popup.dre-edex-params-popup.dre-execute-params-popup {
-  box-shadow: 0 3px 17px #0000004D !important;
+  box-shadow: 0 3px 17px #0000004d !important;
 }
 
 .dre-ep-header-title {
@@ -1126,7 +1126,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 
 .CodeMirror-Tern-tooltip.deluge-tooltip-example.CodeMirror-Tern-hint-doc {
   background: var(--tertiary-background-color) !important;
-  box-shadow: 0 3px 10px #0000004D !important;
+  box-shadow: 0 3px 10px #0000004d !important;
   margin-left: -5px !important;
   border-width: 0px !important;
   border-radius: 5px !important;
