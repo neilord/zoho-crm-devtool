@@ -144,25 +144,24 @@ function applyRevertStyleSettings(apply = true) {
   });
 }
 
-function setDefaultSettings() {
-  return new Promise((resolve) => {
-    chrome.storage.local.clear(function () {
-      chrome.storage.local.set({
-        'extension-activation-switch': true,
-        'theme': 'zoho-default-light',
-        'style': 'classic',
-        '--code-font-family': 'JetBrains Mono NL,JetBrains Mono',
-        '--code-font-size': '14px',
-        '--code-font-weight': '400',
-        '--code-font-line-height': '1.5',
-        '--font-feature-settings': "'calt', 'zero'",
-        'font-feature-settings-switch': true,
-        'italics-switch': true,
-        'indent-guides-switch': true,
-        'pro-syntax-highlighting-switch': true,
-        'close-button-select': 'right',
-      }, resolve);
-    });
+async function setDefaultSettings() {
+  await new Promise(resolve => chrome.storage.local.clear(resolve));
+  await new Promise(resolve => {
+    chrome.storage.local.set({
+      'extension-activation-switch': true,
+      'theme': 'zoho-default-light',
+      'style': 'classic',
+      '--code-font-family': 'JetBrains Mono NL,JetBrains Mono',
+      '--code-font-size': '14px',
+      '--code-font-weight': '400',
+      '--code-font-line-height': '1.5',
+      '--font-feature-settings': "'calt', 'zero'",
+      'font-feature-settings-switch': true,
+      'italics-switch': true,
+      'indent-guides-switch': true,
+      'pro-syntax-highlighting-switch': true,
+      'close-button-select': 'right',
+    }, resolve);
   });
 }
 
