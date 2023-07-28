@@ -646,7 +646,7 @@ button {
 .emphasized-button span {
   align-items: center;
   background: var(--secondary-background-color);
-  border-radius: 10px;
+  border-radius: 8.5px;
   display: flex;
   justify-content: center;
   height: 100%;
