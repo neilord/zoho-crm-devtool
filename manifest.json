@@ -11,7 +11,7 @@
     "128": "images/icon.png"
   },
 
-  "permissions": ["storage"],
+  "permissions": ["storage", "activeTab"],
 
   "action": {
     "default_title": "Zoho CRM DevTool",

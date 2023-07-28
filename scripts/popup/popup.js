@@ -61,6 +61,19 @@ function startBackgroundTasks() {
       }
     });
   };
+
+  // Footer buttons
+  const buttons = {
+    'request-feature-button': 'https://zoho-crm-devtool.canny.io/feature-requests',
+    'donate-button': 'https://ko-fi.com/zohocrmdevtool',
+    'report-bug-button': 'https://zoho-crm-devtool.canny.io/bug-reports'
+  };
+
+  for (const id in buttons) {
+    document.getElementById(id).addEventListener("click", () => {
+      chrome.tabs.create({ url: buttons[id] });
+    });
+  }
 }
 
 function addAvailiableFontSettings() {
