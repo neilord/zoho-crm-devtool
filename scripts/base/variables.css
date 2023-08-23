@@ -53,7 +53,7 @@
   --brackets-color: #f9d849;
   --matching-brackets-background-color: #223342;
   --matching-brackets-border-color: #888888;
-  --nonmatching-brackets-text-color: #fb001b;
+  --non-matching-brackets-text-color: #fb001b;
 
   /* Buttons */
   --general-button-text-color: #ffffff;
@@ -96,7 +96,7 @@
   --dangerous-press-button-background-color: #9e0e1a;
   --dangerous-press-button-border-color: #9e0e1a;
 
-  /* Extension Pupup */
+  /* Extension Popup */
   --extension-popup-glow-color: #89c2da;
   --extension-popup-text-glow-blur-radius: 5px;
 
@@ -142,7 +142,7 @@
   /* Buttons */
   --button-border-style: none;
   --button-border-width: 1px;
-  --buttom-shadow-offset: -2px;
+  --button-shadow-offset: -2px;
 
   /* Popups */
   --border-radius: 10px;

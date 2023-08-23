@@ -54,7 +54,7 @@
   --brackets-color: #9180b4;
   --matching-brackets-background-color: #16161c;
   --matching-brackets-border-color: #54546b;
-  --nonmatching-brackets-text-color: #ec6867;
+  --non-matching-brackets-text-color: #ec6867;
 
   /* Buttons */
   --general-button-text-color: #1f1f27;
@@ -97,7 +97,7 @@
   --dangerous-press-button-background-color: linear-gradient(0deg, #9b2327, #c12931);
   --dangerous-press-button-border-color: #9b2327;
 
-  /* Extension Pupup */
+  /* Extension Popup */
   --extension-popup-glow-color: #a19e8b;
   --extension-popup-text-glow-blur-radius: 0px;
 

@@ -127,7 +127,7 @@ function removeFooter() {
 
 // Apply
 
-async function enchanceFunctionsEditor() {
+async function enhanceFunctionsEditor() {
   addLeftCloseButton();
   addFooter();
   createRemoveScriptElement('base/variables.css');
@@ -146,23 +146,23 @@ function revertFunctionsEditor() {
 }
 
 async function observeFunctionsEditor() {
-  const visableTopBarSelecter = '#tabLayer:not([style*="display: none"])';
-  const hiddenTopBarWithCodeFrameSelecter = '#basic:has(#tabLayer[style*="display: none"]) ~ #createfunctionpopdiv';
+  const visibleTopBarSelector = '#tabLayer:not([style*="display: none"])';
+  const hiddenTopBarWithCodeFrameSelector = '#basic:has(#tabLayer[style*="display: none"]) ~ #createfunctionpopdiv';
 
   // Opened
-  await waitForElement(hiddenTopBarWithCodeFrameSelecter);
+  await waitForElement(hiddenTopBarWithCodeFrameSelector);
 
-  // Enchance if extension-activation-switch is on or was turned on
+  // Enhance if extension-activation-switch is on or was turned on
   chrome.storage.local.get(['extension-activation-switch']).then((result) => {
     if (result['extension-activation-switch']) {
-      enchanceFunctionsEditor();
+      enhanceFunctionsEditor();
     }
   });
 
   const extensionActivationSwitchChangesListener = (changes) => {
     if ('extension-activation-switch' in changes) {
       if (changes['extension-activation-switch'].newValue) {
-        enchanceFunctionsEditor();
+        enhanceFunctionsEditor();
       } else {
         revertFunctionsEditor();
       }
@@ -172,7 +172,7 @@ async function observeFunctionsEditor() {
   chrome.storage.onChanged.addListener(extensionActivationSwitchChangesListener);
 
   // Closed
-  await waitForElement(visableTopBarSelecter);
+  await waitForElement(visibleTopBarSelector);
   revertFunctionsEditor();
 
   chrome.storage.onChanged.removeListener(extensionActivationSwitchChangesListener);

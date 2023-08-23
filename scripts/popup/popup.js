@@ -41,7 +41,7 @@ async function updateStorageVariable(key, value, overwrite = true) {
 async function setupPopup() {
   await setInitialSettings();
   await showSavedSettings();
-  await addAvailiableFontSettings();
+  await addAvailableFontSettings();
   startSettingsSave();
   applyRevertStyleSettings();
 
@@ -76,7 +76,7 @@ function startBackgroundTasks() {
   }
 }
 
-function addAvailiableFontSettings() {
+function addAvailableFontSettings() {
   return new Promise((resolve) => {
     fetch(chrome.runtime.getURL('scripts/base/variables.css'))
       .then(response => response.text())

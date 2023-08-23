@@ -224,7 +224,7 @@ lyte-button[data-zcqa="cf_functionSaveExecute"] button {
   color: var(--general-button-text-color) !important;
   background: var(--general-normal-button-background-color) !important;
   border-color: var(--general-normal-button-border-color) !important;
-  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--general-normal-button-shadow-color) !important;
+  box-shadow: inset 0 var(--button-shadow-offset) 0 var(--general-normal-button-shadow-color) !important;
 }
 
 lyte-button[data-zcqa="cf_functionSave"]:hover button,
@@ -245,7 +245,7 @@ lyte-button[data-zcqa="cf_functionCancel"] button,
   color: var(--close-button-text-color) !important;
   background: var(--close-normal-button-background-color) !important;
   border-color: var(--close-normal-button-border-color) !important;
-  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--close-normal-button-shadow-color) !important;
+  box-shadow: inset 0 var(--button-shadow-offset) 0 var(--close-normal-button-shadow-color) !important;
 }
 
 lyte-button[data-zcqa="cf_functionCancel"] button:hover,
@@ -266,7 +266,7 @@ lyte-button[data-zcqa="cf_functionCancel"] button:active,
   color: var(--dangerous-button-text-color) !important;
   background: var(--dangerous-normal-button-background-color) !important;
   border-color: var(--dangerous-normal-button-border-color) !important;
-  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--dangerous-normal-button-shadow-color) !important;
+  box-shadow: inset 0 var(--button-shadow-offset) 0 var(--dangerous-normal-button-shadow-color) !important;
 }
 
 .newDelBtn.leavePage.redbtn:hover,
@@ -290,7 +290,7 @@ lyte-button[data-zcqa="cf_functionCancel"] button:active,
   color: var(--safe-button-text-color) !important;
   background: var(--safe-normal-button-background-color) !important;
   border-color: var(--safe-normal-button-border-color) !important;
-  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--safe-normal-button-shadow-color) !important;
+  box-shadow: inset 0 var(--button-shadow-offset) 0 var(--safe-normal-button-shadow-color) !important;
 }
 
 .newGrayBgBtn.stayPage.newgraybtn:hover,
@@ -888,7 +888,7 @@ lyte-modal-footer {
   font-weight: 500 !important;
   text-transform: capitalize !important;
   border-radius: 6px !important;
-  box-shadow: inset 0 var(--buttom-shadow-offset) 0 var(--save-arguments-normal-button-shadow-color) !important;
+  box-shadow: inset 0 var(--button-shadow-offset) 0 var(--save-arguments-normal-button-shadow-color) !important;
 }
 
 #dreExecuteParamsSaveBtn:hover,
@@ -1153,7 +1153,7 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
 }
 
 .CodeMirror-nonmatchingbracket {
-  color: var(--nonmatching-brackets-text-color) !important;
+  color: var(--non-matching-brackets-text-color) !important;
 }
 
 .CodeMirror-matchingbracket:not(.CodeMirror-matchingbracket + .CodeMirror-matchingbracket):not(.CodeMirror-matchingbracket:has(+ .CodeMirror-matchingbracket)) {
