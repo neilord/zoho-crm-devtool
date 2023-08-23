@@ -92,7 +92,7 @@ async function addFooter() {
   functionDescription.setAttribute('id', 'templateSubject');
   functionDescription.setAttribute('placeholder', 'Function Description');
   functionDescription.setAttribute('autocomplete', 'off');
-  functionDescription.setAttribute('value', headerFunctionDescription.getAttribute('value'));
+  functionDescription.setAttribute('value', headerFunctionDescription.value);
   headerFunctionDescription.setAttribute('id', 'headerFunctionDescription');
 
   // Deluge Logo
