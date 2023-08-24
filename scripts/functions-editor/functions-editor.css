@@ -28,7 +28,7 @@
   background: var(--editor-header-background-color) !important;
 }
 
-#templateName {
+#templateName, #templateName::placeholder {
   font-family: var(--editor-header-font-family) !important;
   font-size: 22px !important;
   font-weight: 500 !important;
