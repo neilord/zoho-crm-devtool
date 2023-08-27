@@ -56,20 +56,18 @@ async function addFooter() {
 
   // Function Name
   const headerFunctionName = await waitForElement('#dreFunctionName')
-
   const functionName = document.createElement('div');
   functionDetails.appendChild(functionName);
-  functionName.textContent = headerFunctionName.textContent;
+  syncElements(headerFunctionName, functionName, 'textContent');
 
   // Function Parameters
   const headerFunctionParameters = await waitForElement('#functionArguments')
-
   const functionParameters = document.createElement('div');
   functionDetails.appendChild(functionParameters);
-  functionParameters.textContent = headerFunctionParameters.textContent;
   functionParameters.style = `
     margin-left: 2px;
   `;
+  syncElements(headerFunctionParameters, functionParameters, 'textContent');
 
   // Edit Arguments
   const functionEditArguments = document.createElement('div');
@@ -86,7 +84,6 @@ async function addFooter() {
 
   // Function Description
   const headerFunctionDescription = await waitForElement('lyte-input[data-zcqa="cf_functionDesc"] input[value]');
-
   const functionDescription = document.createElement('input');
   footer.appendChild(functionDescription);
   functionDescription.setAttribute('id', 'templateSubject');

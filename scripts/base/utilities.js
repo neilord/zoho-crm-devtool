@@ -62,6 +62,38 @@ function waitForElementRemoval(selector) {
   });
 }
 
+function syncElements(source, target, property) {
+  const sourceElement = typeof source === 'string' ? document.querySelector(source) : source;
+  const targetElement = typeof target === 'string' ? document.querySelector(target) : target;
+
+  targetElement[property] = sourceElement[property];
+
+  const syncObserver = new MutationObserver(() => {
+    targetElement[property] = sourceElement[property];
+  });
+  syncObserver.observe(sourceElement, {
+    characterData: true,
+    childList: true,
+    subtree: true
+  });
+
+  const removalObserver = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+      if (mutation.removedNodes.length > 0) {
+        if (!document.contains(sourceElement) || !document.contains(targetElement)) {
+          syncObserver.disconnect();
+          removalObserver.disconnect();
+          return;
+        }
+      }
+    }
+  });
+  removalObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+}
+
 function applyRevertStyleSettings(apply = true) {
   const popupSettings = [
     'theme',
