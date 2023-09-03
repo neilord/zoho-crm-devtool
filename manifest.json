@@ -5,10 +5,10 @@
   "description": "UI and UX improvements for Zoho CRM.",
 
   "icons": {
-    "16": "images/icon.png",
-    "32": "images/icon.png",
-    "48": "images/icon.png",
-    "128": "images/icon.png"
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
   },
 
   "permissions": ["storage", "activeTab"],
