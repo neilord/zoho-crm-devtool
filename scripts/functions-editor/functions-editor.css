@@ -375,6 +375,19 @@ lyte-button[data-zcqa="cf_functionCancel"] button:active,
   margin-top: 5px !important;
 }
 
+.wfDelugeArgumentsRow:last-child {
+  height: 42px !important;
+}
+
+.wfDelugeArgumentsRow:last-child .wfDelugeAddorRemoveRow {
+  display: flex !important;
+  margin: 0 !important;
+}
+
+.wfDelugeArgumentsRow:nth-last-child(2) .wfDelugeAddorRemoveRow {
+  margin-top: 5px !important;
+}
+
 .pL0.w200 {
   display: flex !important;
   align-items: center !important;
