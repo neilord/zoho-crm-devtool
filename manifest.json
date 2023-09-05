@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Zoho CRM DevTool",
   "version": "1.0.0",
-  "description": "Enhance your Zoho CRM development environment with advanced interface improvements and features",
+  "description": "Enhance Zoho CRM development environment with interface improvements and features",
   "icons": {
     "16": "images/icon16.png",
     "32": "images/icon32.png",
