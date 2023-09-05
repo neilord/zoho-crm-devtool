@@ -1,26 +1,22 @@
 {
   "manifest_version": 3,
   "name": "Zoho CRM DevTool",
-  "version": "1.0",
-  "description": "UI and UX improvements for Zoho CRM.",
-
+  "version": "1.0.0",
+  "description": "Enhance your Zoho CRM development environment with advanced interface improvements and features",
   "icons": {
     "16": "images/icon16.png",
     "32": "images/icon32.png",
     "48": "images/icon48.png",
     "128": "images/icon128.png"
   },
-
   "permissions": ["storage", "activeTab"],
 
   "action": {
     "default_title": "Zoho CRM DevTool",
     "default_popup": "scripts/popup/popup.html"
   },
-
   "content_scripts": [
     {
-      "js": ["scripts/base/utilities.js", "scripts/functions-editor/functions-editor.js"],
       "matches": [
         "https://crm.zoho.com/*",
         "https://crm.zoho.au/*",
@@ -29,24 +25,24 @@
         "https://crm.zoho.com.cn/*",
         "https://crm.zoho.jp/*",
         "https://crm.zoho.in/*"
-      ]
+      ],
+      "js": ["scripts/base/utilities.js", "scripts/functions-editor/functions-editor.js"]
     }
   ],
-
   "web_accessible_resources": [
     {
+      "matches": [
+        "https://crm.zoho.com/*",
+        "https://crm.zoho.au/*",
+        "https://crm.zoho.eu/*",
+        "https://crm.zoho.com.au/*",
+        "https://crm.zoho.com.cn/*",
+        "https://crm.zoho.jp/*",
+        "https://crm.zoho.in/*"
+      ],
       "resources": [
         "scripts/*",
         "fonts/*"
-      ],
-      "matches": [
-        "https://crm.zoho.com/*",
-        "https://crm.zoho.au/*",
-        "https://crm.zoho.eu/*",
-        "https://crm.zoho.com.au/*",
-        "https://crm.zoho.com.cn/*",
-        "https://crm.zoho.jp/*",
-        "https://crm.zoho.in/*"
       ]
     }
   ]
