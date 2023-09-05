@@ -1232,15 +1232,19 @@ body:has(.CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-deluge-edit-task.co
   font-weight: bolder !important;
 }
 
-.CodeMirror-Tern-tooltip.deluge-tooltip-example.CodeMirror-Tern-hint-doc {
+.CodeMirror-Tern-tooltip {
+  color: var(--primary-text-color) !important;
   background: var(--tertiary-background-color) !important;
   box-shadow: 0 3px 10px #0000004d !important;
+  font-family: var(--code-font-family) !important;
+  font-size: var(--code-font-size) !important;
+  font-weight: var(--code-font-weight) !important;
   margin-left: -5px !important;
   border-width: 0px !important;
   border-radius: 5px !important;
 }
 
-.CodeMirror-Tern-tooltip.deluge-tooltip-example.CodeMirror-Tern-hint-doc * {
+.CodeMirror-Tern-tooltip * {
   font-family: var(--code-font-family) !important;
   font-size: var(--code-font-size) !important;
   font-weight: var(--code-font-weight) !important;
