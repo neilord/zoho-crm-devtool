@@ -4,7 +4,7 @@ Enhance Zoho CRM development environment with interface improvements and feature
 Zoho CRM DevTool transforms your default Zoho CRM Deluge Function Editor into a professional coding environment. Whether you're a seasoned developer or just starting out, our extension offers a suite of features designed to improve your coding experience
 
 ### Install
-_The Chrome Web Store link will be there soon! (Currently publishing)_
+[Chrome Web Store](https://rebrand.ly/zcdt-github)
 
 ## Font Customization
 Adjust font size, weight, italics, and line height to your preference.
