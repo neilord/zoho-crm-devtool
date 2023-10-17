@@ -38,7 +38,21 @@
         "https://crm.zoho.com.au/*",
         "https://crm.zoho.com.cn/*",
         "https://crm.zoho.jp/*",
-        "https://crm.zoho.in/*"
+        "https://crm.zoho.in/*",
+        "https://crm.zohoportal.com/*",
+        "https://crm.zohoportal.au/*",
+        "https://crm.zohoportal.eu/*",
+        "https://crm.zohoportal.com.au/*",
+        "https://crm.zohoportal.com.cn/*",
+        "https://crm.zohoportal.jp/*",
+        "https://crm.zohoportal.in/*",
+        "https://*.zohoportal.com/*",
+        "https://*.zohoportal.au/*",
+        "https://*.zohoportal.eu/*",
+        "https://*.zohoportal.com.au/*",
+        "https://*.zohoportal.com.cn/*",
+        "https://*.zohoportal.jp/*",
+        "https://*.zohoportal.in/*"
       ],
       "resources": [
         "scripts/*",
