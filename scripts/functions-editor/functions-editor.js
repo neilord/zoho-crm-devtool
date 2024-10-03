@@ -8,7 +8,9 @@ async function changeGoToLinePlaceholder() {
 
 function addLeftCloseButton() {
   const leftCloseButton = document.createElement('lyte-button');
-  document.querySelector('.w100p.untitledRepTextPar.aIC.dF.spaceBetween.h70').children[0].before(leftCloseButton);
+  document
+    .querySelector('div.headerSectionTabCnt.pR.crmBaseColor.br_bottom_border3.w100_per.oH > div')
+    .children[0].before(leftCloseButton);
   leftCloseButton.setAttribute('id', 'functionCancelLeft');
   leftCloseButton.firstElementChild.textContent = 'Close';
   leftCloseButton.onclick = () => {
@@ -55,13 +57,13 @@ async function addFooter() {
   `;
 
   // Function Name
-  const headerFunctionName = await waitForElement('#dreFunctionName')
+  const headerFunctionName = await waitForElement('#dreFunctionName');
   const functionName = document.createElement('div');
   functionDetails.appendChild(functionName);
   syncElements(headerFunctionName, functionName, 'textContent');
 
   // Function Parameters
-  const headerFunctionParameters = await waitForElement('#functionArguments')
+  const headerFunctionParameters = await waitForElement('#functionArguments');
   const functionParameters = document.createElement('div');
   functionDetails.appendChild(functionParameters);
   functionParameters.style = `
